@@ -195,6 +195,23 @@ ul.plain li::before{
   text-align:center;font-family:var(--f-display);font-weight:800;
   font-size:19px;letter-spacing:.14em;margin-top:30px;color:var(--ink);
 }
+.ft-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ft-wrap::after{
+  content:"← 표를 옆으로 밀어 보세요";
+  display:none;font-size:11px;color:var(--ink-faint);
+  padding-top:6px;font-family:var(--f-mono);
+}
+@media (max-width:640px){
+  .form{padding:22px 14px 18px}
+  .form-title{font-size:21px;letter-spacing:.35em;text-indent:.35em}
+  .ft{min-width:440px;font-size:11.5px}
+  .ft td{padding:6px 7px;height:30px}
+  .ft td.lb{letter-spacing:0}
+  .ft-wrap::after{display:block}
+  .fsec{margin-bottom:24px}
+  .fsign u{padding:0 20px}
+  .form-foot{font-size:17px}
+}
 
 .form-title2{
   font-family:var(--f-body);font-weight:700;font-size:16px;
@@ -467,7 +484,7 @@ footer{
 
       <div class="fsec">
         <h4>1. 고소인<sup>*</sup></h4>
-        <table class="ft">
+        <div class="ft-wrap"><table class="ft">
           <colgroup><col style="width:19%"><col style="width:29%"><col style="width:19%"><col style="width:33%"></colgroup>
           <tbody>
             <tr><td class="lb">성 명<small>(상호·대표자)</small></td><td></td><td class="lb">주민등록번호<small>(법인등록번호)</small></td><td class="ct">–</td></tr>
@@ -477,14 +494,14 @@ footer{
             <tr><td class="lb">이메일</td><td colspan="3"></td></tr>
             <tr><td class="lb">대리인에<br>의한 고소</td><td colspan="3">□ 법정대리인 (성명 :　　　　　, 연락처 :　　　　　)<br>□ 고소대리인 (성명 : 변호사　　　, 연락처 :　　　　　)</td></tr>
           </tbody>
-        </table>
+        </table></div>
         <p class="fnote">※ 법인·단체이면 상호, 대표자, 법인등록번호, 주된 사무소 소재지를 적고 법인등기부 등본을 첨부합니다. 법정대리인·변호사가 대리하는 경우 관계나 선임을 증명할 서류를 첨부합니다.</p>
         <p class="tip"><b>안내</b> — 여기 적는 전화번호가 수사기관이 연락할 유일한 창구입니다. 실제로 받는 번호를 적으세요.</p>
       </div>
 
       <div class="fsec">
         <h4>2. 피고소인<sup>*</sup></h4>
-        <table class="ft">
+        <div class="ft-wrap"><table class="ft">
           <colgroup><col style="width:19%"><col style="width:29%"><col style="width:19%"><col style="width:33%"></colgroup>
           <tbody>
             <tr><td class="lb">성 명</td><td></td><td class="lb">주민등록번호</td><td class="ct">–</td></tr>
@@ -494,14 +511,14 @@ footer{
             <tr><td class="lb">이메일</td><td colspan="3"></td></tr>
             <tr><td class="lb">기타사항</td><td colspan="3"></td></tr>
           </tbody>
-        </table>
+        </table></div>
         <p class="fnote">※ 아는 사항만 적으면 되며, 이름조차 모르는 경우 기타사항에 성별·특징적 외모·인상착의 등을 구체적으로 적습니다.</p>
         <p class="tip"><b>안내</b> — 계좌번호, 전화번호, SNS 계정, 차량번호가 곧 신원 추적의 실마리입니다. 아는 만큼 기타사항에 모두 적으세요.</p>
       </div>
 
       <div class="fsec">
         <h4>3. 고소취지<sup>*</sup></h4>
-        <table class="ft"><tbody><tr><td>고소인은 피고소인을 　　　　　죄로 고소하오니 처벌하여 주시기 바랍니다.</td></tr></tbody></table>
+        <div class="ft-wrap"><table class="ft"><tbody><tr><td>고소인은 피고소인을 　　　　　죄로 고소하오니 처벌하여 주시기 바랍니다.</td></tr></tbody></table></div>
         <p class="fnote">※ 죄명 및 피고소인에 대한 처벌의사를 기재합니다.</p>
         <p class="tip"><b>안내</b> — 죄명을 몰라도 접수됩니다. 최종 판단은 수사기관이 합니다.</p>
       </div>
@@ -522,23 +539,23 @@ footer{
 
       <div class="fsec">
         <h4>6. 증거자료</h4>
-        <table class="ft"><tbody>
+        <div class="ft-wrap"><table class="ft"><tbody>
           <tr><td>□ 고소인은 고소인의 진술 외에 제출할 증거가 <b>없습니다.</b></td></tr>
           <tr><td>□ 고소인은 고소인의 진술 외에 제출할 증거가 <b>있습니다.</b><br>　☞ 제출할 증거의 세부내역은 <b>별지</b>를 작성하여 첨부합니다.</td></tr>
-        </tbody></table>
+        </tbody></table></div>
         <p class="tip"><b>안내</b> — 별지는 인적증거 / 증거서류 / 증거물 / 기타 증거 네 부분입니다. 서류·물건은 표에 하나씩 적고 <b>접수시 제출</b>인지 <b>수사 중 제출</b>인지 체크합니다.</p>
       </div>
 
       <div class="fsec">
         <h4>7. 관련사건의 수사 및 재판 여부<sup>*</sup></h4>
-        <table class="ft">
+        <div class="ft-wrap"><table class="ft">
           <colgroup><col style="width:24%"><col style="width:76%"></colgroup>
           <tbody>
             <tr><td class="lb">① 중복 고소 여부</td><td>본 고소장과 같은 내용의 고소장을 다른 검찰청 또는 경찰서에 제출하거나 제출하였던 사실이 <span class="cb">있습니다 □ / 없습니다 □</span></td></tr>
             <tr><td class="lb">② 관련 형사사건<br>수사 유무</td><td>본 고소장에 기재된 범죄사실과 관련된 사건 또는 공범에 대하여 검찰청이나 경찰서에서 <span class="cb">수사 중에 있습니다 □ / 수사 중에 있지 않습니다 □</span></td></tr>
             <tr><td class="lb">③ 관련 민사소송<br>유무</td><td>본 고소장에 기재된 범죄사실과 관련된 사건에 대하여 법원에서 <span class="cb">민사소송 중에 있습니다 □ / 민사소송 중에 있지 않습니다 □</span></td></tr>
           </tbody>
-        </table>
+        </table></div>
         <p class="fnote">※ ①, ②항은 반드시 표시하여야 하며, 수사·재판 중이라면 어느 검찰청·경찰서·법원인지 아는 범위에서 기타사항 난에 기재하여야 합니다.</p>
         <p class="tip"><b>안내</b> — 숨기면 나중에 신빙성을 크게 잃습니다. 있는 그대로 표시하세요.</p>
       </div>
@@ -578,7 +595,7 @@ footer{
 
       <div class="fsec">
         <h4>1. 인적증거 <span class="sub">(목격자, 기타 참고인 등)</span></h4>
-        <table class="ft">
+        <div class="ft-wrap"><table class="ft">
           <colgroup><col style="width:17%"><col style="width:30%"><col style="width:19%"><col style="width:34%"></colgroup>
           <tbody>
             <tr><td class="lb">성 명</td><td></td><td class="lb">주민등록번호</td><td class="ct">–</td></tr>
@@ -586,14 +603,14 @@ footer{
             <tr><td class="lb">전 화</td><td colspan="3">(휴대폰)　　　　(자택)　　　　(사무실)</td></tr>
             <tr><td class="lb">입증하려는<br>내용</td><td colspan="3" style="height:66px"></td></tr>
           </tbody>
-        </table>
+        </table></div>
         <p class="fnote">※ 참고인의 인적사항과 연락처를 정확히 알 수 없으면 참고인을 특정할 수 있도록 성별, 외모 등을 ‘입증하려는 내용’란에 아는 대로 기재하시기 바랍니다.</p>
         <p class="tip"><b>안내</b> — 사람이 증거일 때 쓰는 칸입니다. “그 자리에 있었다”가 아니라 <b>무엇을 보고 들었는지</b>를 적어야 수사관이 부를 이유가 생깁니다.</p>
       </div>
 
       <div class="fsec">
         <h4>2. 증거서류 <span class="sub">(진술서, 차용증, 각서, 금융거래내역서, 진단서 등)</span></h4>
-        <table class="ft">
+        <div class="ft-wrap"><table class="ft">
           <colgroup><col style="width:9%"><col style="width:35%"><col style="width:19%"><col style="width:37%"></colgroup>
           <tbody>
             <tr><td class="hd">순번</td><td class="hd">증거</td><td class="hd">작성자</td><td class="hd">제출 유무</td></tr>
@@ -603,14 +620,14 @@ footer{
             <tr><td class="ct">4</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
             <tr><td class="ct">5</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
           </tbody>
-        </table>
+        </table></div>
         <p class="fnote">※ 증거란에 각 증거서류를 개별적으로 기재하고, 제출 유무란에는 고소장 접수시 제출하는지 또는 수사 중 제출할 예정인지 표시하시기 바랍니다.</p>
         <p class="tip"><b>안내</b> — “카카오톡 대화 내역”처럼 <b>하나씩</b> 적습니다. 지금 낼 수 있는 것은 전부 ‘접수시 제출’에 체크하세요. 나중에 내겠다는 게 많을수록 수사가 늦어집니다.</p>
       </div>
 
       <div class="fsec">
         <h4>3. 증거물</h4>
-        <table class="ft">
+        <div class="ft-wrap"><table class="ft">
           <colgroup><col style="width:9%"><col style="width:35%"><col style="width:19%"><col style="width:37%"></colgroup>
           <tbody>
             <tr><td class="hd">순번</td><td class="hd">증거</td><td class="hd">소유자</td><td class="hd">제출 유무</td></tr>
@@ -620,7 +637,7 @@ footer{
             <tr><td class="ct">4</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
             <tr><td class="ct">5</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
           </tbody>
-        </table>
+        </table></div>
         <p class="fnote">※ 소유자란에는 고소장 제출시 누가 소유하고 있는지, 제출 유무란에는 고소장 접수시 제출하는지 또는 수사 중 제출할 예정인지 표시하시기 바랍니다.</p>
         <p class="tip"><b>안내</b> — 서류가 아닌 <b>물건</b>입니다(파손된 물품, 흉기, 위조품 등). 2번의 ‘작성자’ 자리가 여기서는 <b>소유자</b>로 바뀝니다.</p>
       </div>
@@ -692,7 +709,7 @@ footer{
         <div class="ex-f">
           <h5>별지 2. 증거서류 — 이렇게 채웁니다</h5>
           <div class="scroll">
-            <table class="ft">
+            <div class="ft-wrap"><table class="ft">
               <colgroup><col style="width:9%"><col style="width:41%"><col style="width:16%"><col style="width:34%"></colgroup>
               <tbody>
                 <tr><td class="hd">순번</td><td class="hd">증거</td><td class="hd">작성자</td><td class="hd">제출 유무</td></tr>
@@ -702,7 +719,7 @@ footer{
                 <tr><td class="ct">4</td><td>피고소인 번호로의 통화기록 및 차단 확인 화면</td><td class="ct">고소인</td><td class="ct cb"><b>☑ 접수시 제출</b> &nbsp; □ 수사 중 제출</td></tr>
                 <tr><td class="ct">5</td><td>동일 계좌 사기 피해 사례 조회 결과 (2026. 6. 17. 조회)</td><td class="ct">고소인</td><td class="ct cb"><b>☑ 접수시 제출</b> &nbsp; □ 수사 중 제출</td></tr>
               </tbody>
-            </table>
+            </table></div>
           </div>
           <p class="ex-why">‘작성자’는 그 서류를 만든 주체입니다. 내가 캡처했으면 고소인, 은행이 발급했으면 은행. 채팅은 <b>일부 캡처가 아니라 전체 내보내기(txt)</b>여야 앞뒤 맥락이 살아 있습니다.</p>
         </div>
