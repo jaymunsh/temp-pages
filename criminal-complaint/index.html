@@ -37,6 +37,8 @@
   --f-mono:"IBM Plex Mono", ui-monospace, monospace;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
+section{scroll-margin-top:20px}
 body{
   margin:0;
   background:var(--paper);
@@ -53,7 +55,7 @@ p{margin:0 0 1em}
 a{color:var(--indigo)}
 strong{font-weight:700}
 :focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 
 /* ── masthead ───────────────────────────── */
 .mast{padding:64px 0 40px;border-bottom:2px solid var(--ink)}
@@ -79,6 +81,38 @@ h1{
   font-size:14.5px;line-height:1.7;color:var(--ink);
 }
 .notice b{color:var(--seal)}
+
+/* ── 전체 흐름 ─────────────────────────── */
+.flow{list-style:none;padding:0;margin:22px 0 0;border-top:1px solid var(--rule-strong)}
+.flow li{
+  display:grid;grid-template-columns:62px 1fr auto;
+  gap:2px 16px;align-items:baseline;
+  padding:15px 0;border-bottom:1px solid var(--rule);margin:0;
+}
+.flow a{text-decoration:none;color:inherit}
+.flow a b{font-size:15.5px;font-weight:700;color:var(--ink);border-bottom:1px solid transparent}
+.flow a:hover b{border-bottom-color:var(--seal)}
+.fw{
+  font-size:10.5px;font-weight:700;letter-spacing:.04em;text-align:center;
+  padding:3px 0;border:1px solid currentColor;align-self:start;margin-top:3px;
+}
+.fw.me{color:var(--seal)}
+.fw.them{color:var(--ink-faint)}
+.fw.both{color:var(--indigo)}
+.fd{grid-column:2;font-size:14px;line-height:1.7;color:var(--ink-soft)}
+.fd b{color:var(--ink);font-weight:500}
+.ft2{
+  grid-column:3;grid-row:1;font-family:var(--f-mono);font-size:11.5px;
+  color:var(--ink-faint);white-space:nowrap;
+}
+.flow-note{
+  margin:18px 0 0;font-size:14px;line-height:1.8;color:var(--ink-soft);
+}
+@media (max-width:640px){
+  .flow li{grid-template-columns:56px 1fr;gap:2px 12px}
+  .ft2{grid-column:2;grid-row:auto;margin-top:4px}
+  .fd{grid-column:2}
+}
 
 /* ── section / steps ────────────────────── */
 section{padding-top:56px}
@@ -405,8 +439,60 @@ footer{
   피해 금액이 크거나, 상대가 다투고 있거나, 고소기간이 얼마 남지 않았다면 <b>제출 전에</b> 변호사 상담(대한법률구조공단 국번없이 132, 마을변호사, 각 지방변호사회 무료상담)을 받는 편이 훨씬 안전합니다.
 </div>
 
+<section id="flow">
+  <div class="sec-head"><span class="num">—</span><h2>전체 흐름</h2></div>
+  <p class="sec-sub">고소는 서류를 내면 끝나는 일이 아니라, 길게는 1년 넘게 이어지는 절차입니다. 먼저 전체 지도를 보고 시작하세요.</p>
+  <div class="body">
+    <ol class="flow">
+      <li>
+        <span class="fw who me">내 몫</span>
+        <a href="#s00"><b>1. 자격과 기간 확인</b></a>
+        <span class="fd">내가 고소할 수 있는 사람인지, 친고죄 6개월이 지나지 않았는지. <b>여기서 걸리면 나머지가 무의미</b>합니다.</span>
+        <span class="ft2">지금 당장</span>
+      </li>
+      <li>
+        <span class="fw who me">내 몫</span>
+        <a href="#s01"><b>2. 사실관계 정리와 증거 확보</b></a>
+        <span class="fd">있었던 일을 시간순으로. 사라질 증거(CCTV, 게시글)를 먼저 붙잡습니다. 가장 오래 걸리는 단계입니다.</span>
+        <span class="ft2">며칠</span>
+      </li>
+      <li>
+        <span class="fw who me">내 몫</span>
+        <a href="#s03"><b>3. 고소장 작성</b></a>
+        <span class="fd">경찰청 공식 서식 8개 항목 + 증거 별지. 핵심은 4번 범죄사실입니다.</span>
+        <span class="ft2">하루</span>
+      </li>
+      <li>
+        <span class="fw who me">내 몫</span>
+        <a href="#s05"><b>4. 제출</b></a>
+        <span class="fd">가까운 경찰서 방문이 원칙. 사이버범죄는 ECRM 온라인 접수도 됩니다. <b>사건번호를 받아 적으세요.</b></span>
+        <span class="ft2">당일</span>
+      </li>
+      <li>
+        <span class="fw who both">함께</span>
+        <a href="#s06"><b>5. 수사</b></a>
+        <span class="fd">고소인 조사(출석해서 진술) → 피고소인 조사 → 증거 확보. 추가 증거는 언제든 낼 수 있습니다.</span>
+        <span class="ft2">수개월</span>
+      </li>
+      <li>
+        <span class="fw who them">기관 몫</span>
+        <a href="#s06"><b>6. 결정</b></a>
+        <span class="fd">경찰이 <b>송치</b>(혐의 있음, 검찰로) 또는 <b>불송치</b>(혐의 없음)를 결정해 통지합니다. 이후 검사가 <b>기소·불기소</b>를 정합니다.</span>
+        <span class="ft2">통지 도착</span>
+      </li>
+      <li>
+        <span class="fw who me">내 몫</span>
+        <a href="#s06"><b>7. 불복 — 기간이 매우 짧습니다</b></a>
+        <span class="fd">불송치면 <b>이의신청</b>. 불기소면 <b>항고 30일</b> → 기각 시 <b>재정신청 10일</b>. 통지서를 받는 즉시 날짜부터 확인하세요.</span>
+        <span class="ft2">30일 / 10일</span>
+      </li>
+    </ol>
+    <p class="flow-note">1~4번이 이 문서가 주로 다루는 부분이고, 5~7번은 <a href="#s06">06단계</a>에 자세히 있습니다. 형사 절차로 처벌을 구하는 것과 <strong>돈을 돌려받는 것은 별개</strong>라는 점도 미리 알아두세요 — 배상은 배상명령이나 민사소송으로 따로 챙겨야 합니다.</p>
+  </div>
+</section>
+
 <!-- 00 ─────────────────────────────────── -->
-<section>
+<section id="s00">
   <div class="sec-head"><span class="num">00</span><h2>내가 쓸 게 정말 고소장이 맞나</h2></div>
   <p class="sec-sub">비슷한 이름의 서류가 네 개 있고, 잘못 고르면 헛수고가 됩니다.</p>
   <div class="body">
@@ -441,7 +527,7 @@ footer{
 </section>
 
 <!-- 01 ─────────────────────────────────── -->
-<section>
+<section id="s01">
   <div class="sec-head"><span class="num">01</span><h2>쓰기 전에 사실관계를 시간순으로 늘어놓기</h2></div>
   <p class="sec-sub">고소장 작성에서 가장 오래 걸리는 단계이자, 여기서 대충 하면 나머지가 전부 흔들리는 단계입니다.</p>
   <div class="body">
@@ -467,7 +553,7 @@ footer{
 </section>
 
 <!-- 02 ─────────────────────────────────── -->
-<section>
+<section id="s02">
   <div class="sec-head"><span class="num">02</span><h2>죄명은 몰라도 됩니다</h2></div>
   <p class="sec-sub">다만 대략 어느 쪽인지 알면 사실관계를 어디에 힘줘 써야 하는지가 보입니다.</p>
   <div class="body">
@@ -486,7 +572,7 @@ footer{
 </section>
 
 <!-- 03 ─────────────────────────────────── -->
-<section>
+<section id="s03">
   <div class="sec-head"><span class="num">03</span><h2>고소장 서식 — 칸별로 무엇을 쓰는가</h2></div>
   <p class="sec-sub">경찰청이 배포하는 공식 서식이 있습니다. 아래는 그 서식을 항목별 설명과 함께 옮긴 것입니다.</p>
   <div class="body">
@@ -797,7 +883,7 @@ footer{
 </section>
 
 <!-- 04 ─────────────────────────────────── -->
-<section>
+<section id="s04">
   <div class="sec-head"><span class="num">04</span><h2>범죄사실 쓰는 법</h2></div>
   <p class="sec-sub">고소장의 성패는 거의 전적으로 이 항목에서 갈립니다.</p>
   <div class="body">
@@ -833,7 +919,7 @@ footer{
 </section>
 
 <!-- 05 ─────────────────────────────────── -->
-<section>
+<section id="s05">
   <div class="sec-head"><span class="num">05</span><h2>어디에, 어떻게 내는가</h2></div>
   <p class="sec-sub">세 가지 방법이 있고, 대부분의 사건은 첫 번째로 충분합니다.</p>
   <div class="body">
@@ -848,7 +934,7 @@ footer{
 </section>
 
 <!-- 06 ─────────────────────────────────── -->
-<section>
+<section id="s06">
   <div class="sec-head"><span class="num">06</span><h2>낸 다음에 일어나는 일</h2></div>
   <p class="sec-sub">고소장 제출은 끝이 아니라 시작입니다. 전체 흐름을 알고 있어야 당황하지 않습니다.</p>
   <div class="body">
@@ -899,7 +985,7 @@ footer{
 </section>
 
 <!-- 07 ─────────────────────────────────── -->
-<section>
+<section id="s07">
   <div class="sec-head"><span class="num">07</span><h2>가장 많이 하는 실수</h2></div>
   <div class="body">
     <ul class="plain">
@@ -933,7 +1019,7 @@ footer{
 </section>
 
 <!-- 08 ─────────────────────────────────── -->
-<section>
+<section id="s08">
   <div class="sec-head"><span class="num">08</span><h2>제출 전 최종 점검</h2></div>
   <p class="sec-sub">인쇄하기 전에 이 목록을 위에서 아래로 훑어보세요.</p>
   <div class="body">
