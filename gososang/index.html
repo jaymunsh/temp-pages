@@ -1,0 +1,934 @@
+<title>고소장 처음 쓰는 사람을 위한 안내</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  color-scheme:light;
+  --paper:#F4F4F1;
+  --panel:#FBFBF9;
+  --ink:#1E2430;
+  --ink-soft:#5A6272;
+  --ink-faint:#8A8F9C;
+  --rule:#DCDDD7;
+  --rule-strong:#B9BBB3;
+  --seal:#A6362B;
+  --seal-wash:#F2E3E0;
+  --indigo:#2E4272;
+  --indigo-wash:#E6E9F0;
+  --shadow:0 1px 2px rgba(30,36,48,.06);
+
+  --f-display:"Nanum Myeongjo", "Apple SD Gothic Neo", serif;
+  --f-body:"Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, monospace;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-weight:400;
+  font-size:16px;
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+  word-break:keep-all;
+}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px 96px}
+p{margin:0 0 1em}
+a{color:var(--indigo)}
+strong{font-weight:700}
+:focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ── masthead ───────────────────────────── */
+.mast{padding:64px 0 40px;border-bottom:2px solid var(--ink)}
+.eyebrow{
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink-faint);margin-bottom:20px;
+}
+h1{
+  font-family:var(--f-display);font-weight:800;
+  font-size:clamp(34px,6vw,50px);line-height:1.25;letter-spacing:-.01em;
+  margin:0 0 18px;text-wrap:balance;
+}
+.dek{font-size:17px;color:var(--ink-soft);max-width:34em;margin:0}
+.mast-meta{
+  display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;
+  font-family:var(--f-mono);font-size:12px;color:var(--ink-faint);
+}
+
+/* ── notice ─────────────────────────────── */
+.notice{
+  margin:28px 0 0;padding:16px 18px;
+  background:var(--seal-wash);border-left:3px solid var(--seal);
+  font-size:14.5px;line-height:1.7;color:var(--ink);
+}
+.notice b{color:var(--seal)}
+
+/* ── section / steps ────────────────────── */
+section{padding-top:56px}
+.sec-head{display:flex;gap:16px;align-items:baseline;margin-bottom:8px}
+.num{
+  font-family:var(--f-mono);font-size:13px;font-weight:500;
+  color:var(--seal);letter-spacing:.08em;flex:none;padding-top:6px;
+}
+h2{
+  font-family:var(--f-display);font-weight:800;
+  font-size:clamp(23px,3.4vw,29px);line-height:1.4;margin:0;text-wrap:balance;
+}
+.sec-sub{color:var(--ink-soft);font-size:15px;margin:0 0 22px 45px}
+.body{margin-left:45px}
+@media (max-width:640px){
+  .sec-sub,.body{margin-left:0}
+  .sec-head{gap:12px}
+}
+h3{
+  font-family:var(--f-body);font-weight:700;font-size:16px;
+  margin:32px 0 10px;letter-spacing:-.005em;
+}
+h3::before{content:"— ";color:var(--ink-faint)}
+
+/* ── lists ──────────────────────────────── */
+ul,ol{margin:0 0 1em;padding-left:1.3em}
+li{margin-bottom:.5em}
+li::marker{color:var(--ink-faint)}
+ul.plain{list-style:none;padding:0}
+ul.plain li{
+  padding-left:1.4em;position:relative;
+}
+ul.plain li::before{
+  content:"▸";position:absolute;left:0;color:var(--seal);font-size:12px;top:.15em;
+}
+
+/* ── definition rows ────────────────────── */
+.rows{border-top:1px solid var(--rule-strong);margin:20px 0 24px}
+.row{
+  display:grid;grid-template-columns:130px 1fr;gap:0 20px;
+  border-bottom:1px solid var(--rule);padding:14px 0;
+}
+.row dt{
+  font-weight:700;font-size:14.5px;color:var(--ink);
+}
+.row dd{margin:0;font-size:15px;color:var(--ink-soft)}
+.row dd b{color:var(--ink);font-weight:500}
+@media (max-width:640px){
+  .row{grid-template-columns:1fr;gap:4px}
+}
+
+/* ── form specimen (경찰청 서식 파사밀리) ── */
+.form{
+  background:var(--panel);border:1px solid var(--rule-strong);
+  box-shadow:var(--shadow);margin:24px 0;padding:30px 26px 26px;
+  overflow-x:auto;
+}
+.form-title{
+  font-family:var(--f-display);font-weight:800;font-size:26px;
+  text-align:center;letter-spacing:.55em;text-indent:.55em;
+  color:var(--ink);margin-bottom:6px;
+}
+.form-cap{
+  text-align:right;font-size:11.5px;color:var(--ink-faint);
+  margin-bottom:26px;
+}
+.fsec{margin-bottom:30px}
+.fsec:last-child{margin-bottom:0}
+.fsec h4{
+  font-family:var(--f-body);font-weight:700;font-size:15px;
+  margin:0 0 10px;color:var(--ink);
+}
+.fsec h4 sup{color:var(--seal);font-size:13px}
+.ft{
+  width:100%;min-width:520px;border-collapse:collapse;
+  table-layout:fixed;font-size:12.5px;line-height:1.6;
+}
+.ft td{
+  border:1px solid var(--ink);padding:8px 9px;
+  color:var(--ink-soft);vertical-align:middle;height:34px;
+}
+.ft td.lb{
+  text-align:center;color:var(--ink);font-weight:500;
+  background:rgba(46,66,114,.045);letter-spacing:.06em;
+}
+.ft td.lb small{display:block;font-size:11px;letter-spacing:0;color:var(--ink-soft)}
+.ft td.ct{text-align:center}
+.ft td.hd{text-align:center;color:var(--ink);font-weight:700;background:rgba(46,66,114,.045)}
+.ft .cb{white-space:nowrap}
+.fwrite{
+  border:1px solid var(--ink);min-height:120px;
+  background:repeating-linear-gradient(
+    to bottom, transparent, transparent 27px,
+    var(--rule) 27px, var(--rule) 28px);
+}
+.fwrite.tall{min-height:160px}
+.fnote{
+  font-size:11.5px;line-height:1.7;color:var(--ink-faint);
+  margin:9px 0 0;padding-left:15px;text-indent:-15px;
+}
+.tip{
+  font-size:12.5px;line-height:1.75;color:var(--ink);
+  margin:10px 0 0;padding:9px 12px;
+  border-left:2px solid var(--seal);background:var(--seal-wash);
+}
+.tip b{color:var(--seal)}
+.foath{
+  border:1px solid var(--ink);padding:16px 18px;margin-top:6px;
+  font-size:12.5px;line-height:1.9;color:var(--ink-soft);
+}
+.foath b{color:var(--seal)}
+.fsign{
+  display:flex;justify-content:center;align-items:center;gap:18px;
+  margin-top:26px;text-align:center;font-size:13.5px;line-height:2.1;
+  color:var(--ink);
+}
+.fsign sup{color:var(--seal);font-weight:700}
+.fsign u{text-decoration:none;border-bottom:1px solid var(--ink);padding:0 34px}
+.seal{
+  width:44px;height:44px;border-radius:50%;flex:none;
+  border:1.5px solid var(--seal);color:var(--seal);
+  display:grid;place-items:center;
+  font-family:var(--f-display);font-weight:700;font-size:12px;
+  transform:rotate(-7deg);opacity:.85;
+}
+.form-foot{
+  text-align:center;font-family:var(--f-display);font-weight:800;
+  font-size:19px;letter-spacing:.14em;margin-top:30px;color:var(--ink);
+}
+
+.form-title2{
+  font-family:var(--f-body);font-weight:700;font-size:16px;
+  color:var(--ink);margin-bottom:6px;
+}
+.form-cap2{
+  font-size:11.5px;line-height:1.7;color:var(--ink-faint);
+  margin:0 0 26px;padding-left:12px;
+}
+.fsec h4 .sub{font-weight:400;font-size:13px;color:var(--ink-soft)}
+
+/* ── 접이식 예시 ────────────────────────── */
+.ex{
+  border:1px solid var(--rule-strong);background:var(--panel);
+  margin:26px 0;
+}
+.ex > summary{
+  list-style:none;cursor:pointer;padding:15px 18px;
+  display:flex;align-items:baseline;gap:12px;
+  font-size:14.5px;font-weight:700;color:var(--ink);
+}
+.ex > summary::-webkit-details-marker{display:none}
+.ex > summary::before{
+  content:"▸";color:var(--seal);font-size:12px;
+  transition:transform .15s ease;flex:none;
+}
+.ex[open] > summary::before{transform:rotate(90deg)}
+.ex > summary:hover{background:var(--indigo-wash)}
+.ex > summary span{
+  font-weight:400;font-size:13px;color:var(--ink-faint);
+}
+.ex-body{padding:4px 18px 20px;border-top:1px solid var(--rule)}
+.scroll{overflow-x:auto;margin-top:2px}
+.ex-case{
+  font-size:13.5px;line-height:1.85;color:var(--ink-soft);
+  padding:14px 0 4px;
+}
+.ex-f{margin-top:20px}
+.ex-f h5{
+  font-size:12px;font-weight:700;color:var(--indigo);margin:0 0 7px;
+  letter-spacing:.04em;
+}
+.ex-f .txt{
+  border-left:2px solid var(--rule-strong);padding:2px 0 2px 14px;
+  font-size:13.5px;line-height:1.95;color:var(--ink);
+}
+.ex-f .txt p{margin:0 0 .7em}
+.ex-f .txt p:last-child{margin:0}
+.ex-f ol{margin:0;padding-left:1.4em;font-size:13.5px;line-height:1.9}
+.ex-why{
+  margin-top:10px;font-size:12.5px;line-height:1.75;
+  color:var(--seal);padding-left:14px;
+}
+
+/* ── 서식 내려받기 ──────────────────────── */
+.res{
+  border:1px solid var(--indigo);background:var(--panel);
+  margin:28px 0;
+}
+.res-head{
+  padding:13px 18px;background:var(--indigo-wash);
+  border-bottom:1px solid var(--indigo);
+  font-size:12.5px;font-weight:700;color:var(--indigo);letter-spacing:.06em;
+}
+.res-item{
+  display:grid;grid-template-columns:56px 1fr auto;
+  gap:0 16px;align-items:start;
+  padding:15px 18px;border-bottom:1px solid var(--rule);
+  text-decoration:none;color:inherit;
+}
+.res-item:last-of-type{border-bottom:0}
+.res-item:hover{background:var(--indigo-wash)}
+.res-ext{
+  font-family:var(--f-mono);font-size:10.5px;font-weight:500;
+  letter-spacing:.06em;text-align:center;padding:4px 0;
+  border:1px solid currentColor;margin-top:2px;
+}
+.res-ext.hwp{color:var(--indigo)}
+.res-ext.pdf{color:var(--seal)}
+.res-ext.doc{color:var(--ink-soft)}
+.res-txt{font-size:14.5px;line-height:1.6}
+.res-txt b{font-weight:700;color:var(--ink)}
+.res-txt i{
+  font-style:normal;font-size:12px;color:var(--ink-faint);
+  margin-left:8px;letter-spacing:.02em;
+}
+.res-txt em{
+  display:block;font-style:normal;font-size:13px;
+  color:var(--ink-soft);line-height:1.7;margin-top:3px;
+}
+.res-go{
+  font-family:var(--f-mono);font-size:12px;color:var(--indigo);
+  white-space:nowrap;margin-top:3px;
+}
+.res-foot{
+  margin:0;padding:13px 18px;border-top:1px solid var(--rule);
+  font-size:12.5px;line-height:1.7;color:var(--ink-faint);
+}
+.res-foot b{color:var(--ink-soft)}
+@media (max-width:640px){
+  .res-item{grid-template-columns:52px 1fr;gap:0 12px}
+  .res-go{grid-column:2;margin-top:6px}
+}
+
+/* ── example prose block ────────────────── */
+.example{
+  background:var(--panel);border:1px solid var(--rule);
+  padding:20px 22px;margin:18px 0;font-size:15px;line-height:1.95;
+}
+.example .tag{
+  font-family:var(--f-mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:10px;
+}
+.example.good{border-left:3px solid var(--indigo)}
+.example.bad{border-left:3px solid var(--seal);color:var(--ink-soft)}
+
+/* ── compare grid ───────────────────────── */
+.cmp{display:grid;gap:14px;margin:20px 0}
+@media (min-width:720px){.cmp{grid-template-columns:1fr 1fr}}
+
+/* ── timeline ───────────────────────────── */
+.tl{margin:24px 0;border-left:2px solid var(--rule-strong);padding-left:24px}
+.tl-item{position:relative;padding-bottom:24px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{
+  content:"";position:absolute;left:-31px;top:7px;
+  width:9px;height:9px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--seal);
+}
+.tl-when{
+  font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;
+  color:var(--ink-faint);text-transform:uppercase;
+}
+.tl-what{font-weight:700;font-size:15.5px;margin:2px 0 4px}
+.tl-note{font-size:14.5px;color:var(--ink-soft);margin:0}
+
+/* ── checklist ──────────────────────────── */
+.check{list-style:none;padding:0;margin:20px 0;border-top:1px solid var(--rule)}
+.check li{
+  display:flex;gap:12px;align-items:flex-start;
+  padding:11px 0;border-bottom:1px solid var(--rule);margin:0;font-size:15px;
+}
+.check li::before{
+  content:"";flex:none;width:15px;height:15px;margin-top:6px;
+  border:1.5px solid var(--rule-strong);border-radius:2px;
+}
+
+/* ── warn box ───────────────────────────── */
+.warn{
+  border:1px solid var(--seal);background:var(--seal-wash);
+  padding:20px 22px;margin:24px 0;
+}
+.warn h3{margin-top:0;color:var(--seal)}
+.warn h3::before{content:"⚠ ";color:var(--seal)}
+.warn p:last-child{margin-bottom:0}
+
+/* ── footer ─────────────────────────────── */
+footer{
+  margin-top:72px;padding-top:24px;border-top:2px solid var(--ink);
+  font-size:13.5px;color:var(--ink-faint);line-height:1.8;
+}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <div class="eyebrow">형사고소 실무 · 비전문가용 안내</div>
+  <h1>고소장 처음 쓰는 사람을<br>위한 안내</h1>
+  <p class="dek">변호사 없이 직접 고소장을 써야 하는 상황에서, 무엇을 먼저 정리하고 어떤 칸에 무엇을 적으며 낸 다음에는 무슨 일이 벌어지는지를 순서대로 정리했습니다.</p>
+  <div class="mast-meta">
+    <span>대한민국 형사절차 기준</span>
+    <span>8단계 · 서식 예시 · 체크리스트</span>
+  </div>
+</header>
+
+<div class="notice">
+  <b>먼저 읽어주세요.</b> 이 문서는 일반적인 절차 안내이지 법률자문이 아닙니다. 사건마다 죄명·기간·관할이 달라지고 법령과 실무는 바뀝니다.
+  피해 금액이 크거나, 상대가 다투고 있거나, 고소기간이 얼마 남지 않았다면 <b>제출 전에</b> 변호사 상담(대한법률구조공단 국번없이 132, 마을변호사, 각 지방변호사회 무료상담)을 받는 편이 훨씬 안전합니다.
+</div>
+
+<!-- 00 ─────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="num">00</span><h2>내가 쓸 게 정말 고소장이 맞나</h2></div>
+  <p class="sec-sub">비슷한 이름의 서류가 네 개 있고, 잘못 고르면 헛수고가 됩니다.</p>
+  <div class="body">
+    <dl class="rows">
+      <div class="row"><dt>고소장</dt><dd><b>피해자 본인</b>(또는 법정대리인 등)이 범인의 처벌을 구하는 서류. 수사기관은 반드시 수사에 착수하고 결과를 통지해야 합니다.</dd></div>
+      <div class="row"><dt>고발장</dt><dd>피해자가 아닌 <b>제3자</b>가 범죄를 신고하며 처벌을 구하는 서류. 내용은 고소장과 거의 같지만, <b>경찰이 불송치했을 때 이의신청을 할 수 없습니다</b>(형사소송법 제245조의7, 2022. 9. 10. 시행). 이 차이가 작지 않습니다.</dd></div>
+      <div class="row"><dt>진정서</dt><dd>처벌 요구 없이 <b>조사를 요청</b>하는 서류. 사실관계가 흐릿할 때 씁니다. 수사 개시 의무가 약하고 무혐의 시 불복 수단도 제한적입니다.</dd></div>
+      <div class="row"><dt>소장(민사)</dt><dd>돈을 <b>돌려받기 위해</b> 법원에 내는 서류. 형사고소로는 돈이 자동으로 돌아오지 않습니다. 배상을 원하면 민사소송을 따로 내거나, 형사재판에서 <b>배상명령</b>을 신청해야 합니다(소송촉진법 제25조 — <b>변론이 끝나기 전까지</b> 신청해야 하므로 재판이 진행 중이라면 시점을 놓치지 마세요).</dd></div>
+    </dl>
+
+    <h3>고소할 수 있는 사람인지 확인</h3>
+    <ul class="plain">
+      <li>원칙은 <strong>범죄 피해자 본인</strong>입니다. 미성년자라도 의사능력이 있으면 스스로 고소할 수 있고, 법정대리인은 이와 별개로 <strong>독립하여</strong> 고소할 수 있습니다(형사소송법 제225조 제1항).</li>
+      <li>피해자가 사망했으면 배우자·직계친족·형제자매가 고소할 수 있습니다. 다만 <strong>피해자가 생전에 명시한 의사에 반해서는 할 수 없습니다</strong>(제225조 제2항 단서).</li>
+      <li><strong>자기 또는 배우자의 직계존속(부모·조부모)은 고소할 수 없습니다</strong>(형사소송법 제224조). 예외는 <strong>성폭력범죄</strong>(성폭력처벌법 제18조)와 <strong>가정폭력범죄</strong>(가정폭력처벌법 제6조 제2항)뿐입니다. 부모의 사기·횡령처럼 그 밖의 범죄는 여전히 고소할 수 없습니다(수사기관이 스스로 인지하는 것은 별개).</li>
+      <li>회사가 피해자면 대표이사 명의로 내고 법인등기부등본을 첨부합니다.</li>
+    </ul>
+
+    <h3>기간이 지나지 않았는지 확인 — 가장 흔한 탈락 사유</h3>
+    <ul class="plain">
+      <li><strong>친고죄</strong>(모욕죄, 사자명예훼손죄 등)는 <strong>범인을 알게 된 날부터 6개월</strong> 안에 고소해야 합니다(형사소송법 제230조). 이 기간이 지나면 내용이 아무리 맞아도 처벌할 수 없습니다. 다만 <strong>고소할 수 없는 불가항력의 사유</strong>가 있었다면 그 사유가 없어진 날부터 기산합니다(같은 조 단서).</li>
+      <li>친고죄가 아닌 범죄(사기·횡령·상해·절도 등)는 고소기간 제한이 없지만, <strong>공소시효</strong>는 있습니다(형사소송법 제249조, 범죄가 끝난 때부터 기산). 대략 <strong>사기·횡령·배임 10년</strong>, <strong>상해 7년</strong>, <strong>폭행·협박·명예훼손·모욕 5년</strong> 수준입니다. 시간이 지날수록 증거도 사라지니 빠를수록 유리합니다.</li>
+      <li><strong>고소를 한 번 취소하면 같은 사건으로 다시 고소할 수 없습니다</strong>(형사소송법 제232조 제2항). 취소는 1심 판결 선고 전까지만 가능하고, 반의사불벌죄에서 <strong>“처벌을 원하지 않는다”고 한 번 표시하면 그것도 되돌릴 수 없습니다</strong>(같은 조 제3항). 합의서에 서명하기 전에 반드시 다시 생각하세요.</li>
+    </ul>
+
+    <div class="warn">
+      <h3>가족 사이의 재산범죄는 규칙이 다릅니다 — 친족상도례</h3>
+      <p>사기·횡령·배임·절도 같은 재산범죄는 가해자가 친족이면 특칙이 적용됩니다(형법 제328조 등). <strong>동거하지 않는 친족</strong> 사이라면 <strong>친고죄</strong>가 되어 앞서 본 <strong>6개월 고소기간</strong>이 그대로 걸립니다.</p>
+      <p style="margin-bottom:0">직계혈족·배우자·동거친족 사이에는 형을 면제하던 규정이 있었으나, 헌법재판소가 2024. 6. 27. 헌법불합치로 결정해 현재 적용이 중지된 상태입니다. 가족 간 금전 문제로 고소를 고민 중이라면 <strong>이 부분은 반드시 변호사에게 현재 상태를 확인</strong>하세요.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 01 ─────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="num">01</span><h2>쓰기 전에 사실관계를 시간순으로 늘어놓기</h2></div>
+  <p class="sec-sub">고소장 작성에서 가장 오래 걸리는 단계이자, 여기서 대충 하면 나머지가 전부 흔들리는 단계입니다.</p>
+  <div class="body">
+    <p>바로 문서 양식을 열지 마세요. 빈 종이나 메모장에 <strong>날짜 순서대로</strong> 있었던 일을 먼저 적습니다. 문장이 예쁠 필요는 전혀 없고, 다음 네 가지만 채워 넣으면 됩니다.</p>
+    <ol>
+      <li><strong>언제</strong> — 연·월·일, 가능하면 시각까지. 정확히 모르면 “2025. 3. 중순경”처럼 <em>경</em>을 붙여 씁니다.</li>
+      <li><strong>어디서</strong> — 주소나 상호. 온라인이면 사이트·앱 이름과 대화방 종류.</li>
+      <li><strong>누가 무엇을 했는지</strong> — 상대가 한 말과 행동을 그대로. 들은 말은 큰따옴표로 인용.</li>
+      <li><strong>그 근거가 무엇인지</strong> — 이 사실을 증명할 자료(계좌이체 내역, 카톡 캡처, 녹취, 진단서, 목격자).</li>
+    </ol>
+    <p>이 표가 다 채워지면 고소장의 <strong>범죄사실</strong> 항목은 사실상 다 쓴 것입니다. 반대로 “언제”와 “근거”가 비어 있는 줄이 많다면, 그 부분은 고소장에서도 약한 부분이 됩니다.</p>
+
+    <h3>증거는 이때 함께 정리합니다</h3>
+    <ul class="plain">
+      <li>카카오톡·문자는 스크린샷보다 <strong>대화 내보내기(txt) 전체</strong>가 낫습니다. 앞뒤 맥락이 잘리면 오히려 불리해집니다.</li>
+      <li>계좌이체는 은행 앱 캡처가 아니라 <strong>거래내역서(입출금거래내역 확인서)</strong>를 발급받으세요.</li>
+      <li>상해는 <strong>진단서</strong>, 사진은 촬영 일시가 남는 원본 파일로.</li>
+      <li>사라질 수 있는 증거(게시글, CCTV)는 <strong>지금 즉시</strong> 확보합니다. CCTV는 보통 2주~1개월이면 덮어씌워집니다.</li>
+      <li>증거는 <strong>별지(증거자료 세부 목록)</strong>에 하나씩 적습니다. 서류는 <strong>증거·작성자</strong>를, 물건은 <strong>증거·소유자</strong>를 쓰고, 각각 <strong>지금 낼 것</strong>인지 <strong>수사 중에 낼 것</strong>인지 체크합니다.</li>
+      <li>목격자가 있으면 별지 <strong>인적증거</strong>란에 인적사항과 <strong>무엇을 입증할 수 있는지</strong>를 적습니다. 연락처를 모르면 성별·외모라도 적어 특정되게 합니다.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 02 ─────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="num">02</span><h2>죄명은 몰라도 됩니다</h2></div>
+  <p class="sec-sub">다만 대략 어느 쪽인지 알면 사실관계를 어디에 힘줘 써야 하는지가 보입니다.</p>
+  <div class="body">
+    <p>죄명을 최종적으로 판단하는 것은 수사기관과 법원입니다. 틀리게 적었다고 고소가 각하되지 않고, 비워두거나 “해당 죄명”이라고만 써도 접수됩니다. <strong>죄명을 맞히려다 사실관계를 왜곡하는 것이 훨씬 위험합니다.</strong></p>
+    <p>그래도 자주 쓰이는 것들의 <strong>핵심 쟁점</strong>은 알아두면 좋습니다. 아래 오른쪽 칸이 곧 “범죄사실에서 반드시 드러나야 하는 부분”입니다.</p>
+    <dl class="rows">
+      <div class="row"><dt>사기</dt><dd><b>돈을 받을 당시에 이미</b> 갚거나 이행할 의사·능력이 없었다는 점. 단순한 채무불이행은 형사가 아니라 민사입니다.</dd></div>
+      <div class="row"><dt>횡령</dt><dd>상대가 <b>내 재물을 보관하는 지위</b>였다는 점, 그리고 그것을 자기 것처럼 썼다는 점.</dd></div>
+      <div class="row"><dt>배임</dt><dd>상대가 <b>내 사무를 대신 처리하는 지위</b>였다는 점, 그리고 그 임무에 어긋나게 행동해 손해를 입혔다는 점.</dd></div>
+      <div class="row"><dt>명예훼손</dt><dd><b>공연성</b>(불특정·다수가 알 수 있는 상태)과 <b>구체적 사실의 적시</b>. 단둘이 나눈 대화는 대개 해당하지 않습니다. <b>반의사불벌죄</b>라 고소기간 제한은 없지만, 처벌불원 의사를 표시하면 처벌할 수 없습니다.</dd></div>
+      <div class="row"><dt>모욕</dt><dd>공연성 + 경멸적 표현. <b>친고죄이므로 6개월 기간 제한</b>이 걸립니다.</dd></div>
+      <div class="row"><dt>협박</dt><dd>구체적인 해악의 고지. 문구를 <b>토씨 하나까지 그대로</b> 옮겨 적어야 합니다.</dd></div>
+      <div class="row"><dt>상해 · 폭행</dt><dd>가해 행위의 부위·정도, 그리고 진단서상 상해 결과. 폭행은 <b>반의사불벌죄</b>라 피해자가 <b>처벌을 원하지 않는다는 의사를 명시하면</b> 처벌할 수 없고, 그 표시는 철회할 수 없습니다. 합의서만 썼다고 자동으로 그렇게 되는 것은 아닙니다. 상해는 반의사불벌죄가 아닙니다.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 03 ─────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="num">03</span><h2>고소장 서식 — 칸별로 무엇을 쓰는가</h2></div>
+  <p class="sec-sub">경찰청이 배포하는 공식 서식이 있습니다. 아래는 그 서식을 항목별 설명과 함께 옮긴 것입니다.</p>
+  <div class="body">
+
+    <div class="form">
+      <div class="form-title">고 소 장</div>
+      <p class="form-cap">(고소장 기재사항 중 * 표시된 항목은 반드시 기재하여야 합니다.)</p>
+
+      <div class="fsec">
+        <h4>1. 고소인<sup>*</sup></h4>
+        <table class="ft">
+          <colgroup><col style="width:19%"><col style="width:29%"><col style="width:19%"><col style="width:33%"></colgroup>
+          <tbody>
+            <tr><td class="lb">성 명<small>(상호·대표자)</small></td><td></td><td class="lb">주민등록번호<small>(법인등록번호)</small></td><td class="ct">–</td></tr>
+            <tr><td class="lb">주 소<small>(주사무소 소재지)</small></td><td colspan="3" class="ct">(현 거주지)</td></tr>
+            <tr><td class="lb">직 업</td><td></td><td class="lb">사무실 주소</td><td></td></tr>
+            <tr><td class="lb">전 화</td><td colspan="3">(휴대폰)　　　　(자택)　　　　(사무실)</td></tr>
+            <tr><td class="lb">이메일</td><td colspan="3"></td></tr>
+            <tr><td class="lb">대리인에<br>의한 고소</td><td colspan="3">□ 법정대리인 (성명 :　　　　　, 연락처 :　　　　　)<br>□ 고소대리인 (성명 : 변호사　　　, 연락처 :　　　　　)</td></tr>
+          </tbody>
+        </table>
+        <p class="fnote">※ 법인·단체이면 상호, 대표자, 법인등록번호, 주된 사무소 소재지를 적고 법인등기부 등본을 첨부합니다. 법정대리인·변호사가 대리하는 경우 관계나 선임을 증명할 서류를 첨부합니다.</p>
+        <p class="tip"><b>안내</b> — 여기 적는 전화번호가 수사기관이 연락할 유일한 창구입니다. 실제로 받는 번호를 적으세요.</p>
+      </div>
+
+      <div class="fsec">
+        <h4>2. 피고소인<sup>*</sup></h4>
+        <table class="ft">
+          <colgroup><col style="width:19%"><col style="width:29%"><col style="width:19%"><col style="width:33%"></colgroup>
+          <tbody>
+            <tr><td class="lb">성 명</td><td></td><td class="lb">주민등록번호</td><td class="ct">–</td></tr>
+            <tr><td class="lb">주 소</td><td colspan="3" class="ct">(현 거주지)</td></tr>
+            <tr><td class="lb">직 업</td><td></td><td class="lb">사무실 주소</td><td></td></tr>
+            <tr><td class="lb">전 화</td><td colspan="3">(휴대폰)　　　　(자택)　　　　(사무실)</td></tr>
+            <tr><td class="lb">이메일</td><td colspan="3"></td></tr>
+            <tr><td class="lb">기타사항</td><td colspan="3"></td></tr>
+          </tbody>
+        </table>
+        <p class="fnote">※ 아는 사항만 적으면 되며, 이름조차 모르는 경우 기타사항에 성별·특징적 외모·인상착의 등을 구체적으로 적습니다.</p>
+        <p class="tip"><b>안내</b> — 계좌번호, 전화번호, SNS 계정, 차량번호가 곧 신원 추적의 실마리입니다. 아는 만큼 기타사항에 모두 적으세요.</p>
+      </div>
+
+      <div class="fsec">
+        <h4>3. 고소취지<sup>*</sup></h4>
+        <table class="ft"><tbody><tr><td>고소인은 피고소인을 　　　　　죄로 고소하오니 처벌하여 주시기 바랍니다.</td></tr></tbody></table>
+        <p class="fnote">※ 죄명 및 피고소인에 대한 처벌의사를 기재합니다.</p>
+        <p class="tip"><b>안내</b> — 죄명을 몰라도 접수됩니다. 최종 판단은 수사기관이 합니다.</p>
+      </div>
+
+      <div class="fsec">
+        <h4>4. 범죄사실<sup>*</sup></h4>
+        <div class="fwrite tall"></div>
+        <p class="fnote">※ 형법 등 처벌법규에 해당하는 사실에 대하여 <b>일시, 장소, 범행방법, 결과</b> 등을 구체적으로 특정하여 기재해야 하며, 고소인이 알고 있는 지식과 경험, 증거에 의해 사실로 인정되는 내용을 기재하여야 합니다.</p>
+        <p class="tip"><b>안내</b> — 이 칸이 고소장의 심장입니다. 시간순으로, 사실만, “피고소인은 ~하였습니다” 형태로. 자세한 요령은 04단계에 있습니다.</p>
+      </div>
+
+      <div class="fsec">
+        <h4>5. 고소이유</h4>
+        <div class="fwrite tall"></div>
+        <p class="fnote">※ 피고소인의 범행 경위 및 정황, 고소를 하게 된 동기와 사유 등 범죄사실을 뒷받침하는 내용을 간략·명료하게 기재합니다.</p>
+        <p class="tip"><b>안내</b> — 4번이 “무엇이 있었나”라면 5번은 “그래서 어떤 피해를 입었나”입니다. 불리한 사실도 여기서 함께 밝히세요.</p>
+      </div>
+
+      <div class="fsec">
+        <h4>6. 증거자료</h4>
+        <table class="ft"><tbody>
+          <tr><td>□ 고소인은 고소인의 진술 외에 제출할 증거가 <b>없습니다.</b></td></tr>
+          <tr><td>□ 고소인은 고소인의 진술 외에 제출할 증거가 <b>있습니다.</b><br>　☞ 제출할 증거의 세부내역은 <b>별지</b>를 작성하여 첨부합니다.</td></tr>
+        </tbody></table>
+        <p class="tip"><b>안내</b> — 별지는 인적증거 / 증거서류 / 증거물 / 기타 증거 네 부분입니다. 서류·물건은 표에 하나씩 적고 <b>접수시 제출</b>인지 <b>수사 중 제출</b>인지 체크합니다.</p>
+      </div>
+
+      <div class="fsec">
+        <h4>7. 관련사건의 수사 및 재판 여부<sup>*</sup></h4>
+        <table class="ft">
+          <colgroup><col style="width:24%"><col style="width:76%"></colgroup>
+          <tbody>
+            <tr><td class="lb">① 중복 고소 여부</td><td>본 고소장과 같은 내용의 고소장을 다른 검찰청 또는 경찰서에 제출하거나 제출하였던 사실이 <span class="cb">있습니다 □ / 없습니다 □</span></td></tr>
+            <tr><td class="lb">② 관련 형사사건<br>수사 유무</td><td>본 고소장에 기재된 범죄사실과 관련된 사건 또는 공범에 대하여 검찰청이나 경찰서에서 <span class="cb">수사 중에 있습니다 □ / 수사 중에 있지 않습니다 □</span></td></tr>
+            <tr><td class="lb">③ 관련 민사소송<br>유무</td><td>본 고소장에 기재된 범죄사실과 관련된 사건에 대하여 법원에서 <span class="cb">민사소송 중에 있습니다 □ / 민사소송 중에 있지 않습니다 □</span></td></tr>
+          </tbody>
+        </table>
+        <p class="fnote">※ ①, ②항은 반드시 표시하여야 하며, 수사·재판 중이라면 어느 검찰청·경찰서·법원인지 아는 범위에서 기타사항 난에 기재하여야 합니다.</p>
+        <p class="tip"><b>안내</b> — 숨기면 나중에 신빙성을 크게 잃습니다. 있는 그대로 표시하세요.</p>
+      </div>
+
+      <div class="fsec">
+        <h4>8. 기타</h4>
+        <div class="fwrite"></div>
+      </div>
+
+      <div class="fsec">
+        <p class="form-cap" style="margin-bottom:8px">(고소내용에 대한 진실확약)</p>
+        <div class="foath">
+          본 고소장에 기재한 내용은 고소인이 알고 있는 지식과 경험을 바탕으로 모두 사실대로 작성하였으며,
+          만일 <b>허위사실을 고소하였을 때에는 형법 제156조 무고죄로 처벌받을 것임을 서약</b>합니다.
+        </div>
+
+        <div class="fsign">
+          <span>
+            년　　　월　　　일<sup>*</sup><br>
+            고소인 <u></u> (인)<sup>*</sup><br>
+            제출인 <u></u> (인)
+          </span>
+          <div class="seal">인</div>
+        </div>
+        <p class="fnote">※ 고소인 난에는 고소인이 <b>직접 자필로 서명 날(무)인</b> 해야 합니다. 법정대리인이나 변호사가 대리하는 경우에만 제출인을 기재합니다.</p>
+
+        <div class="form-foot">○○경찰서 귀중</div>
+        <p class="fnote" style="text-align:center;text-indent:0;padding-left:0;margin-top:10px">※ 고소장은 가까운 경찰서에 제출하셔도 됩니다.</p>
+      </div>
+    </div>
+
+    <p>6번에서 “제출할 증거가 있습니다”에 체크했다면 아래 <strong>별지</strong>를 작성해 함께 냅니다. 네 부분으로 되어 있습니다.</p>
+
+    <div class="form">
+      <div class="form-title2">별지 : 증거자료 세부 목록</div>
+      <p class="form-cap2">(범죄사실 입증을 위해 제출하려는 증거에 대하여 아래 각 증거별로 해당 난을 구체적으로 작성해 주시기 바랍니다)</p>
+
+      <div class="fsec">
+        <h4>1. 인적증거 <span class="sub">(목격자, 기타 참고인 등)</span></h4>
+        <table class="ft">
+          <colgroup><col style="width:17%"><col style="width:30%"><col style="width:19%"><col style="width:34%"></colgroup>
+          <tbody>
+            <tr><td class="lb">성 명</td><td></td><td class="lb">주민등록번호</td><td class="ct">–</td></tr>
+            <tr><td class="lb">주 소</td><td colspan="2">자택 :<br>직장 :</td><td class="lb">직업</td></tr>
+            <tr><td class="lb">전 화</td><td colspan="3">(휴대폰)　　　　(자택)　　　　(사무실)</td></tr>
+            <tr><td class="lb">입증하려는<br>내용</td><td colspan="3" style="height:66px"></td></tr>
+          </tbody>
+        </table>
+        <p class="fnote">※ 참고인의 인적사항과 연락처를 정확히 알 수 없으면 참고인을 특정할 수 있도록 성별, 외모 등을 ‘입증하려는 내용’란에 아는 대로 기재하시기 바랍니다.</p>
+        <p class="tip"><b>안내</b> — 사람이 증거일 때 쓰는 칸입니다. “그 자리에 있었다”가 아니라 <b>무엇을 보고 들었는지</b>를 적어야 수사관이 부를 이유가 생깁니다.</p>
+      </div>
+
+      <div class="fsec">
+        <h4>2. 증거서류 <span class="sub">(진술서, 차용증, 각서, 금융거래내역서, 진단서 등)</span></h4>
+        <table class="ft">
+          <colgroup><col style="width:9%"><col style="width:35%"><col style="width:19%"><col style="width:37%"></colgroup>
+          <tbody>
+            <tr><td class="hd">순번</td><td class="hd">증거</td><td class="hd">작성자</td><td class="hd">제출 유무</td></tr>
+            <tr><td class="ct">1</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
+            <tr><td class="ct">2</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
+            <tr><td class="ct">3</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
+            <tr><td class="ct">4</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
+            <tr><td class="ct">5</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
+          </tbody>
+        </table>
+        <p class="fnote">※ 증거란에 각 증거서류를 개별적으로 기재하고, 제출 유무란에는 고소장 접수시 제출하는지 또는 수사 중 제출할 예정인지 표시하시기 바랍니다.</p>
+        <p class="tip"><b>안내</b> — “카카오톡 대화 내역”처럼 <b>하나씩</b> 적습니다. 지금 낼 수 있는 것은 전부 ‘접수시 제출’에 체크하세요. 나중에 내겠다는 게 많을수록 수사가 늦어집니다.</p>
+      </div>
+
+      <div class="fsec">
+        <h4>3. 증거물</h4>
+        <table class="ft">
+          <colgroup><col style="width:9%"><col style="width:35%"><col style="width:19%"><col style="width:37%"></colgroup>
+          <tbody>
+            <tr><td class="hd">순번</td><td class="hd">증거</td><td class="hd">소유자</td><td class="hd">제출 유무</td></tr>
+            <tr><td class="ct">1</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
+            <tr><td class="ct">2</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
+            <tr><td class="ct">3</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
+            <tr><td class="ct">4</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
+            <tr><td class="ct">5</td><td></td><td></td><td class="ct cb">□ 접수시 제출 &nbsp; □ 수사 중 제출</td></tr>
+          </tbody>
+        </table>
+        <p class="fnote">※ 소유자란에는 고소장 제출시 누가 소유하고 있는지, 제출 유무란에는 고소장 접수시 제출하는지 또는 수사 중 제출할 예정인지 표시하시기 바랍니다.</p>
+        <p class="tip"><b>안내</b> — 서류가 아닌 <b>물건</b>입니다(파손된 물품, 흉기, 위조품 등). 2번의 ‘작성자’ 자리가 여기서는 <b>소유자</b>로 바뀝니다.</p>
+      </div>
+
+      <div class="fsec">
+        <h4>4. 기타 증거</h4>
+        <div class="fwrite"></div>
+        <p class="tip"><b>안내</b> — 위 세 칸에 안 들어가는 것. 녹음 파일, 영상, CCTV 위치처럼 <b>수사기관이 확보해야 하는 증거</b>를 적기 좋은 자리입니다. CCTV는 보통 2주~1개월이면 덮어써지니 위치와 일시를 여기에 꼭 남기세요.</p>
+      </div>
+    </div>
+
+    <p>마지막 줄은 <strong>“○○경찰서 귀중”</strong>이고, 서식에 <strong>가까운 경찰서에 제출해도 된다</strong>고 명시돼 있습니다. 고소인란은 <strong>본인이 직접 자필로 서명하고 날인</strong>해야 하며, 인감일 필요는 없습니다. 대리인이 대신 내는 경우에만 <strong>제출인</strong>란을 채웁니다.</p>
+
+    <p><strong>간이고소장</strong>도 있습니다. <strong>모욕·명예훼손 / 사기 / 폭행</strong> 세 유형에 맞춰 간소화한 서식이라 사건이 여기 해당하면 그쪽이 더 쉽습니다. 해당하지 않으면 위의 일반 고소장을 쓰면 되고, 일반 고소장은 모든 죄명에 쓸 수 있습니다.</p>
+
+    <details class="ex">
+      <summary>작성 예시 — 온라인 중고거래 사기 <span>실제로 어떻게 채워지는지 보고 싶다면 펼쳐보세요</span></summary>
+      <div class="ex-body">
+        <p class="ex-case">아래는 <strong>가공한 사례</strong>입니다. 문장 구조와 특정 방식을 참고하시되, 내용은 본인 사건의 사실로 바꿔 쓰세요.<br>
+        <em style="font-style:normal;color:var(--ink-faint)">상황 — 중고거래 앱에서 아이폰을 사기로 하고 85만원을 보냈는데 물건이 오지 않고 판매자가 연락을 끊었다. 판매자의 실명·주소는 모르고, 앱 닉네임과 입금한 계좌번호, 휴대전화 번호만 알고 있다.</em></p>
+
+        <div class="ex-f">
+          <h5>2. 피고소인 — 이름을 몰라도 이렇게 특정합니다</h5>
+          <div class="txt">
+            <p>성명 : <b>성명불상</b> (중고거래 앱 ‘○○마켓’ 닉네임 “행복한하루”)</p>
+            <p>주소 : 불상 &nbsp;/&nbsp; 전화 : 010-1234-5678 (앱 채팅에 기재된 번호)</p>
+            <p>기타사항 : 입금 계좌 <b>카카오뱅크 3333-01-1234567 (예금주 박○○)</b>, 앱 프로필 상 활동지역 ‘서울 관악구’, 거래 게시글 주소 https://○○.kr/articles/12345678</p>
+          </div>
+          <p class="ex-why">계좌번호와 전화번호가 핵심입니다. 이 둘이면 수사기관이 명의자를 특정할 수 있습니다.</p>
+        </div>
+
+        <div class="ex-f">
+          <h5>3. 고소취지</h5>
+          <div class="txt"><p>고소인은 피고소인을 <b>사기죄</b>로 고소하오니 처벌하여 주시기 바랍니다.</p></div>
+        </div>
+
+        <div class="ex-f">
+          <h5>4. 범죄사실 — 시간순 · 사실만 · 상대가 주어</h5>
+          <div class="txt">
+            <p>1) 피고소인은 2026. 6. 12. 14:20경 중고거래 애플리케이션 ‘○○마켓’에 “아이폰 15 프로 256GB 미개봉, 85만원”이라는 제목의 판매 게시글을 게시하였습니다.</p>
+            <p>2) 고소인이 같은 날 14:35경 위 앱 채팅으로 구매 의사를 밝히자, 피고소인은 고소인에게 “오늘 입금해 주시면 내일 오전에 택배 보내드리고 송장번호 바로 알려드릴게요”라고 말하였습니다.</p>
+            <p>3) 고소인은 이를 믿고 같은 날 15:40경 피고소인이 지정한 카카오뱅크 계좌(3333-01-1234567, 예금주 박○○)로 <b>850,000원</b>을 송금하였습니다.</p>
+            <p>4) 그러나 피고소인은 물품을 발송하지 않았고, 고소인이 2026. 6. 13.부터 6. 16.까지 위 앱 채팅과 휴대전화로 여러 차례 연락하자 <b>2026. 6. 16. 고소인을 차단하고 위 게시글을 삭제</b>하였습니다.</p>
+            <p>5) 피고소인은 위 금원을 받을 당시 <b>판매할 물품을 보유하고 있지 않았고 이를 발송할 의사도 없었으면서</b>, 마치 정상적으로 물품을 보낼 것처럼 고소인을 기망하여 위 금원을 편취하였습니다.</p>
+          </div>
+          <p class="ex-why">5)번 문장이 이 고소장의 핵심입니다. 사기죄는 “돈을 받을 당시에 이미 이행할 의사·능력이 없었다”는 점이 인정돼야 성립합니다. 이 문장이 없으면 단순한 거래 분쟁으로 읽힙니다.</p>
+        </div>
+
+        <div class="ex-f">
+          <h5>5. 고소이유</h5>
+          <div class="txt">
+            <p>고소인은 학생으로 위 금원은 아르바이트로 모은 돈이며, 피고소인의 기망으로 850,000원 전액의 피해를 입었습니다. 피고소인은 물품 발송을 약속한 뒤 연락을 차단하고 게시글까지 삭제하였는바, 그 경위에 비추어 처음부터 편취를 목적으로 한 것으로 보입니다.</p>
+            <p>고소인은 2026. 6. 17. 사기 피해 정보 공유 사이트에서 위 계좌번호로 <b>동일한 수법의 피해 사례가 다수 검색</b>됨을 확인하였습니다. 피고소인을 철저히 수사하여 엄히 처벌하여 주시기 바랍니다.</p>
+          </div>
+          <p class="ex-why">같은 계좌로 피해자가 여럿이면 사건이 병합되어 수사에 힘이 실립니다. 확인했다면 반드시 적으세요.</p>
+        </div>
+
+        <div class="ex-f">
+          <h5>6. 증거자료</h5>
+          <div class="txt"><p>□ 제출할 증거가 없습니다 &nbsp;&nbsp; <b>☑ 제출할 증거가 있습니다</b> → 별지 작성</p></div>
+        </div>
+
+        <div class="ex-f">
+          <h5>별지 1. 인적증거</h5>
+          <div class="txt"><p><b>해당 없음</b> — 온라인 거래라 목격자가 없습니다.</p></div>
+          <p class="ex-why">비어 있어도 괜찮습니다. 억지로 채우지 마세요.</p>
+        </div>
+
+        <div class="ex-f">
+          <h5>별지 2. 증거서류 — 이렇게 채웁니다</h5>
+          <div class="scroll">
+            <table class="ft">
+              <colgroup><col style="width:9%"><col style="width:41%"><col style="width:16%"><col style="width:34%"></colgroup>
+              <tbody>
+                <tr><td class="hd">순번</td><td class="hd">증거</td><td class="hd">작성자</td><td class="hd">제출 유무</td></tr>
+                <tr><td class="ct">1</td><td>○○마켓 판매 게시글 화면 캡처 (2026. 6. 12.자)</td><td class="ct">고소인</td><td class="ct cb"><b>☑ 접수시 제출</b> &nbsp; □ 수사 중 제출</td></tr>
+                <tr><td class="ct">2</td><td>○○마켓 채팅 대화 내역 전체 (2026. 6. 12.~6. 16.)</td><td class="ct">고소인</td><td class="ct cb"><b>☑ 접수시 제출</b> &nbsp; □ 수사 중 제출</td></tr>
+                <tr><td class="ct">3</td><td>카카오뱅크 이체확인증 (850,000원, 2026. 6. 12. 15:40)</td><td class="ct">카카오뱅크</td><td class="ct cb"><b>☑ 접수시 제출</b> &nbsp; □ 수사 중 제출</td></tr>
+                <tr><td class="ct">4</td><td>피고소인 번호로의 통화기록 및 차단 확인 화면</td><td class="ct">고소인</td><td class="ct cb"><b>☑ 접수시 제출</b> &nbsp; □ 수사 중 제출</td></tr>
+                <tr><td class="ct">5</td><td>동일 계좌 사기 피해 사례 조회 결과 (2026. 6. 17. 조회)</td><td class="ct">고소인</td><td class="ct cb"><b>☑ 접수시 제출</b> &nbsp; □ 수사 중 제출</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="ex-why">‘작성자’는 그 서류를 만든 주체입니다. 내가 캡처했으면 고소인, 은행이 발급했으면 은행. 채팅은 <b>일부 캡처가 아니라 전체 내보내기(txt)</b>여야 앞뒤 맥락이 살아 있습니다.</p>
+        </div>
+
+        <div class="ex-f">
+          <h5>별지 3. 증거물</h5>
+          <div class="txt"><p><b>해당 없음</b> — 물건을 아예 받지 못했으므로 제출할 물건이 없습니다.</p></div>
+        </div>
+
+        <div class="ex-f">
+          <h5>별지 4. 기타 증거</h5>
+          <div class="txt"><p>피고소인이 사용한 ○○마켓 계정의 가입정보·접속기록 및 카카오뱅크 계좌(3333-01-1234567)의 개설정보·거래내역에 대한 <b>수사기관의 사실조회가 필요합니다.</b></p></div>
+          <p class="ex-why">내가 못 가져오는 증거는 여기에 적습니다. 플랫폼 로그와 계좌 정보는 수사기관만 받을 수 있고, 이 한 줄이 피의자 특정으로 이어지는 결정적 부분입니다.</p>
+        </div>
+
+        <div class="ex-f">
+          <h5>7. 관련사건</h5>
+          <div class="txt"><p>① 없습니다 ☑ &nbsp; ② 수사 중에 있지 않습니다 ☑ &nbsp; ③ 민사소송 중에 있지 않습니다 ☑</p></div>
+          <p class="ex-why">모르면 아는 범위에서 표시하고 기타사항에 사정을 적습니다. 비워두면 보완 요청을 받습니다.</p>
+        </div>
+
+        <div class="ex-f">
+          <h5>제출</h5>
+          <div class="txt"><p>이 사건은 사이버범죄이므로 <b>경찰청 사이버범죄 신고시스템(ECRM)</b>으로 온라인 접수하거나, 가까운 경찰서에 직접 제출하면 됩니다. 어느 쪽이든 이후 <b>고소인 조사를 위해 경찰서에 출석</b>하게 됩니다.</p></div>
+        </div>
+      </div>
+    </details>
+
+    <div class="res">
+      <div class="res-head">서식 내려받기</div>
+
+      <a class="res-item" href="https://drive.google.com/file/d/1STDrG2Ra39etJDJNQg8cVhnS3DVhE3Q1/view?usp=sharing" target="_blank" rel="noopener">
+        <span class="res-ext hwp">HWP</span>
+        <span class="res-txt">
+          <b>고소장.hwp</b> <i>경찰청 공식 원본</i>
+          <em>한글(HWP)이 설치돼 있다면 이것으로 작성하는 것이 가장 정확합니다.</em>
+        </span>
+        <span class="res-go">열기 →</span>
+      </a>
+
+      <a class="res-item" href="https://drive.google.com/file/d/1SAJStBI-8ak_fot0QLnbd4lx0wJC5Yfd/view?usp=sharing" target="_blank" rel="noopener">
+        <span class="res-ext pdf">PDF</span>
+        <span class="res-txt">
+          <b>고소장.pdf</b> <i>경찰청 공식 원본</i>
+          <em>인쇄해서 손으로 쓸 때. 화면에서 서식을 확인만 할 때도 이쪽이 편합니다.</em>
+        </span>
+        <span class="res-go">열기 →</span>
+      </a>
+
+      <a class="res-item" href="https://docs.google.com/document/d/1B0TeZTFdi53ysJ-dNhgYKBZakXy82K-Q/edit?usp=sharing" target="_blank" rel="noopener">
+        <span class="res-ext doc">DOCX</span>
+        <span class="res-txt">
+          <b>고소장_양식.docx</b> <i>Word 변환본</i>
+          <em>위 공식 서식을 표·체크란·서약문·별지까지 그대로 옮긴 것입니다. 한글이 없어도 바로 입력할 수 있습니다.</em>
+        </span>
+        <span class="res-go">열기 →</span>
+      </a>
+
+      <p class="res-foot">원본은 <b>경찰청 민원서식</b>에서 배포합니다. 모욕·명예훼손 / 사기 / 폭행 사건이라면 같은 곳의 <b>간이고소장</b> 서식이 더 간단합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 04 ─────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="num">04</span><h2>범죄사실 쓰는 법</h2></div>
+  <p class="sec-sub">고소장의 성패는 거의 전적으로 이 항목에서 갈립니다.</p>
+  <div class="body">
+    <p>수사관은 하루에도 여러 건의 고소장을 읽습니다. <strong>읽는 사람이 사건을 머릿속에서 재생할 수 있게</strong> 쓰는 것이 목표입니다. 원칙은 세 가지뿐입니다.</p>
+    <ol>
+      <li><strong>시간순으로</strong> 씁니다. 억울한 순서가 아니라 일어난 순서로.</li>
+      <li><strong>사실만</strong> 씁니다. 평가·추측·감정은 5번 고소이유로 옮깁니다.</li>
+      <li><strong>“피고소인은 ~하였습니다”</strong> 형태로, 주어를 상대로 두고 씁니다.</li>
+    </ol>
+
+    <div class="cmp">
+      <div class="example bad">
+        <span class="tag">이렇게 쓰지 않습니다</span>
+        피고소인은 처음부터 저를 속일 작정이었던 아주 악질적인 사람입니다. 몇 달 동안 연락도 안 받고 저를 완전히 무시했고, 주변에서도 다들 그 사람이 원래 그런 사람이라고 합니다. 정말 억울하고 밤에 잠도 오지 않습니다.
+      </div>
+      <div class="example good">
+        <span class="tag">이렇게 씁니다</span>
+        피고소인은 2025. 4. 10. 15:00경 서울 강남구 ○○로 12 소재 ‘○○카페’에서 고소인에게 “다음 달에 상가 보증금이 나오니 한 달만 빌려주면 이자까지 붙여 갚겠다”고 말하였습니다. 고소인은 이를 믿고 같은 날 16:20경 피고소인 명의 국민은행 계좌(123456-**-****)로 30,000,000원을 송금하였습니다. 그러나 피고소인은 당시 이미 채무가 약 2억 원에 이르고 위 상가 임대차계약도 존재하지 않아, 이를 변제할 의사나 능력이 없었습니다.
+      </div>
+    </div>
+
+    <h3>세부 요령</h3>
+    <ul class="plain">
+      <li>날짜는 <strong>2025. 4. 10.</strong> 형식으로, 시각은 <strong>15:00경</strong>으로 씁니다. 실무 문서의 표기법입니다.</li>
+      <li>금액은 <strong>30,000,000원</strong>처럼 아라비아 숫자에 쉼표를 넣습니다.</li>
+      <li>상대가 한 말은 <strong>따옴표로 그대로</strong>. 요약하면 힘이 절반으로 줄어듭니다.</li>
+      <li>계좌번호·주민번호 뒷자리 등은 <strong>일부를 가려</strong> 적고 전체는 별지의 증거자료로 냅니다.</li>
+      <li>행위가 여러 번이면 <strong>1항, 2항</strong>으로 나누거나 표로 정리합니다. 이체가 20건이면 표가 훨씬 낫습니다.</li>
+      <li>확실하지 않은 것은 <strong>“~로 알고 있습니다”, “~로 추정됩니다”</strong>라고 명확히 구분해 적습니다. 아는 척이 가장 위험합니다.</li>
+      <li>분량은 <strong>A4 2~4장</strong>이면 충분합니다. 길다고 유리하지 않고, 오히려 쟁점이 흐려집니다.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 05 ─────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="num">05</span><h2>어디에, 어떻게 내는가</h2></div>
+  <p class="sec-sub">세 가지 방법이 있고, 대부분의 사건은 첫 번째로 충분합니다.</p>
+  <div class="body">
+    <dl class="rows">
+      <div class="row"><dt>경찰서 방문</dt><dd>가장 일반적입니다. <b>사건 발생지나 피고소인 주소지 관할 경찰서</b>의 민원실에 냅니다. 관할이 애매하면 가까운 경찰서에 물어보면 안내해 줍니다. 신분증을 지참하고, 고소장과 증거자료는 <b>본인 보관용 사본</b>을 한 부 더 만들어 가세요.</dd></div>
+      <div class="row"><dt>온라인 접수</dt><dd>사이버범죄(인터넷 사기, 사이버 명예훼손 등)는 경찰청 <b>사이버범죄 신고시스템(ECRM, ecrm.police.go.kr)</b>으로 낼 수 있습니다. 그 밖의 사건은 <b>문서24(docu.gdoc.go.kr)</b>로 경찰서·검찰청에 전자문서로 보낼 수 있습니다. 어느 쪽이든 <b>결국 고소인 조사를 위해 경찰서에 출석해야 하고</b>, ECRM은 접수 후 일정 기간 안에 방문하지 않으면 반려됩니다.</dd></div>
+      <div class="row"><dt>우편 발송</dt><dd>가능하지만 접수 확인이 늦고 보완 요청 대응이 느립니다. 직접 갈 수 없을 때만 쓰고, 등기로 보내세요.</dd></div>
+    </dl>
+    <p>2021년 수사권 조정 이후 일반 형사사건의 수사 개시는 <strong>경찰</strong>이 담당합니다. 특별한 사정이 없으면 경찰서 접수가 정석입니다.</p>
+    <p>접수하면 <strong>사건번호</strong>가 부여됩니다. 이 번호를 반드시 메모해 두세요. 이후 모든 조회와 문의의 기준이 됩니다. 진행 상황은 <strong>형사사법포털(kics.go.kr)</strong>에서 조회할 수 있습니다 — 고소장 제출이 아니라 <strong>제출한 뒤 진행을 확인하는 곳</strong>입니다.</p>
+  </div>
+</section>
+
+<!-- 06 ─────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="num">06</span><h2>낸 다음에 일어나는 일</h2></div>
+  <p class="sec-sub">고소장 제출은 끝이 아니라 시작입니다. 전체 흐름을 알고 있어야 당황하지 않습니다.</p>
+  <div class="body">
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-when">접수 후 수일~수주</div>
+        <div class="tl-what">담당 수사관 배정 및 연락</div>
+        <p class="tl-note">담당자 이름과 연락처를 알려줍니다. 이후 이 사람이 창구입니다.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">1차</div>
+        <div class="tl-what">고소인 조사</div>
+        <p class="tl-note">경찰서에 출석해 진술합니다. 고소장에 쓴 내용과 <strong>다르게 말하지 않는 것</strong>이 중요합니다. 미리 자기 고소장을 다시 읽고 가세요. 조서에 서명하기 전 반드시 정독하고, 틀린 부분은 그 자리에서 정정을 요구할 수 있습니다.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">이후</div>
+        <div class="tl-what">피고소인 조사 · 증거 확보</div>
+        <p class="tl-note">필요하면 대질조사를 하기도 합니다. 추가 증거가 생기면 <strong>의견서</strong>나 <strong>추가 증거자료 제출서</strong>를 언제든 낼 수 있습니다.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">수개월</div>
+        <div class="tl-what">경찰의 결정 — 송치 또는 불송치</div>
+        <p class="tl-note">혐의가 인정되면 검찰로 <strong>송치</strong>, 인정되지 않으면 <strong>불송치</strong> 결정을 하고 고소인에게 통지합니다.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">불송치 통지 후</div>
+        <div class="tl-what">이의신청</div>
+        <p class="tl-note">불송치에 불복하면 해당 경찰서에 <strong>이의신청</strong>을 할 수 있고, 이 경우 사건은 검찰로 넘어갑니다.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-when">검찰 단계</div>
+        <div class="tl-what">기소 또는 불기소</div>
+        <p class="tl-note">검사가 재판에 넘길지(기소) 결정합니다. 불기소되면 두 단계의 불복 수단이 있고, <strong>기간이 매우 짧으니</strong> 통지서를 받는 즉시 날짜부터 확인하세요.<br><br>① <strong>항고</strong> — 불기소 통지를 받은 날부터 <strong>30일</strong> 이내에 고등검찰청에 제기합니다(검찰청법 제10조 제4항).<br>② <strong>재정신청</strong> — 항고가 기각되면 그 통지를 받은 날부터 <strong>10일</strong> 이내에, <strong>고등법원이 아니라 원래 사건을 처리한 지방검찰청(지청)에 재정신청서를 제출</strong>합니다(형사소송법 제260조 제3항). 심리는 관할 고등법원이 합니다. 고소인은 모든 범죄에 대해 재정신청을 할 수 있습니다(제260조 제1항).</p>
+      </div>
+    </div>
+    <h3>돈을 돌려받는 문제, 그리고 혼자 감당하지 않는 방법</h3>
+    <p>형사 절차가 끝나도 피해금이 자동으로 돌아오지는 않습니다. 별도로 챙겨야 할 경로가 있습니다.</p>
+    <dl class="rows">
+      <div class="row"><dt>배상명령</dt><dd>사기·횡령·상해·폭행 등으로 <b>유죄판결이 선고될 때</b> 형사재판에서 곧바로 배상을 명하도록 신청하는 제도(소송촉진법 제25조). 별도 소송보다 빠르고 비용이 없습니다. <b>변론이 끝나기 전까지</b> 신청해야 합니다.</dd></div>
+      <div class="row"><dt>민사소송</dt><dd>배상명령이 각하되거나 다툼이 복잡하면 민사로 갑니다. 형사 수사기록은 유력한 증거가 되므로, 판결 후 <b>기록 열람·등사 신청</b>을 할 수 있습니다.</dd></div>
+      <div class="row"><dt>소송구조</dt><dd>일정 소득 이하이면 <b>대한법률구조공단</b>에서 소송대리를 무료 또는 저비용으로 지원받을 수 있습니다(국번없이 132).</dd></div>
+      <div class="row"><dt>피해자 국선변호사</dt><dd>성폭력·아동학대·인신매매 등 일부 범죄의 피해자에게는 수사 단계부터 <b>국선변호사</b>가 무료로 선정됩니다. 해당된다면 신청하지 않을 이유가 없습니다.</dd></div>
+      <div class="row"><dt>범죄피해구조금</dt><dd>생명·신체를 해치는 범죄로 사망하거나 중상해를 입었는데 가해자로부터 배상받지 못한 경우, 국가가 구조금을 지급합니다. 관할 지방검찰청 <b>범죄피해자지원센터</b>에 문의하세요.</dd></div>
+    </dl>
+
+    <p>전 과정은 사건에 따라 <strong>수개월에서 1년 이상</strong> 걸릴 수 있습니다. 조용하다고 잊힌 것이 아니니, 궁금하면 형사사법포털이나 담당 수사관에게 진행 상황을 문의하면 됩니다.</p>
+  </div>
+</section>
+
+<!-- 07 ─────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="num">07</span><h2>가장 많이 하는 실수</h2></div>
+  <div class="body">
+    <ul class="plain">
+      <li><strong>사실과 감정을 섞어 씁니다.</strong> 감정이 섞일수록 사실의 신빙성이 함께 깎입니다. 담담한 문서가 더 무섭습니다.</li>
+      <li><strong>불리한 사실을 빼먹습니다.</strong> 상대가 일부 갚은 적이 있다면 그것도 씁니다. 수사 과정에서 어차피 드러나고, 숨긴 사실 하나가 나머지 전부의 신뢰를 무너뜨립니다.</li>
+      <li><strong>민사 문제를 형사로 가져갑니다.</strong> 빌려준 돈을 못 받은 것만으로는 사기가 아닙니다. <em>빌릴 당시에</em> 갚을 의사·능력이 없었다는 정황이 필요합니다.</li>
+      <li><strong>증거 없이 주장만 씁니다.</strong> 각 문단마다 “이건 무엇으로 증명하지?”를 자문하세요.</li>
+      <li><strong>고소기간을 놓칩니다.</strong> 친고죄 6개월. 달력에 표시해 두세요.</li>
+      <li><strong>합의하며 고소를 덜컥 취소합니다.</strong> 취소도, 반의사불벌죄의 “처벌을 원하지 않는다”는 표시도 되돌릴 수 없습니다. 합의금은 <strong>받은 뒤에</strong> 취소서를 주는 것이 순서입니다.</li>
+      <li><strong>연락을 안 받습니다.</strong> 수사기관의 연락에 응하지 않으면 고소인이 수사에 협조하지 않는 것으로 정리될 수 있습니다.</li>
+    </ul>
+
+    <h3>수사에 들어가기도 전에 각하될 수 있는 경우</h3>
+    <p>내용의 옳고 그름을 따지기 전에 형식 요건에서 걸러지는 사건들이 있습니다. 제출 전에 여기에 해당하지 않는지 확인하세요.</p>
+    <ul class="plain">
+      <li><strong>고소권이 없는 사람</strong>이 낸 경우 — 피해자가 아닌데 고소장으로 냈거나, 직계존속을 고소한 경우.</li>
+      <li><strong>친고죄의 6개월 고소기간이 지난</strong> 경우.</li>
+      <li><strong>공소시효가 완성된</strong> 경우.</li>
+      <li><strong>같은 사실로 이미 불기소 처분을 받았는데 새로운 증거 없이 다시 낸</strong> 경우.</li>
+      <li><strong>고소를 취소했던 사건을 다시 고소한</strong> 경우.</li>
+      <li>고소 내용 자체가 <strong>범죄를 구성하지 않는</strong> 경우 — 예컨대 단순히 빌려준 돈을 못 받았다는 사실만 적혀 있는 경우.</li>
+      <li>고소인이 <strong>정당한 이유 없이 조사에 응하지 않아</strong> 사실관계를 확인할 수 없는 경우.</li>
+    </ul>
+
+    <div class="warn">
+      <h3>허위 고소는 그 자체가 범죄입니다</h3>
+      <p>타인으로 하여금 형사처분을 받게 할 목적으로 <strong>허위 사실을</strong> 신고하면 <strong>무고죄</strong>(형법 제156조)가 성립하고, <strong>10년 이하의 징역 또는 1,500만원 이하의 벌금</strong>에 처해질 수 있습니다. 형량이 가볍지 않습니다.</p>
+      <p style="margin-bottom:0">기억이 흐릿한 부분을 확실한 것처럼 단정해 쓰거나, 압박 수단으로 과장해 쓰는 것이 위험한 실질적인 이유입니다. <strong>확실한 것은 확실하게, 불확실한 것은 불확실하게</strong> 쓰는 것이 본인을 지키는 방법입니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 08 ─────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="num">08</span><h2>제출 전 최종 점검</h2></div>
+  <p class="sec-sub">인쇄하기 전에 이 목록을 위에서 아래로 훑어보세요.</p>
+  <div class="body">
+    <ul class="check">
+      <li>고소권자가 맞고, 직계존속 고소 제한에 걸리지 않는다</li>
+      <li>친고죄라면 범인을 안 날부터 6개월이 지나지 않았다</li>
+      <li>피고소인을 특정할 단서(이름·계좌·전화·계정)를 아는 만큼 모두 적었다</li>
+      <li>범죄사실이 시간순이고, 각 문장이 “언제·어디서·무엇을” 담고 있다</li>
+      <li>범죄사실에 감정 표현이나 추측이 섞여 있지 않다</li>
+      <li>상대의 발언은 요약이 아니라 원문 그대로 인용했다</li>
+      <li>불리한 사실도 빠짐없이 적었다</li>
+      <li>주장하는 문단마다 대응하는 증거가 별지에 들어 있다</li>
+      <li>별지(증거자료 세부 목록)를 작성하고 6번 항목의 체크를 맞췄다</li>
+      <li>고소인 연락처가 실제로 연락 가능한 번호다</li>
+      <li>제출일·자필 서명·날인을 하고, 7번 관련사건 ①②를 표시했다</li>
+      <li>고소장과 증거자료 전체의 사본을 본인 몫으로 한 부 남겼다</li>
+      <li>제출 후 조사에 대비해 원본 증거를 안전하게 보관했다</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  이 문서는 대한민국 형사소송법·형법상의 일반 절차를 비전문가가 이해할 수 있게 정리한 안내이며, 특정 사건에 대한 법률자문이 아닙니다.
+  법령과 수사 실무는 개정될 수 있으므로 조문과 기간은 국가법령정보센터(law.go.kr)에서 최신 내용을 확인하시고,
+  구체적인 판단이 필요하면 변호사 상담을 권합니다. 대한법률구조공단 국번없이 132.
+</footer>
+
+</div>
