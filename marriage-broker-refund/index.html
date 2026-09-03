@@ -112,6 +112,22 @@ ul.plain li::before{content:"▸";position:absolute;left:0;color:var(--seal);fon
   border-left:2px solid var(--seal);background:var(--seal-wash)}
 .tip b{color:var(--seal)}
 
+.res{border:1px solid var(--indigo);background:var(--panel);margin:28px 0}
+.res-head{padding:13px 18px;background:var(--indigo-wash);border-bottom:1px solid var(--indigo);
+  font-size:12.5px;font-weight:700;color:var(--indigo);letter-spacing:.06em}
+.res-item{display:grid;grid-template-columns:56px 1fr auto;gap:0 16px;align-items:start;
+  padding:15px 18px;text-decoration:none;color:inherit}
+.res-item:hover{background:var(--indigo-wash)}
+.res-ext{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.06em;text-align:center;
+  padding:4px 0;border:1px solid currentColor;margin-top:2px;color:var(--ink-soft)}
+.res-txt{font-size:14.5px;line-height:1.6}
+.res-txt b{font-weight:700;color:var(--ink)}
+.res-txt em{display:block;font-style:normal;font-size:13px;color:var(--ink-soft);
+  line-height:1.7;margin-top:3px}
+.res-go{font-family:var(--f-mono);font-size:12px;color:var(--indigo);white-space:nowrap;margin-top:3px}
+@media (max-width:640px){.res-item{grid-template-columns:52px 1fr;gap:0 12px}
+  .res-go{grid-column:2;margin-top:6px}}
+
 .warn{border:1px solid var(--seal);background:var(--seal-wash);
   padding:20px 22px;margin:24px 0}
 .warn h3{margin-top:0;color:var(--seal)}
@@ -299,6 +315,18 @@ footer{margin-top:72px;padding-top:24px;border-top:2px solid var(--ink);
     </div>
 
     <p class="tip"><b>여기가 핵심입니다</b> — 5항의 “관할 지자체 신고, 한국소비자원 피해구제 신청”. 중개업체는 등록업이라 <b>행정 제재가 소송보다 무섭습니다.</b> 소송만 언급하는 것보다 압박 강도가 훨씬 높습니다.</p>
+
+    <div class="res">
+      <div class="res-head">문서 내려받기</div>
+      <div class="res-item">
+        <span class="res-ext">DOCX</span>
+        <span class="res-txt">
+          <b>내용증명_통고서.docx</b>
+          <em>위 초안을 그대로 담은 Word 파일입니다. 빈칸만 채우면 발송할 수 있고, <b>마지막 장의 「작성 안내」 페이지만 삭제</b>한 뒤 3부 출력하면 됩니다.</em>
+        </span>
+        <span class="res-go">준비 중</span>
+      </div>
+    </div>
 
     <div class="warn">
       <h3>절대 넣지 말아야 할 문구</h3>
