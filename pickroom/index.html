@@ -106,8 +106,10 @@ body{font-size:14px;line-height:1.55}main{max-width:1320px;padding-top:32px}.int
 /* 모니터 컴팩트 카드 */
 .mon-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:15px 18px;display:grid;grid-template-columns:105px minmax(200px,1.2fr) minmax(290px,2fr) 135px;gap:16px;align-items:center;transition:border-color .2s,box-shadow .2s}
 .mon-card:hover{border-color:#386a4d;box-shadow:0 3px 12px rgba(32,43,38,0.06)}
-.mon-visual{background:#f3f6f1;border-radius:8px;padding:8px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.mon-visual{background:#f7f9f6;border:1px solid #e4eae2;border-radius:8px;padding:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:96px}
 .mon-visual svg{width:70px;height:65px}
+.mon-img{width:100%;height:68px;object-fit:contain;mix-blend-mode:multiply;border-radius:4px;transition:transform .2s ease}
+.mon-card:hover .mon-img{transform:scale(1.06)}
 .mon-info .badge{position:static;display:inline-block;margin-bottom:4px;background:#e9f3eb;color:#205634;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700}
 .mon-info h3{margin:0 0 4px;font-size:15px;color:var(--ink);letter-spacing:-0.3px}
 .mon-info p{margin:0;font-size:11px;color:var(--muted);line-height:1.4}
@@ -118,8 +120,17 @@ body{font-size:14px;line-height:1.55}main{max-width:1320px;padding-top:32px}.int
 .mon-specs dd{margin:0;font-weight:600;color:#1d2e23}
 .mon-comment{grid-column:1/-1;border-top:1px dashed #e3e9e3;margin-top:4px;padding-top:5px;font-size:11px;color:#3e5e46;line-height:1.45}
 @media(max-width:1050px){
-  .pc-card,.mon-card{grid-template-columns:1fr;gap:12px}
-  .pc-card-visual,.mon-visual{display:none}
+  .pc-card{grid-template-columns:1fr;gap:12px}
+  .pc-card-visual{display:none}
+  .mon-card{grid-template-columns:110px 1fr;gap:14px}
+  .mon-specs{grid-column:1 / -1}
+  .mon-card .pc-card-actions{grid-column:1 / -1}
+}
+@media(max-width:650px){
+  .mon-card{grid-template-columns:85px 1fr;gap:10px;padding:12px}
+  .mon-visual{min-height:auto;padding:4px}
+  .mon-img{height:55px}
+  .mon-specs{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -339,6 +350,7 @@ const products={desk:[{"id": "d1", "brand": "LONGCO", "name": "롱코 싱글 슬
 ],monitor:[
   {
     "id": "m1",
+    "image": "https://img.danuri.io/catalog-image/018/385/079/30befab870a74fc89c27a6f331cf317a.jpg?shrink=330:330&_v=20261029091939",
     "brand": "한성컴퓨터",
     "name": "TFG27F14P2 게이밍 144",
     "desc": "10만 원대 초반 극가성비 e스포츠 입문 게이밍",
@@ -359,6 +371,7 @@ const products={desk:[{"id": "d1", "brand": "LONGCO", "name": "롱코 싱글 슬
   },
   {
     "id": "m2",
+    "image": "https://img.danuri.io/catalog-image/153/479/063/518704347330463e82a26efe6a17a1f3.jpg?shrink=330:330&_v=20261028080628",
     "brand": "GIGABYTE",
     "name": "GS27QA QHD 180",
     "desc": "20만 원대 초반에 누리는 가성비 QHD 180Hz 실속형",
@@ -379,6 +392,7 @@ const products={desk:[{"id": "d1", "brand": "LONGCO", "name": "롱코 싱글 슬
   },
   {
     "id": "m3",
+    "image": "https://img.danuri.io/catalog-image/801/416/108/33a82958e9f04cc3a6eb58284f2603b7.jpeg?shrink=330:330&_v=20261029001048",
     "brand": "필립스 (알파스캔)",
     "name": "에반니아 27M2N3501PF Fast IPS 180",
     "desc": "\"가성비 판도를 뒤흔든 게임체인저\" 알파스캔 A/S",
@@ -399,6 +413,7 @@ const products={desk:[{"id": "d1", "brand": "LONGCO", "name": "롱코 싱글 슬
   },
   {
     "id": "m4",
+    "image": "https://img.danuri.io/catalog-image/133/638/062/88ab6c0b6f9e43f18da5a15807dc5383.jpg?shrink=330:330&_v=20261029092042",
     "brand": "LG전자",
     "name": "울트라기어 27GS85Q 나노IPS 200",
     "desc": "\"QHD 모니터의 표준이자 교과서\" 나노IPS 1ms",
@@ -419,6 +434,7 @@ const products={desk:[{"id": "d1", "brand": "LONGCO", "name": "롱코 싱글 슬
   },
   {
     "id": "m5",
+    "image": "https://img.danuri.io/catalog-image/253/733/099/90759ba88e824cd4af2729c442004666.jpg?shrink=330:330&_v=20261029092227",
     "brand": "알파스캔 AOC",
     "name": "Q27G4S 게이밍 Fast IPS 180",
     "desc": "LG 울트라기어 대체 1순위, 완성도 높은 마감과 A/S",
@@ -439,6 +455,7 @@ const products={desk:[{"id": "d1", "brand": "LONGCO", "name": "롱코 싱글 슬
   },
   {
     "id": "m6",
+    "image": "https://img.danuri.io/catalog-image/512/005/100/2027d067fd254d5094220f3a4be1c432.jpg?shrink=330:330&_v=20261029092042",
     "brand": "MSI",
     "name": "MAG 325QF700 Rapid IPS 180",
     "desc": "32인치 QHD 게이밍 시장 독보적 가성비 대화면",
@@ -459,6 +476,7 @@ const products={desk:[{"id": "d1", "brand": "LONGCO", "name": "롱코 싱글 슬
   },
   {
     "id": "m7",
+    "image": "https://img.danuri.io/catalog-image/709/071/101/9f28a66356454d768f1208e48749f25e.jpg?shrink=330:330&_v=20261029092228",
     "brand": "삼성전자",
     "name": "오디세이 G5 S32FG500 IPS 165",
     "desc": "대기업 32인치 평면 IPS, 로스트아크·스팀 오픈월드 최적",
@@ -479,6 +497,7 @@ const products={desk:[{"id": "d1", "brand": "LONGCO", "name": "롱코 싱글 슬
   },
   {
     "id": "m8",
+    "image": "https://img.danuri.io/catalog-image/756/356/102/5d31e1651977485f9c31017cefa00db0.jpg?shrink=330:330&_v=20261029092229",
     "brand": "한성컴퓨터",
     "name": "TFG27U1224PMW 4K 160",
     "desc": "27인치 고밀도 4K 고주사율 가성비 원탑",
@@ -499,6 +518,7 @@ const products={desk:[{"id": "d1", "brand": "LONGCO", "name": "롱코 싱글 슬
   },
   {
     "id": "m9",
+    "image": "https://img.danuri.io/catalog-image/232/725/020/ef3623ef9bf84f6fbaf30ea4eb864948.jpg?shrink=330:330&_v=20261026080336",
     "brand": "LG전자",
     "name": "울트라기어 32GR93U 4K 144",
     "desc": "300만 원대 본체에 걸맞은 32인치 4K 144Hz 정석 종결",
@@ -519,6 +539,7 @@ const products={desk:[{"id": "d1", "brand": "LONGCO", "name": "롱코 싱글 슬
   },
   {
     "id": "m10",
+    "image": "https://img.danuri.io/catalog-image/941/384/093/4bb8c885bf6944baa7b22143887c82ee.jpg?shrink=330:330&_v=20261027080442",
     "brand": "ASUS ROG",
     "name": "ROG Strix XG32UCG 듀얼모드",
     "desc": "4K 160Hz ↔ FHD 320Hz 듀얼 모드 지원 끝판왕",
@@ -597,7 +618,7 @@ function compactPC(p){
 function compactMonitor(p){
   return `<article class="mon-card">
     <div class="mon-visual">
-      ${art(p)}
+      ${p.image ? `<img class="mon-img" src="${p.image}" alt="${p.name} 사진" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div style="display:none">${art(p)}</div>` : art(p)}
       <span class="badge" style="margin-top:6px">${p.type}</span>
     </div>
     <div class="mon-info">
