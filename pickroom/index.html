@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pickroom — 나에게 맞는 데스크 셋업</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
+:root{--ink:#202b26;--muted:#7b827c;--green:#386a4d;--line:#e2e5df;--bg:#f7f8f4}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',sans-serif;font-size:14px}button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}header{height:86px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6%}.logo{font-size:28px;font-weight:900;letter-spacing:-1.7px}.logo span{color:var(--green)}header small{color:var(--muted)}main{max-width:1240px;margin:auto;padding:52px 30px 80px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--green);font-weight:800}h1{font-size:46px;line-height:1.4;letter-spacing:-2.6px;margin:14px 0}p{line-height:1.8}.intro{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center}.intro p{color:var(--muted);font-size:15px}.scene{height:230px;background:#e9eee3;border-radius:12px;position:relative;overflow:hidden}.scene:before{content:'';position:absolute;width:230px;height:230px;border:1px solid #d6dfcd;border-radius:50%;right:10px;top:-50px}.scene small{position:absolute;left:24px;bottom:20px;color:#658067;font-size:10px;letter-spacing:2px}.scene svg{width:100%;height:100%}.tabs{display:flex;border-bottom:1px solid var(--line);margin-top:44px;gap:30px}.tab{background:none;border:0;padding:18px 3px;color:var(--muted);border-bottom:3px solid transparent;font-weight:700;font-size:16px}.tab[aria-selected=true]{color:var(--green);border-color:var(--green)}.tab span{font-size:11px;margin-left:8px}.toolbar{display:flex;justify-content:space-between;align-items:center;margin:28px 0 22px;gap:12px}.filters{display:flex;gap:8px;flex-wrap:wrap}.chip{border:1px solid var(--line);border-radius:30px;background:transparent;padding:9px 17px;color:#697168;font-size:12px}.chip.active{background:var(--ink);border-color:var(--ink);color:white}.count{font-size:12px;color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{border:1px solid var(--line);border-radius:12px;background:white;overflow:hidden;transition:transform .2s}.card:hover{transform:translateY(-4px)}.visual{height:215px;background:#f0f0e9;position:relative;padding:28px}.card:nth-child(2) .visual{background:#eeefee}.card:nth-child(3) .visual{background:#ede9e1}.visual svg{width:100%;height:100%}.badge{position:absolute;top:16px;left:16px;border:1px solid #ffffff90;background:#ffffffbd;padding:5px 9px;font-size:10px;border-radius:4px;color:var(--green);font-weight:700}.body{padding:23px}.brand{font-size:10px;color:var(--muted);letter-spacing:1.5px}h2{font-size:20px;letter-spacing:-.8px;margin:6px 0 7px}.desc{font-size:12px;color:var(--muted);margin:0 0 17px;min-height:22px}.price{font-size:24px;font-weight:800;letter-spacing:-.8px}.price small{font-size:12px;font-weight:400;letter-spacing:0;margin-left:5px;color:var(--muted)}.specs{margin:20px 0 16px;padding:15px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:9px}.specs div{display:flex;justify-content:space-between;font-size:11px;gap:8px}.specs dt{color:var(--muted)}.specs dd{margin:0;text-align:right}.verdict{font-size:11px;line-height:1.8;margin:0 0 18px;color:#626c63}.verdict b{color:var(--green)}.actions{display:flex;gap:8px}.buy{display:block;flex:1;text-align:center;border:0;border-radius:5px;background:var(--green);color:white;padding:11px;font-size:12px}.compare{border:1px solid var(--line);border-radius:5px;background:white;padding:10px 13px;font-size:12px}.compare[aria-pressed=true]{border-color:var(--green);background:#edf4ed;color:var(--green)}.guide{margin-top:32px;padding:27px 30px;border:1px solid var(--line);border-radius:10px;background:#eef2e9;display:flex;align-items:center;gap:24px}.guide .icon{font-size:27px}.guide h3{margin:0 0 5px;font-size:16px}.guide p{margin:0;color:#70796e;font-size:12px}.guide button{margin-left:auto;white-space:nowrap;background:none;border:0;color:var(--green);font-weight:700}.details{padding:24px;background:white;border:1px solid var(--line);border-radius:8px;margin-top:12px;line-height:2;font-size:13px}.details h3{margin-top:0}.details ul{padding-left:20px}.sectionline{display:flex;justify-content:space-between;margin:40px 0 18px;align-items:center}.sectionline h3{margin:0;font-size:19px}.sectionline small{color:var(--muted)}.note{font-size:11px;color:#83897f;line-height:1.9;margin-top:25px}footer{border-top:1px solid var(--line);display:flex;justify-content:space-between;padding:26px 6%;font-size:11px;color:var(--muted)}.comparison{overflow:auto;border:1px solid var(--line);border-radius:9px;background:white}.comparison table{border-collapse:collapse;width:100%;min-width:480px;font-size:12px}.comparison th,.comparison td{text-align:left;padding:16px;border-bottom:1px solid var(--line)}.comparison th{background:#edf2e9}.empty{padding:25px;color:var(--muted);font-size:12px}.monitor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.monitor-grid article{padding:22px;background:white;border:1px solid var(--line);border-radius:8px}.monitor-grid h4{margin:8px 0}.monitor-grid p{font-size:12px;color:var(--muted)}[hidden]{display:none!important}@media(max-width:850px){main{padding:30px 20px 50px}.intro{grid-template-columns:1fr;gap:15px}h1{font-size:36px}.scene{height:180px}.cards{grid-template-columns:1fr}.visual{height:235px}.monitor-grid{grid-template-columns:1fr}.guide{padding:20px;gap:13px;flex-wrap:wrap}.guide button{margin-left:0}.toolbar{align-items:start;flex-direction:column}header{height:70px;padding:0 20px}header small{font-size:10px}.tabs{margin-top:25px}footer{gap:20px}.sectionline{align-items:start;gap:12px}.sectionline small{font-size:10px}}
+
+/* 가로형 비교 목록 */
+.intro{grid-template-columns:1.4fr 1fr}.intro h1{font-size:36px}.scene{height:185px}main{padding-top:35px}.cards{grid-template-columns:1fr;gap:14px}.card{display:grid;grid-template-columns:210px minmax(0,1fr)}.card:hover{transform:translateY(-2px)}.visual{height:100%;min-height:230px;padding:24px;display:flex;align-items:center;justify-content:center}.visual img{width:100%;height:170px;object-fit:contain;mix-blend-mode:multiply}.visual svg{height:150px}.body{display:grid;grid-template-columns:minmax(180px,1fr) minmax(190px,1fr) minmax(230px,1.3fr) 150px;gap:22px;padding:24px;align-items:center}.price{font-size:23px;margin-top:12px}.price-note{color:var(--muted);font-size:10px;line-height:1.7;margin:6px 0}.specs{margin:0;border:0;border-left:1px solid var(--line);padding:0 0 0 20px}.review{font-size:11px;line-height:1.9;color:#677267}.review strong{display:block;font-size:12px;color:var(--ink);margin-bottom:5px}.review p{margin:0}.source{display:inline-block;color:var(--green);font-size:10px;text-decoration:underline;text-underline-offset:3px;margin-top:8px}.actions{flex-direction:column}.verdict{margin:0 0 8px;font-size:10px}.review-meta{font-size:9px;color:#879080}.evidence{padding:13px 18px;background:#eef2e9;border-radius:7px;color:#687761;font-size:11px;line-height:1.9;margin:18px 0 0}.visual-label{position:absolute;bottom:9px;left:12px;font-size:9px;color:#737c70}.sectionline{margin-top:30px}
+@media(min-width:651px) and (max-width:1150px){.card{grid-template-columns:155px minmax(0,1fr)}.body{grid-template-columns:1fr 1fr 1.1fr;gap:16px;padding:20px}.review{grid-column:3;grid-row:1 / 3}.actions{grid-column:1 / 3;grid-row:2;flex-direction:row}.visual{min-height:250px;padding:15px}.specs{padding-left:12px}.body h2{font-size:18px}.desc{font-size:11px;margin-bottom:6px}}
+@media(max-width:650px){.intro{grid-template-columns:1fr}.intro h1{font-size:31px}.scene{display:none}.card{grid-template-columns:110px minmax(0,1fr)}.visual{padding:9px;min-height:180px;align-items:flex-start;padding-top:45px}.visual img{height:100px}.visual svg{height:95px}.badge{left:8px;top:10px;font-size:8px}.body{display:block;padding:18px 14px}.body h2{font-size:17px}.specs{border-left:0;border-top:1px solid var(--line);padding:12px 0;margin-top:14px}.review{border-top:1px solid var(--line);padding-top:12px;margin-top:4px}.actions{margin-top:14px;flex-direction:row}.price{font-size:21px}.visual-label{font-size:8px;left:8px}.toolbar{margin-top:20px}.tabs{gap:15px}.tab{font-size:14px}}
+ .actions{display:grid;grid-template-columns:1fr;gap:7px}.actions .price-note{margin:0}.actions .source{margin:0}.buy{background:#287b46}@media(min-width:651px) and (max-width:1150px){.actions{grid-template-columns:1fr auto}.actions .price-note,.actions .source{grid-column:1 / -1}.actions .compare{grid-column:2;grid-row:1}}  .specs{gap:8px}.specs div{align-items:start}.specs dd{max-width:65%;line-height:1.7}.specs dt{white-space:nowrap}.community{border-top:1px solid var(--line);margin-top:15px;padding-top:14px}.review .source{margin-top:5px} 
+.motor-block{margin:14px 0 10px;padding:12px;border:1px solid #c9dccc;border-radius:8px;background:#eff6ef;display:flex;gap:11px;align-items:center}.motor-block b{font-size:25px;line-height:1}.motor-block strong{display:block;font-size:12px}.motor-block small{display:block;font-size:10px;margin-top:4px;color:#526454}.motor-block.unknown{background:#f3f1ed;border-color:#e1dcd2;color:#736c61}.motor-tools{padding:16px 18px;background:white;border:1px solid var(--line);border-radius:10px;margin-bottom:18px}.motor-tools p{font-size:12px;color:#626c63;margin:10px 0 0}.motor-tools .filters{align-items:center}.motor-tools label{font-weight:700;margin-right:8px}.buy-planner{margin:24px 0;border:1px solid var(--line);border-radius:12px;background:white;padding:24px}.buy-planner h3{margin:0 0 7px}.buy-planner>p{color:#677267;font-size:12px}.buy-planner summary{cursor:pointer;font-weight:700;font-size:15px}.check-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}.check-item{display:block;padding:16px;border:1px solid var(--line);border-radius:8px;font-size:13px;line-height:1.7}.check-item input{accent-color:var(--green);width:17px;height:17px;vertical-align:middle;margin:0 7px 0 0}.check-item span{display:block;font-size:11px;color:#687269;margin-top:8px}.check-item:has(input:checked){background:#edf5ed;border-color:#8eaf92}.progress-track{height:5px;border-radius:4px;background:#e9eee7;margin-top:15px;overflow:hidden}.progress-track i{display:block;height:100%;background:var(--green);width:0}.model-check{margin:12px 0;font-size:11px;line-height:1.8}.model-check summary{cursor:pointer;color:var(--green);font-weight:700}.model-check p{margin:8px 0}.model-check textarea{width:100%;min-height:155px;resize:vertical;font:inherit;padding:9px;border:1px solid var(--line);border-radius:5px;background:#fafbf8}.decision{border-top:1px solid var(--line);margin-top:18px;padding-top:14px;font-size:12px;line-height:1.9}.motor-emphasis{background:#edf5ed;border-radius:4px;padding:5px!important}.no-results{padding:30px;border:1px dashed var(--line);border-radius:9px;background:white}@media(max-width:850px){.check-grid{grid-template-columns:1fr 1fr}}@media(max-width:650px){.check-grid{grid-template-columns:1fr}.buy-planner{padding:18px}.motor-block b{font-size:22px}}
+
+/* Compact comparison rows */
+.intro{gap:24px}.intro h1{font-size:32px}.scene{height:150px}.tabs{margin-top:24px}.evidence{margin-top:12px;padding:10px 15px}.buy-planner{margin:14px 0;padding:15px 18px}.buy-planner>p{margin:5px 0}.toolbar{margin:16px 0 12px}.motor-tools{padding:10px 14px;margin-bottom:12px}.motor-tools p{margin-top:6px}.cards{gap:10px}.card{grid-template-columns:155px minmax(0,1fr)}.visual{min-height:190px;padding:15px}.visual img{height:135px}.body{grid-template-columns:minmax(165px,1fr) minmax(180px,1fr) minmax(170px,1fr) 140px;gap:14px;padding:16px}.body h2{font-size:16px;margin:4px 0}.desc{margin-bottom:5px}.price{font-size:20px;margin-top:7px}.motor-block{margin:7px 0;padding:7px 9px}.motor-block b{font-size:20px}.specs{gap:5px;padding-left:13px}.review{font-size:10px}.evidence-details summary,.score-details summary{cursor:pointer;color:var(--green);font-weight:700;font-size:11px}.evidence-details[open],.score-details[open]{margin-top:8px}.community{margin-top:9px;padding-top:8px}.score-panel{padding:9px 10px;background:#edf5ed;border:1px solid #d5e5d7;border-radius:7px;margin-bottom:8px}.score-panel strong{display:inline;font-size:20px;color:#245b39}.score-panel small{display:block;color:#667467;font-size:10px;line-height:1.5}.score-details p{font-size:10px;line-height:1.7;margin:6px 0}.score-method{font-size:12px;padding:15px 18px;background:#f2f6ee;margin:12px 0;border:1px solid var(--line);border-radius:8px;line-height:1.8}.score-method summary{font-weight:700;cursor:pointer}.model-check{margin:5px 0}.actions{gap:5px}.actions .buy{padding:9px}.compare{padding:8px}.visual-label{font-size:8px}@media(min-width:651px) and (max-width:1150px){.body{grid-template-columns:1fr 1fr 1.1fr}.visual{min-height:210px}}@media(max-width:650px){.card{grid-template-columns:90px minmax(0,1fr)}.body{display:block;padding:14px}.visual{min-height:150px;padding:35px 7px 8px}.visual img{height:90px}.specs{padding:10px 0}.review{padding-top:8px}.intro h1{font-size:29px}}
+
+/* Readability and visual hierarchy */
+:root{--ink:#1d2b23;--muted:#59675e;--green:#256240;--line:#d8e0d9;--bg:#f5f7f3}
+body{font-size:14px;line-height:1.55}main{max-width:1320px;padding-top:32px}.intro h1{font-size:34px;line-height:1.28}.intro p{color:#59675e}.tabs{margin-top:24px}.tab{font-size:16px;padding:15px 4px}.evidence{background:#eef3ec;color:#45584b;font-size:12px;padding:11px 16px;border:1px solid #dce7dd}
+.score-overview{background:#183f2d;color:#fff;border-radius:13px;padding:20px 24px;margin-top:20px;display:grid;grid-template-columns:minmax(210px,1fr) minmax(480px,2fr);gap:16px 30px;align-items:center}.score-kicker{font-size:11px;font-weight:800;letter-spacing:1.4px;color:#b8d9bf}.score-heading h2{font-size:20px;letter-spacing:-.5px;margin:5px 0}.score-heading p{font-size:12px;color:#d5e5d8;margin:0;line-height:1.6}.score-criteria{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.score-criteria div{border-left:1px solid #76917e;padding:0 0 0 15px}.score-criteria b{display:block;font-size:23px;line-height:1.1}.score-criteria b span{font-size:12px;margin-left:3px}.score-criteria strong{display:block;font-size:13px;margin-top:7px}.score-criteria small{display:block;color:#d4e4d5;font-size:11px;margin-top:3px}.score-foot{grid-column:1/-1;border-top:1px solid #52745e;padding-top:10px;font-size:12px;color:#e2eee4}.score-foot details{margin-top:6px}.score-foot summary{cursor:pointer;color:#fff;font-weight:700}.score-foot p{line-height:1.8;max-width:1000px;color:#e4efe6;margin:8px 0}
+.buy-planner{background:#fff}.buy-planner>p,.price-note,.desc,.count{color:#58675c}.chip{font-size:13px;color:#47564d;border-color:#cbd7cd}.chip.active{background:#244c35;border-color:#244c35}.motor-tools{background:#eef4ed;border-color:#d7e4d8}.motor-tools p{font-size:12px;color:#405849}.card{grid-template-columns:160px minmax(0,1fr);box-shadow:0 3px 15px #244c350a}.visual{background:#eff3ec!important;min-height:210px}.body{grid-template-columns:minmax(170px,1.05fr) minmax(195px,1fr) minmax(160px,.9fr) 145px;gap:16px;align-items:start}.brand{font-size:11px;color:#55665a}.body h2{font-size:18px;line-height:1.4;color:#17291d}.desc{font-size:12px;line-height:1.55}.price{font-size:23px;color:#182d20}.price-note{font-size:11px;line-height:1.6}.source{font-size:11px;font-weight:600;color:#245e3d}.specs{padding-left:15px;gap:0}.specs div{padding:4px 0;border-bottom:1px solid #eef1ec;font-size:12px;line-height:1.45}.specs dt{color:#5c6c61}.specs dd{font-weight:600;color:#24352a}.motor-emphasis{margin:2px -6px;padding:5px 6px!important;background:#e5f1e5}.motor-block{background:#e9f4e9;border-color:#caddcb}.motor-block strong{font-size:12px}.motor-block small{color:#465d4b;font-size:11px}.motor-block.unknown{background:#f6f1e8;color:#705d42;border-color:#e4d5bd}.review{font-size:12px;color:#415246}.review strong{font-size:12px}.score-panel{background:#eef6ed;border-color:#c8dec9;padding:12px}.score-panel strong{font-size:25px;line-height:1;color:#1e6138}.score-panel small{font-size:11px;color:#3f5946;margin-top:4px}.score-details summary,.evidence-details summary,.model-check summary{font-size:12px;color:#245e3d}.score-details p{font-size:11px;color:#304c36}.buy{background:#256840;font-size:12px;font-weight:700}.compare{font-size:12px;border-color:#bbcabc}.actions .price-note{font-size:11px}.visual-label{font-size:9px;color:#526457}.sectionline h3{font-size:19px}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #b27b22;outline-offset:3px}
+@media(min-width:651px) and (max-width:1150px){.body{grid-template-columns:1fr 1fr 1fr;gap:14px}.card{grid-template-columns:135px minmax(0,1fr)}.score-overview{grid-template-columns:1fr}.score-foot{grid-column:1}.review{grid-column:3}.visual{min-height:225px}.score-criteria{max-width:780px}}
+@media(max-width:650px){main{padding:22px 14px 50px}.score-overview{display:block;padding:18px}.score-heading h2{font-size:19px}.score-criteria{grid-template-columns:repeat(2,1fr);gap:15px;margin:16px 0}.score-criteria div{padding-left:12px}.score-foot{padding-top:12px}.card{grid-template-columns:95px minmax(0,1fr)}.body{display:block;padding:16px 13px}.body h2{font-size:17px}.specs{margin:12px 0;border-left:0;border-top:1px solid var(--line);padding:8px 0}.review{border-top:0;padding:0;margin:0}.actions{margin-top:12px}.visual{padding:42px 7px 10px;min-height:170px}.chip{padding:8px 13px}.motor-tools p{font-size:11px}}
+
+.desk-essentials{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:16px 20px;margin:12px 0;border:1px solid #d5e2d4;background:#edf4e9;border-radius:10px}.desk-essentials span{font-size:10px;letter-spacing:1.3px;color:#32694a;font-weight:800}.desk-essentials h2{font-size:17px;margin:3px 0}.desk-essentials p{font-size:11px;color:#51645a;line-height:1.55;margin:4px 0}.essentials-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.essentials-grid b{font-size:12px;color:#244f36}.compact-row{background:#fff;border:1px solid #dbe5db;border-radius:9px;display:grid;grid-template-columns:72px minmax(160px,1.4fr) minmax(310px,2.3fr) 120px 125px;gap:12px;align-items:center;padding:11px 14px}.compact-img{height:68px;width:72px;object-fit:contain;background:#f1f4ef;border-radius:6px}.compact-name{min-width:0}.compact-name span{font-size:10px;color:#5f7163}.compact-name h2{font-size:14px;line-height:1.35;margin:2px 0}.compact-name strong{font-size:17px}.compact-name small{display:block;color:#657568;font-size:10px}.compact-spec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 10px;font-size:12px}.compact-spec div{display:flex;gap:5px;align-items:baseline}.compact-spec small{color:#617265;white-space:nowrap;font-size:11px}.compact-spec b{font-size:12px;line-height:1.4}.compact-spec .wide{grid-column:1/-1}.compact-score .score-panel{margin:0;padding:8px}.compact-score .score-panel strong{font-size:20px}.compact-score .score-panel small{font-size:10px}.compact-actions{display:grid;gap:5px}.compact-actions .buy,.compact-actions .compare{padding:8px 5px;font-size:11px}.compact-more{grid-column:2/-1;border-top:1px solid #e4ebe3;padding-top:6px;font-size:12px}.compact-more summary{cursor:pointer;color:#286341;font-weight:700}.compact-expanded{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:10px 0;line-height:1.7}.compact-expanded dl{margin:0}.compact-expanded dl div{display:flex;justify-content:space-between;border-bottom:1px solid #edf1ed;padding:3px 0;gap:10px}.compact-expanded dt{color:#5f6f62}.compact-expanded dd{margin:0;text-align:right}.compact-expanded p{margin:5px 0;color:#4c5d51}.cards{gap:8px}@media(max-width:1050px){.compact-row{grid-template-columns:62px minmax(145px,1fr) minmax(240px,1.8fr) 105px}.compact-img{width:62px;height:62px}.compact-actions{grid-column:2/-1;display:flex}.compact-actions>*{flex:1}.compact-more{grid-column:2/-1}.desk-essentials{grid-template-columns:1fr}.essentials-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.compact-row{grid-template-columns:56px minmax(0,1fr) 90px;gap:8px;padding:10px}.compact-img{width:56px;height:56px}.compact-name h2{font-size:13px}.compact-name strong{font-size:15px}.compact-spec{grid-column:1/-1;border-top:1px solid #edf1ed;padding-top:8px}.compact-score{grid-column:3;grid-row:1}.compact-actions{grid-column:1/-1}.compact-more{grid-column:1/-1}.compact-expanded{grid-template-columns:1fr;gap:8px}.desk-essentials{padding:14px}.essentials-grid{gap:10px}}
+
+/* 비교 행: 사진과 사양을 가까이 묶어 가로 공간을 활용 */
+@media(min-width:1051px){.compact-row{grid-template-columns:124px minmax(185px,1.1fr) minmax(295px,1.35fr) 112px 116px;gap:12px;padding:10px 14px}.compact-img{width:124px;height:102px;object-fit:contain}.compact-spec{grid-template-columns:minmax(150px,1fr) minmax(130px,1fr);gap:5px 14px}.compact-more{grid-column:2/-1}}
+@media(min-width:651px) and (max-width:1050px){.compact-row{grid-template-columns:100px minmax(150px,1fr) minmax(220px,1.3fr) 105px}.compact-img{width:100px;height:88px}.compact-actions{grid-column:2/-1}}
+@media(max-width:650px){.compact-row{grid-template-columns:78px minmax(0,1fr) 90px}.compact-img{width:78px;height:78px}}
+.compact-name h2{font-size:15px}.compact-spec b{font-size:13px}.compact-actions .buy,.compact-actions .compare{font-size:12px}.compact-more{padding-top:5px}
+
+/* 크기 값은 한 줄로 유지하고 좁은 화면에서는 행을 재배치합니다. */
+.compact-spec>div:first-child{white-space:nowrap;min-width:max-content}.compact-spec>div:first-child b{white-space:nowrap}
+@media(min-width:1051px){.compact-spec{grid-template-columns:minmax(165px,1fr) minmax(125px,1fr)}}
+@media(min-width:651px) and (max-width:1050px){.compact-spec{grid-template-columns:minmax(165px,1fr) minmax(120px,1fr)}}
+@media(max-width:650px){.compact-spec{grid-template-columns:minmax(160px,1fr) minmax(100px,1fr)}}
+
+.compact-spec>div{white-space:nowrap;min-width:0}.compact-spec b{white-space:nowrap}.compact-spec .wide{white-space:normal}.compact-spec .wide b{white-space:normal}
+
+.score-toggle{display:block;margin:5px 0 0;padding:0;border:0;background:none;color:#245e3d;font-size:12px;font-weight:700;text-align:left}.score-toggle:hover{text-decoration:underline}
+.compact-more{margin-top:1px}.compact-more summary{padding:4px 0;font-size:12px}.compact-expanded{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;padding:12px 0 4px}.detail-section{min-width:0;border:1px solid #e0e8e0;border-radius:8px;padding:15px;background:#fbfcfa}.detail-section h3{margin:0 0 11px;color:#253a2d;font-size:14px;line-height:1.35}.detail-section h3 small{color:#627268;font-size:11px;font-weight:500;margin-left:8px}.detail-score{grid-column:1/-1;background:#f3f8f2}.detail-score-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.detail-score-grid>div{border:1px solid #dce8da;border-radius:6px;background:#fff;padding:10px}.detail-score-grid span,.detail-score-grid strong,.detail-score-grid small{display:block}.detail-score-grid span{font-size:11px;color:#637568}.detail-score-grid strong{font-size:15px;color:#245e3d}.detail-score-grid small{font-size:11px;line-height:1.5;color:#526359}.detail-score p{font-size:11px;margin:8px 0 0}.detail-spec dl div{padding:6px 0}.detail-spec dt,.detail-spec dd{font-size:12px;line-height:1.5}.detail-sources p{font-size:12px;line-height:1.75}.detail-links{display:grid;gap:5px;margin:10px 0}.detail-links .source{margin:0;font-size:12px;line-height:1.5}.detail-purchase{padding-top:8px;border-top:1px solid #e5ebe4}.model-check textarea{width:100%;min-height:160px}
+@media(max-width:650px){.compact-expanded{grid-template-columns:1fr}.detail-score{grid-column:auto}.detail-score-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-section{padding:12px}.detail-section h3 small{display:block;margin:3px 0 0}}
+
+/* 비교 행의 내용은 화면 너비에 맞춰 같은 위치에 정렬 */
+@media(min-width:901px){
+ .compact-row{align-items:center}
+ .compact-name,.compact-spec,.compact-score,.compact-actions{margin-top:0}
+ .compact-name{min-height:0}
+ .compact-score .score-panel{min-height:73px}
+ .score-toggle{white-space:nowrap;font-size:11px}
+ .compact-actions{display:grid;grid-column:auto;grid-row:auto}
+}
+@media(min-width:901px) and (max-width:1050px){
+ .compact-row{grid-template-columns:90px minmax(125px,1fr) minmax(290px,1.2fr) 100px 104px;gap:8px;padding:10px 12px}
+ .compact-img{width:90px;height:90px}
+ .compact-spec{grid-template-columns:minmax(165px,1fr) minmax(110px,1fr);gap:4px 8px}
+ .compact-more{grid-column:2/-1}
+}
+
+.compact-row.top-ranked{position:relative;border:2px solid #3d8056;background:#fcfffb;box-shadow:0 2px 10px rgba(37,98,64,.1)}
+.rank-badge{position:absolute;top:-1px;left:-1px;z-index:1;display:inline-flex;align-items:center;padding:3px 8px;border-radius:8px 0 7px 0;background:#2b7448;color:#fff;font-size:10px;line-height:1.3;font-weight:800;letter-spacing:.02em}
+/* 데스크탑 & 모니터 상단 매트릭스 및 컴팩트 카드 스타일 */
+.spec-matrix-box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 24px;margin:20px 0}
+.spec-matrix-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.spec-matrix-header h3{margin:0;font-size:18px;letter-spacing:-0.5px;color:var(--ink)}
+.spec-matrix-header p{margin:4px 0 0;font-size:12px;color:var(--muted)}
+.matrix-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.matrix-table{width:100%;border-collapse:collapse;min-width:680px;font-size:12px;text-align:left}
+.matrix-table th,.matrix-table td{padding:10px 12px;border-bottom:1px solid #edf1ed;vertical-align:middle}
+.matrix-table th{background:#f3f7f2;color:#355340;font-weight:700;white-space:nowrap}
+.matrix-table tr:hover td{background:#fafcf9}
+.matrix-tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:700;background:#e7f0e7;color:#245e3d}
+.price-diff{font-size:11px;color:#2a7046;font-weight:700}
+.price-orig{color:#828e84;font-size:11px}
+.pc-tips-box{background:#eef4ed;border:1px solid #d2e3d3;border-radius:9px;padding:12px 16px;margin-top:14px;font-size:12px;line-height:1.7}
+.pc-tips-box summary{cursor:pointer;font-weight:700;color:#225c38}
+.pc-tips-list{margin:8px 0 0;padding-left:18px;display:grid;gap:4px;color:#3d5244}
+
+/* 데스크탑 컴팩트 카드 */
+.pc-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:15px 18px;display:grid;grid-template-columns:105px minmax(200px,1.2fr) minmax(290px,2fr) 135px;gap:16px;align-items:center;transition:border-color .2s,box-shadow .2s}
+.pc-card:hover{border-color:#386a4d;box-shadow:0 3px 12px rgba(32,43,38,0.06)}
+.pc-card-visual{text-align:center;padding:8px;background:#f3f6f1;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.pc-card-visual svg{width:70px;height:65px}
+.pc-card-tier{font-size:11px;font-weight:800;color:var(--green);margin-top:3px}
+.pc-card-main{min-width:0}
+.pc-card-main .badge{position:static;display:inline-block;margin-bottom:4px;background:#e9f3eb;color:#205634;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700}
+.pc-card-main h3{margin:0 0 4px;font-size:16px;letter-spacing:-0.4px;color:var(--ink)}
+.pc-card-main p{margin:0 0 6px;font-size:11px;color:var(--muted);line-height:1.4}
+.pc-card-pricing{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.pc-card-price{font-size:19px;font-weight:800;color:#182e21}
+.pc-card-deal{font-size:11px;color:#236b3f;background:#edf7ee;padding:2px 6px;border-radius:4px;font-weight:600}
+.pc-card-specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 10px;background:#fafbf9;border:1px solid #edf1ed;border-radius:8px;padding:9px 12px;font-size:11.5px}
+.pc-card-specs div{display:flex;gap:5px;align-items:baseline}
+.pc-card-specs dt{color:#647568;white-space:nowrap;font-size:11px;min-width:36px}
+.pc-card-specs dd{margin:0;font-weight:600;color:#1d2e23;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pc-card-specs .wide{grid-column:1/-1}
+.pc-card-actions{display:grid;gap:5px}
+.pc-card-actions .buy{padding:8px;font-size:11.5px;font-weight:700;text-align:center;border-radius:5px}
+.pc-card-actions .deal-btn{background:#eef6ee;color:#23633b;border:1px solid #c2dec5;font-weight:700;padding:7px;border-radius:5px;font-size:11px;text-align:center;display:block}
+.pc-card-actions .deal-btn:hover{background:#dfeede}
+
+/* 모니터 컴팩트 카드 */
+.mon-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:15px 18px;display:grid;grid-template-columns:105px minmax(200px,1.2fr) minmax(290px,2fr) 135px;gap:16px;align-items:center;transition:border-color .2s,box-shadow .2s}
+.mon-card:hover{border-color:#386a4d;box-shadow:0 3px 12px rgba(32,43,38,0.06)}
+.mon-visual{background:#f3f6f1;border-radius:8px;padding:8px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.mon-visual svg{width:70px;height:65px}
+.mon-info .badge{position:static;display:inline-block;margin-bottom:4px;background:#e9f3eb;color:#205634;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700}
+.mon-info h3{margin:0 0 4px;font-size:15px;color:var(--ink);letter-spacing:-0.3px}
+.mon-info p{margin:0;font-size:11px;color:var(--muted);line-height:1.4}
+.mon-price{font-size:18px;font-weight:800;margin-top:6px;color:#182e21}
+.mon-specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 10px;background:#fafbf9;border:1px solid #edf1ed;border-radius:8px;padding:9px 12px;font-size:11.5px}
+.mon-specs div{display:flex;gap:5px}
+.mon-specs dt{color:#647568;font-size:11px;white-space:nowrap;min-width:36px}
+.mon-specs dd{margin:0;font-weight:600;color:#1d2e23}
+.mon-comment{grid-column:1/-1;border-top:1px dashed #e3e9e3;margin-top:4px;padding-top:5px;font-size:11px;color:#3e5e46;line-height:1.45}
+@media(max-width:1050px){
+  .pc-card,.mon-card{grid-template-columns:1fr;gap:12px}
+  .pc-card-visual,.mon-visual{display:none}
+}
+</style>
+</head>
+<body>
+<header><a class="logo" href="#">pickroom<span>.</span></a><small>좋은 선택으로 완성하는 나만의 공간</small></header>
+<main>
+<section class="intro"><div><div class="eyebrow">THE DESK SETUP EDIT</div><h1>오래 머무는 공간,<br>더 잘 고르는 방법.</h1><p>책상부터 데스크탑, 그리고 모니터까지.<br>복잡한 스펙은 덜고, 나에게 필요한 기준으로 비교하세요.</p></div><div class="scene"><svg viewBox="0 0 440 230" aria-hidden="true"><ellipse cx="227" cy="204" rx="167" ry="12" fill="#d9e1d1"/><path d="M84 132L333 132L367 146L58 146Z" fill="#af8a60"/><path d="M65 146H359V152H65Z" fill="#8d6f4d"/><path d="M89 152V199H99V152M322 152V199H332V152" stroke="#455a49" stroke-width="8"/><rect x="160" y="55" width="126" height="75" rx="5" fill="#344a3d"/><rect x="166" y="61" width="114" height="62" rx="2" fill="#abc1a5"/><path d="M166 106L203 77L237 102L280 75V123H166Z" fill="#789675"/><path d="M223 130V141M206 141H240" stroke="#344a3d" stroke-width="5"/><path d="M176 145L187 137H248L261 145" fill="#d5d9cf"/><rect x="304" y="104" width="20" height="29" rx="2" fill="#ddd9c8"/><path d="M314 105Q292 81 310 79Q326 90 314 105M314 101Q331 71 337 85Q335 99 314 101" fill="#5c7b4b"/></svg><small>MAKE ROOM FOR BETTER DAYS.</small></div></section>
+<div class="tabs" role="tablist" aria-label="제품 카테고리"><button class="tab" role="tab" id="desk-tab" aria-selected="true" aria-controls="products" data-tab="desk">모션 데스크 <span>01</span></button><button class="tab" role="tab" id="pc-tab" aria-selected="false" aria-controls="products" data-tab="pc" tabindex="-1">데스크탑 <span>02</span></button><button class="tab" role="tab" id="monitor-tab" aria-selected="false" aria-controls="products" data-tab="monitor" tabindex="-1">모니터 <span>03</span></button></div>
+<section class="spec-matrix-box" id="pc-matrix-section" hidden>
+  <div class="spec-matrix-header">
+    <div>
+      <span class="eyebrow">HARDWARE TIER MATRIX</span>
+      <h3>데스크톱 예산별 표준 스펙 & 성능 체급 가이드</h3>
+      <p>다나와 단품 최저가 조합과 커뮤니티(에펨코리아·알구몬) 특가 완본체를 비교 분석한 150만~300만 원 표준 기준표입니다.</p>
+    </div>
+    <span class="matrix-tag">2026 하드웨어 동향 반영</span>
+  </div>
+  <div class="matrix-scroll">
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>예산 체급</th>
+          <th>다나와 단품 표준 부품 조합</th>
+          <th>커뮤니티 핫딜 스펙 (체감가)</th>
+          <th>주력 용도 & 목표 디스플레이</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>150만 원대</b><br><small class="price-orig">145만~155만</small></td>
+          <td><b>라이젠 5 7500F + RTX 4060 Ti 8GB</b><br><small>DDR5 16GB · 1TB NVMe · 600~700W (단품 약 148만~154만)</small></td>
+          <td><b class="price-diff">RTX 4070 SUPER 상향</b><br><small>11번가/알구몬 완본체 체감 약 1,470,000원</small></td>
+          <td>FHD 전 게임 풀옵션 144Hz+ 완벽 방어<br><small style="color:var(--muted)">QHD 중상옵션 원활 입문</small></td>
+        </tr>
+        <tr>
+          <td><b>200만 원대</b><br><small class="price-orig">195만~205만</small></td>
+          <td><b>라이젠 5 7500F + RTX 4070 SUPER</b><br><small>DDR5 32GB · 1TB NVMe · 750W (단품 약 196만~205만)</small></td>
+          <td><b class="price-diff">라이젠 7 7800X3D 결합</b><br><small>특가 완본체 체감 약 183.7만~203만 원</small></td>
+          <td>QHD 고주사율(165Hz) 풀옵션 정복<br><small style="color:var(--muted)">배그·FPS 하위 1% 프레임 최상위 방어</small></td>
+        </tr>
+        <tr>
+          <td><b>250만 원대</b><br><small class="price-orig">245만~255만</small></td>
+          <td><b>라이젠 7 7800X3D + RTX 4070 Ti SUPER 16GB</b><br><small>DDR5 32GB 방열판 · P41 1TB · 850W 골드 (단품 약 245만~254만)</small></td>
+          <td><b class="price-diff">수랭 / 대장급 쿨러 포함</b><br><small>제플몰/알구몬 체감 약 238.5만~242.1만 원</small></td>
+          <td>QHD 종결 및 4K 60Hz+ 입문<br><small style="color:var(--muted)">16GB VRAM 기반 고사양 영상편집·AI</small></td>
+        </tr>
+        <tr>
+          <td><b>300만 원대</b><br><small class="price-orig">295만~305만</small></td>
+          <td><b>라이젠 7 7800X3D/9800X3D + RTX 4080 SUPER 16GB</b><br><small>DDR5 32GB · 990 PRO/P41 2TB · 850~1000W 골드 (단품 약 298만~308만)</small></td>
+          <td><b class="price-diff">850W 골드 풀모듈러 특가</b><br><small>다나와/알구몬 완본체 체감 약 279만~295만 원</small></td>
+          <td>4K UHD 144Hz+ 네이티브 게이밍<br><small style="color:var(--muted)">사이버펑크 레이 트레이싱 풀옵션 & 3D 렌더링</small></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <details class="pc-tips-box">
+    <summary>완본체 핫딜 구매 시 필수 체크리스트 3가지 (원가 절감 방어 팁) ▾</summary>
+    <div class="pc-tips-list">
+      <div><b>1. SSD 디램(DRAM) 유무 확인:</b> 특가 완본체 기본 SSD가 디램리스(벌크/보급형)인 경우 쓰기 지속 시 속도 저하가 발생합니다. 옵션 창에서 SK하이닉스 P41/P31, 삼성 980 PRO/PM9A1으로 변경을 권장합니다.</div>
+      <div><b>2. RAM 듀얼 채널(16GB×2) 구성:</b> 단가를 낮추기 위해 16GB 단일(16G×1)로 파는 경우가 있습니다. 라이젠 CPU는 듀얼 채널 대역폭이 게임 프레임에 결정적이므로 반드시 16GB 2개(32GB) 구성을 확인하세요.</div>
+      <div><b>3. 파워서플라이 정격 용량:</b> RTX 4070 SUPER는 정격 700W 이상, 4070 Ti SUPER / 4080 SUPER는 정격 850W 골드 등급 이상인지 확인 후 필요시 업그레이드하세요.</div>
+    </div>
+  </details>
+</section>
+<section class="spec-matrix-box" id="monitor-matrix-section" hidden>
+  <div class="spec-matrix-header">
+    <div>
+      <span class="eyebrow">MONITOR MATCHING GUIDE</span>
+      <h3>본체 체급에 맞는 모니터 선택 가이드</h3>
+      <p>그래픽카드 등급과 디스플레이 해상도·주사율의 역체감 없는 최적 매칭표입니다. (다나와 및 커뮤니티 검증)</p>
+    </div>
+    <span class="matrix-tag">다나와 최저가 기준</span>
+  </div>
+  <div class="matrix-scroll">
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>추천 본체 예산</th>
+          <th>권장 규격 & 패널</th>
+          <th>대표 추천 모델 (다나와 기준)</th>
+          <th>선택 포인트 및 커뮤니티 평</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>150만 원대</b><br><small class="price-orig">4060 Ti / 4070S</small></td>
+          <td><b>27인치 FHD 144Hz / QHD 180Hz</b><br><small>Fast IPS / 평면</small></td>
+          <td><b>한성 TFG27F14P2, 필립스 27M2N3501PF, 기가바이트 GS27QA</b></td>
+          <td>롤·발로란트 e스포츠 캐주얼 최적 (10만 원대) 또는 20만 원대 가성비 QHD 180Hz 입문</td>
+        </tr>
+        <tr>
+          <td><b>200만 원대</b><br><small class="price-orig">4070 SUPER</small></td>
+          <td><b>27인치 QHD 180~200Hz</b><br><small>Nano-IPS / Fast IPS 1ms</small></td>
+          <td><b>LG 울트라기어 27GS85Q / 27GP850, 알파스캔 AOC Q27G4S</b></td>
+          <td>"QHD 모니터의 교과서" 나노IPS 색감 및 응답속도, 배틀그라운드 하위 1% 프레임 방어</td>
+        </tr>
+        <tr>
+          <td><b>250만 원대</b><br><small class="price-orig">4070 Ti SUPER</small></td>
+          <td><b>32인치 QHD 165Hz+</b><br><small>Rapid IPS / Fast IPS</small></td>
+          <td><b>MSI MAG 325QF700, 삼성 오디세이 G5 S32FG500, LG 32GS75Q</b></td>
+          <td>32인치 대화면 몰입감, 로스트아크·팰월드·스팀 오픈월드 게이머 및 작업 겸용 최적</td>
+        </tr>
+        <tr>
+          <td><b>300만 원대</b><br><small class="price-orig">4080 SUPER</small></td>
+          <td><b>32인치 4K UHD 144~160Hz</b><br><small>Fast IPS / 듀얼모드 지원</small></td>
+          <td><b>LG 울트라기어 32GR93U, 삼성 Neo G7 S32DG700, ASUS ROG XG32UCG</b></td>
+          <td>4K 144Hz 정석 종결, RTX 4080S의 성능을 온전히 뽑아내는 고해상도 끝판왕 환경</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="score-overview" id="score-method" aria-labelledby="score-title"><div class="score-heading"><span class="score-kicker">HOW WE SCORE</span><h2 id="score-title">점수는 이렇게 계산해요</h2><p>확인된 사양을 같은 기준으로 비교한 참고 점수입니다.</p></div><div class="score-criteria"><div><b>25<span>점</span></b><strong>가격</strong><small>조사 가격 기준</small></div><div><b>25<span>점</span></b><strong>높이 범위</strong><small>최저·최고 높이</small></div><div><b>25<span>점</span></b><strong>하중</strong><small>표시된 최대 하중</small></div><div><b>25<span>점</span></b><strong>무상 보증</strong><small>기간 확인 기준</small></div></div><div class="score-foot"><span>확인된 항목으로 잠정 점수 계산 · 확인 개수 함께 표시</span><details><summary>세부 기준과 계산 방법</summary><p>구매 예산 관점의 편집 기준이며 실측 품질 점수가 아닙니다. 가격·높이 범위·하중·보증 네 항목을 각 25점으로 계산합니다. 가격은 배송비 제외 조사 가격 기준 20만원 미만 25점, 20만원대 20점, 30만원대 15점, 40만원대 10점, 50만원 이상 5점입니다. 높이는 최저 65cm 이하·최고 120cm 이상이면 25점, 한쪽만 충족하면 15점, 모두 미충족이면 5점입니다. 하중은 100kg 이상 25점, 80~99kg 18점, 미만 10점입니다. 보증은 해당 모델의 무상 기간이 5년 이상이면 25점, 3~4년 18점, 1~2년 10점입니다.</p><p>총점은 확인된 항목의 획득점 ÷ 확인된 항목의 배점 × 100으로 환산합니다. 확인되지 않았거나 출처가 엇갈리는 항목은 제외합니다. 4개를 모두 확인하지 못한 경우 잠정 점수로 표시하며 서로 다른 확인 항목 수의 점수를 단순 순위로 비교하지 마세요. 다른 사이즈·옵션은 가격과 보증을 다시 확인하세요. 점수는 선호·체형·흔들림·내구성·실제 사용 경험을 반영하지 않습니다.</p></details></div></section><div class="evidence" id="desk-evidence">모션 데스크 8종 · 7개 브랜드 · 1400mm 구성 비교 · 1400 구성 확인 2026.10.29<br>모터 수 · 모터 제조사 · AS 기간 · 상판 두께를 같은 기준으로 비교합니다. 미확인 값은 추정하지 않았습니다. 커뮤니티 평가는 해당 모델의 실사용 원문이 확인된 경우에만 표시합니다. 가격은 기존 조사 시점 기준입니다.</div><section class="desk-essentials" id="desk-essentials"><div><span>BUYING GUIDE</span><h2>사기 전에 이것부터</h2><p>내 몸과 설치 환경에 맞는지 먼저 확인하세요.</p></div><div class="essentials-grid"><div><b>01 · 앉고 서는 높이</b><p>앉은 팔꿈치 높이와 서서 쓰는 높이가 범위에 들어오는지 확인</p></div><div><b>02 · 흔들림과 프레임</b><p>실제 사용할 높이의 흔들림을 후기나 실물로 확인</p></div><div><b>03 · 장비와 상판</b><p>상판·장비 무게와 하중 기준, 모니터 암 장착 가능 여부 확인</p></div><div><b>04 · 보증과 총비용</b><p>모터·상판별 AS와 배송·설치·반품 비용을 확인</p></div></div></section><section class="buy-planner" id="buy-planner"><span class="eyebrow">BEFORE YOU BUY</span><h3>구매 전, 내 조건부터 정리하기</h3><p>구매할 모델을 정한 뒤 직접 확인한 항목만 체크하세요. 체크는 이 페이지를 열어둔 동안 유지됩니다.</p><details><summary>구매 전 선택사항 9가지 <span id="check-progress" aria-live="polite">0 / 9 확인</span></summary><div class="progress-track"><i id="check-bar"></i></div><div class="check-grid"><label class="check-item"><input type="checkbox" class="purchase-check">01 · 사용 높이<span>의자에 앉을 때와 서 있을 때 필요한 상판 높이를 직접 측정하고, 최저·최고 높이에 모두 들어오는지 확인합니다. 프레임 높이와 상판 포함 높이를 구분하세요.</span></label><label class="check-item"><input type="checkbox" class="purchase-check">02 · 상판 옵션<span>폭·깊이·두께·소재·색상, 일체형/분할형, 프레임 단품/상판 포함 여부를 선택합니다. 두께만으로 강도를 판단하지 않습니다.</span></label><label class="check-item"><input type="checkbox" class="purchase-check">03 · 모터와 프레임<span>모터 수·제조사·다리 단수를 각각 확인합니다. 듀얼 모터와 2단 다리는 다른 사양입니다. 실제 사용 높이에서 흔들림도 확인하세요.</span></label><label class="check-item"><input type="checkbox" class="purchase-check">04 · 장비와 하중<span>모니터·암·PC·주변기기 무게와 상판 무게를 정리하고, 판매처의 허용 하중이 상판을 포함하는지·승강 중 기준인지 확인합니다.</span></label><label class="check-item"><input type="checkbox" class="purchase-check">05 · 모니터 암·공간<span>클램프 허용 두께, 뒤쪽 프레임 간섭, 상판 재질의 장착 가능 여부, 벽과의 간격, 의자·서랍장·콘센트 위치를 확인합니다.</span></label><label class="check-item"><input type="checkbox" class="purchase-check">06 · 조작 기능<span>높이 메모리, 잠금, 충돌 감지 유무와 작동 조건을 확인합니다. 상승 시 케이블 여유와 하강 시 서랍장 간섭도 점검합니다.</span></label><label class="check-item"><input type="checkbox" class="purchase-check">07 · 배송·설치<span>자가 조립/기사 설치, 배송일, 지역 추가비, 엘리베이터·계단 반입, 포장 폐기와 조립 공간을 확인합니다.</span></label><label class="check-item"><input type="checkbox" class="purchase-check">08 · AS·반품<span>모터·컨트롤박스·스위치·프레임·상판별 기간과 무상 범위, 출장·왕복배송비, 초기불량·조립 후 반품 조건을 확인합니다.</span></label><label class="check-item"><input type="checkbox" class="purchase-check">09 · 최종 결제금액<span>선택한 상판·프레임 가격에 배송·설치·필수 액세서리를 더합니다. 쿠폰 조건과 판매자, 정확한 모델명·옵션을 마지막으로 대조합니다.</span></label></div><div class="decision"><b>선택 순서</b> 사용 높이 → 설치 공간·상판 → 장비 하중 → 모터·프레임 → AS → 배송 포함 총액<br>싱글·듀얼은 구동 구성의 차이입니다. 모터 수만으로 흔들림·소음·수명·승강 성능을 보장하지 않습니다. 모터 제조사의 부품 보증과 완제품 판매자의 AS 조건도 별개로 확인하세요.<br><a class="source" href="https://www.linak.co.uk/segments/deskline/tech-trends/5-year-warranty/" rel="noopener noreferrer">참고: LINAK 부품 보증 범위 ↗</a></div></details></section><section id="products" role="tabpanel" aria-labelledby="desk-tab"><div class="toolbar"><div class="filters" id="filters"></div><span class="count" id="count"></span></div><div class="motor-tools" id="motor-tools"></div><div class="cards" id="cards"></div></section>
+<details class="details" id="research-method"><summary style="cursor:pointer;font-weight:700">조사 기준 및 출처 안내</summary><p>1400mm 구성을 기준으로 비교합니다. 가격과 사양은 각 제품 카드에 적힌 조사 날짜와 출처 기준입니다. 가격은 실시간으로 갱신되지 않으며, 판매처·옵션·배송과 설치 조건에 따라 달라질 수 있습니다.</p><p>구매 버튼은 네이버 공식 상품으로 연결합니다. 롱코와 핏쳐 E2는 상품 기본 표시 크기가 달라 1400 옵션을 확인해야 합니다. 일부 상품은 네이버 로그인이 필요할 수 있습니다. 제품명·상판·설치 옵션을 구매 전에 대조하세요.</p><p>모터·보증 등은 카드에 표시된 제조사 및 판매처 자료를 바탕으로 정리했습니다. 미확인 항목은 해당 자료에서 확정하지 못한 값이며 미공개라는 뜻은 아닙니다. 커뮤니티 의견은 확인된 해당 모델의 개별 실사용 글에 한해 원문을 연결합니다.</p></details><section class="guide"><span class="icon" aria-hidden="true">↗</span><div><h3 id="guide-title"></h3><p id="guide-description"></p></div><button id="guide-button" aria-expanded="false" aria-controls="guide-detail">선택 가이드 보기 +</button></section><div class="details" id="guide-detail" hidden></div>
+<section id="monitor-section" hidden><div class="sectionline"><h3>내 본체에 맞는 모니터</h3><small>구성 의도를 보여주는 예시 · 실제 성능 검증 전</small></div><div class="monitor-grid" id="monitors"></div></section>
+<section><div class="sectionline"><h3>한눈에 비교하기 <span id="selected-count" style="color:var(--green);font-size:13px">0 / 3</span></h3><small>제품 카드의 ‘비교 담기’를 눌러보세요</small></div><div class="comparison" id="comparison" aria-live="polite"></div></section>
+<p class="note">RESEARCH EDITION · 디시인사이드 원문을 통해 후보 브랜드·모델을 찾고 다나와의 상판 포함 구성·사양과 대조했습니다. 가격·재고·배송·설치비는 주문 전 판매처에서 확인하세요.<br>커뮤니티 의견은 개인 경험이며 전체 구매자의 평가를 대표하지 않습니다. 제품 이미지는 판매처 및 가격비교 사이트의 이미지를 사용합니다. 종합 점수와 사양에 따른 선택 포인트는 편집자의 기준입니다.<br>데스크탑과 모니터는 기존 샘플 데이터입니다. 데스크탑 예산은 본체 기준이며 모니터는 별도입니다.</p>
+</main><footer><span class="logo" style="font-size:19px">pickroom.</span><span>당신의 다음 선택에, 조금 더 확신을.</span><span>구매 가이드 · SAMPLE</span></footer>
+<script>
+const products={desk:[{"id": "d1", "brand": "LONGCO", "name": "롱코 싱글 슬림 플러스 1400", "url": "https://prod.danawa.com/info/?pcode=106045976", "image": "https://img.danuri.io/catalog-image/976/045/106/d04bf0dd03874458ba89aba755ee0dbe.jpg", "price": 121440, "type": "10만 원대", "tag": "브랜드 언급 · 동일 모델 후기 아님", "color": "#c1ac8e", "desc": "10만 원대 전동형 입문 후보", "spec": {"상판 크기": "1400 × 600 mm", "상판 두께": "15 mm", "높이 범위": "720–1180 mm", "모터 수": "1개 · 싱글", "모터 제조사": "미확인", "AS 기간": "1년 · 구매일 기준", "최대 하중": "80 kg", "배송 표시": "10,000원 표기 · 합산 방식 확인"}, "good": "최저 높이 72cm와 얇은 상판 확인", "bad": "모터 제조사·부품별 AS 범위 구매처 확인", "review": "", "reviewKind": "", "refs": [], "search": "롱코 싱글 슬림 플러스 1400", "priceNote": "다나와 조회 표시가 · 배송·설치 조건 확인", "buyUrl": "https://smartstore.naver.com/motionplus/products/12710395403", "buyLabel": "롱코 싱글슬림 공식 상품 보기", "linkNote": "공식 상품 기본 표시 1000 · 1400 옵션 확인 필요 · 네이버 로그인이 필요할 수 있음", "checked": "2026.10.22", "naverSearch": "", "sourceLabel": "다나와 가격·사양", "specSources": [{"url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1344519", "label": "롱코 싱글슬림 1400 · 품질보증 1년"}, {"url": "https://smartstore.naver.com/motionplus/products/12710395403", "label": "롱코 공식 싱글슬림 상품 · 1000 표시, 1400 옵션 확인 필요"}], "specChecked": "2026.10.27", "specNote": "컴퓨존 싱글슬림 1400 상품정보 고시에 구매일부터 1년, 소비자 과실 제외로 기재되어 있습니다. 부품별 적용 범위는 판매처에 확인하세요."}, {"id": "d2", "brand": "APIX GAMING", "name": "에이픽스 MD301 1400", "url": "https://prod.danawa.com/info/?pcode=28333565", "image": "https://img.danuri.io/catalog-image/565/333/028/19a186fc97c4443bb1ad39ff0efac06d.jpg", "price": 217550, "type": "20만 원대", "tag": "브랜드 질문 · 사용 평가 없음", "color": "#c1ac8e", "desc": "1400 × 750 상판의 전동형 후보", "spec": {"상판 크기": "1400 × 750 mm", "상판 두께": "18 mm", "높이 범위": "730–1220 mm", "모터 수": "1개 · 싱글 (행사 안내)", "모터 제조사": "미확인", "AS 기간": "무상 1년 · 판매처 고시", "최대 하중": "80 kg", "배송 표시": "무료배송 표기"}, "good": "최저 73cm가 앉는 자세에 맞는지 확인", "bad": "모터 제조사·부품별 AS 범위 구매처 확인", "review": "", "reviewKind": "", "refs": [], "search": "에이픽스 MD301 1400", "priceNote": "다나와 조회 표시가 · 배송·설치 조건 확인", "buyUrl": "https://brand.naver.com/apixgaming/products/9128524287", "buyLabel": "네이버 공식 상품 보기", "linkNote": "MD301 1400 상품명 확인 · 옵션 선택 필요", "checked": "2026.10.22", "naverSearch": "", "sourceLabel": "다나와 가격·사양", "specSources": [{"url": "https://store.ohou.se/goods/2317037", "label": "MD301 품질보증 고시"}, {"url": "https://jirum-alarm.com/products/11296028", "label": "MD301 1400 행사 안내 · 싱글모터"}], "specChecked": "2026.10.28", "specNote": "모터 수는 행사 안내 기준입니다. 현재 판매 옵션의 구성은 판매자에게 재확인하세요. 미확인 값은 확인 가능한 출처에서 확정하지 못한 값입니다."}, {"id": "d6", "brand": "XENICS", "name": "제닉스 제로드 스탠다드 EL 1400", "price": 220000, "url": "https://prod.danawa.com/info/?pcode=39249023", "image": "https://image3.compuzone.co.kr/img/product_img/2024/0312/1123885/1123885_600.jpg", "type": "20만 원대", "tag": "판매자 안내 · 독립 후기 미확보", "color": "#bda684", "desc": "1400 × 750 상판의 전동형 후보", "spec": {"상판 크기": "1400 × 750 mm", "상판 두께": "미확인", "높이 범위": "730–1220 mm", "모터 수": "1개 · 싱글", "모터 제조사": "미확인", "AS 기간": "상판 15일 · 전동부 1년", "최대 하중": "80 kg", "배송 표시": "판매처·지역·설치비 확인"}, "good": "1400 × 750 상판의 전동형 후보", "bad": "모터 제조사·부품별 AS 범위 구매처 확인", "review": "", "reviewKind": "", "refs": [], "search": "제닉스 제로드 스탠다드 EL 1400", "priceNote": "1400 구성 다나와 표시가 · 배송·설치비 별도 확인", "checked": "2026.10.29", "sourceLabel": "다나와 1400 구성", "buyUrl": "https://brand.naver.com/xenicsholic/products/10212098058", "buyLabel": "네이버 공식 상품 보기", "linkNote": "제닉스본사 · 전동 EL 1400 × 750 상품명 확인", "naverSearch": "", "specSources": [{"url": "https://brand.naver.com/xenicsholic/products/10212098058", "label": "제닉스본사 네이버 공식 상품"}, {"url": "https://prod.danawa.com/info/?pcode=39249023", "label": "제로드 전동 EL 1400 다나와"}, {"url": "https://store.ohou.se/goods/2632619", "label": "동일 라인 판매 상세 · 하중 표기 차이"}, {"url": "https://store.ohou.se/goods/2632619", "label": "판매처 품질보증 고시 · 적용 범위 확인"}], "specChecked": "2026.10.29", "specNote": "사용자가 제공한 사양: 하중 80kg, 싱글 모터, 상판 15일·전동부 1년. 상판 15일의 적용 범위와 조건은 판매처에 확인하세요. 기존 판매처 자료와 하중 표기가 달랐습니다."}, {"id": "d3", "brand": "FITCHUR / CAMEL", "name": "핏쳐 E1 PLUS 1400", "url": "https://prod.danawa.com/info/?pcode=29961470", "image": "https://img.danuri.io/catalog-image/470/961/029/d7c2f9d1900e4c8d9fcc45b6348aa263.jpg", "price": 257210, "type": "20만 원대", "tag": "모델 확인 · 질문 글만 확보", "color": "#c1ac8e", "desc": "낮은 앉는 높이와 25mm 상판 후보", "spec": {"상판 크기": "1400 × 750 mm", "상판 두께": "25 mm", "높이 범위": "650–1080 mm", "모터 수": "1개 · 싱글", "모터 제조사": "미확인", "AS 기간": "무상 1년 · 2024년 문의", "최대 하중": "80 kg", "배송 표시": "무료배송 표기"}, "good": "서서 쓰려면 최고 높이 108cm 확인", "bad": "모터 제조사·부품별 AS 범위 구매처 확인", "review": "", "reviewKind": "", "refs": [], "search": "핏쳐 E1 PLUS 1400", "priceNote": "다나와 조회 표시가 · 배송·설치 조건 확인", "buyUrl": "https://brand.naver.com/fiture/products/9465023924", "buyLabel": "네이버 공식 상품 보기", "linkNote": "E1 PLUS 상품 · 기본 표시 1200, 1400 옵션 확인 필요", "checked": "2026.10.22", "naverSearch": "", "sourceLabel": "다나와 가격·사양", "specSources": [{"url": "https://quasarzone.com/bbs/qb_saleinfo/views/1535753", "label": "핏쳐 E1 PLUS · 2024년 공식몰 문의 전언"}, {"url": "https://store.ohou.se/goods/2600858", "label": "E1 PLUS 보증 고시 · 기간 미기재"}, {"url": "https://quasarzone.com/bbs/qb_partnersaleinfo/views/77317", "label": "핏쳐 브랜드 안내 · E1 PLUS 싱글모터"}], "specChecked": "2026.10.28", "specNote": "2024년 커뮤니티 댓글에서 네이버 공식몰 문의 결과를 무상 1년, 유상 1년으로 전했습니다. 현재 판매 조건과 부품별 범위는 판매처에서 확인하세요."}, {"id": "d4", "brand": "FITCHUR / CAMEL", "name": "핏쳐 E2 1400", "url": "https://prod.danawa.com/info/?pcode=73695071", "image": "https://img.danuri.io/catalog-image/098/695/073/8ad61f4430af45e1bcf7648b685e2af2.jpg", "price": 290600, "type": "20만 원대", "tag": "모델 실사용 · 후기 1건", "color": "#c1ac8e", "desc": "1400 상판·듀얼 모터 구성 후보", "spec": {"상판 크기": "1400 × 750 mm", "상판 두께": "25 mm", "높이 범위": "670–1070 mm", "모터 수": "2개 · 듀얼", "모터 제조사": "미확인", "AS 기간": "1년 · 판매처 표기", "최대 하중": "100 kg", "배송 표시": "판매처·지역·설치비 확인"}, "good": "앉아서 높이 맞추기 중심 · 최고 107cm", "bad": "모터 제조사·부품별 AS 범위 구매처 확인", "review": "E2 1600 하루 사용자는 조립 난이도와 앉는 높이 조절에 만족했지만, 최고 107cm로 서서 사용하기 어렵다고 적었습니다. 1400 구성의 후기나 장기 내구성 평가는 아닙니다.", "reviewKind": "모델 실사용 · 후기 1건", "refs": [{"url": "https://gall.dcinside.com/mgallery/board/view/?id=desk&no=13119", "label": "E2 하루 실사용 · 2025.01.15"}], "search": "핏쳐 E2 1400", "priceNote": "1400 구성 다나와 표시가 · 배송·설치비 별도 확인", "buyUrl": "https://brand.naver.com/fiture/products/11047542147", "buyLabel": "핏쳐 E2 공식 상품 보기", "linkNote": "공식 상품 기본 표시 1200 · 1400 옵션 확인 필요", "checked": "2026.10.29", "naverSearch": "", "sourceLabel": "다나와 1400 구성", "specSources": [{"url": "https://www.enuri.com/search.jsp?keyword=%ED%95%8F%EC%B3%90+E2", "label": "E2 1400 · 판매처 상품명 1년 보증 기록"}, {"url": "https://m.lotteimall.com/goods/viewGoodsDetail.lotte?goods_no=3166215214", "label": "E2 1200 · 판매처 무상 AS 1년 고시"}, {"url": "https://brand.naver.com/fiture/products/11047542147", "label": "핏쳐 공식 E2 · 기본 표시 1200, 1400 옵션 확인 필요"}, {"url": "https://prod.danawa.com/info/?pcode=73695071", "label": "핏쳐 E2 1400 사양"}, {"url": "https://www.camelmount.com/goods/goods_view.php?goodsNo=1000000305", "label": "E2 공식 듀얼모터 사양"}, {"url": "https://www.lotteimall.com/goods/viewGoodsDetail.lotte?goods_no=3166215269", "label": "기존 1600 판매처 AS 고시 · 1400 확인 필요"}], "specChecked": "2026.10.29", "specNote": "E2 1400 상품명에 1년 보증 AS로 표기된 가격비교 기록이 있습니다. 같은 모델 1200 판매 고시에도 1년 무상 AS가 표기됩니다. 현재 옵션과 부품별 범위는 판매처에 확인하세요."}, {"id": "d11", "brand": "LUNA LAB", "name": "루나랩 베이직 1400", "price": 299000, "url": "https://prod.danawa.com/info/?pcode=76331330", "image": "https://cdn.imweb.me/thumbnail/20260624/27fbe896ac0af.jpg", "type": "20만 원대", "tag": "판매처 자료", "color": "#bda684", "desc": "1400 mm 전동형 모션데스크", "spec": {"상판 크기": "1400 × 755 mm", "상판 두께": "18 mm", "높이 범위": "730–1220 mm", "모터 수": "1개 · 싱글", "모터 제조사": "미확인", "AS 기간": "불량 교환·반품 1년", "최대 하중": "80 kg", "배송 표시": "판매처 무료배송 표기"}, "good": "모니터암 장착홈이 있는 1400 mm 전동 책상", "bad": "모터 제조사와 부품별 보증 기간 확인", "review": "", "reviewKind": "", "refs": [], "search": "루나랩 모션데스크 베이직 1400", "priceNote": "공식몰 조회가 · 옵션과 배송 조건 확인", "checked": "2026.10.29", "sourceLabel": "다나와 사양", "buyUrl": "https://brand.naver.com/lunalab/products/11029111583", "buyLabel": "네이버 구매", "linkNote": "루나랩 공식 브랜드스토어 · 베이직 1400", "naverSearch": "", "specSources": [{"url": "https://lunalab.co.kr/56/?idx=180", "label": "루나랩 공식 베이직 1400 · 가격"}, {"url": "https://prod.danawa.com/info/?pcode=76331330", "label": "다나와 베이직 1400 · 크기·두께·높이·하중"}, {"url": "https://store.ohou.se/goods/3244158", "label": "판매처 품질보증 고시 · 불량 교환·반품 1년"}], "specChecked": "2026.10.29", "specNote": "모터 수는 사용자 확인 내용입니다. 판매처는 상품 문제 발생 시 1년간 무료 교환·반품이라고 안내합니다. 모터와 다른 부품의 수리 보증기간은 별도로 확인되지 않아 점수의 보증 항목에 넣지 않았습니다."}, {"id": "d5", "brand": "ENSAN", "name": "엔산 NMD1 라운드 1400", "url": "https://prod.danawa.com/info/?pcode=96260561", "image": "https://img.danuri.io/catalog-image/093/913/058/e9f0962db5d948ca9007583211723cef.jpg", "price": 409000, "type": "40만 원대", "tag": "브랜드 경험 · 모델명 미확인", "color": "#c1ac8e", "desc": "듀얼 모터·1400 라운드 상판 후보", "spec": {"상판 크기": "1400 × 750 mm", "상판 두께": "25 mm", "높이 범위": "645–1305 mm · 상판 포함", "모터 수": "2개 · 듀얼", "모터 제조사": "미확인", "AS 기간": "무상 5년 / 이후 유상 3년", "최대 하중": "100 kg", "배송 표시": "판매처·지역·설치비 확인"}, "good": "상판 타공과 설치 상태 점검", "bad": "모터 제조사·부품별 AS 범위 구매처 확인", "review": "", "reviewKind": "", "refs": [], "search": "엔산 NMD1 라운드 1400", "priceNote": "1400 구성 다나와 표시가 · 배송·설치비 별도 확인", "buyUrl": "https://brand.naver.com/nsan/products/10443137220", "buyLabel": "네이버 공식 상품 보기", "linkNote": "NMD1 상품 · 1400 라운드 옵션 확인 필요", "checked": "2026.10.29", "naverSearch": "", "sourceLabel": "다나와 1400 구성", "specSources": [{"url": "https://www.nsan.co.kr/goods/goods_view.php?goodsNo=1000001936", "label": "NMD1 공식 높이·AS 안내"}, {"url": "https://prod.danawa.com/info/?pcode=96260561", "label": "1400 라운드 상판 사양"}], "specChecked": "2026.10.29", "specNote": "다나와 높이는 62–128cm로 표기하며, 공식 자료의 상판 포함 높이는 64.5–130.5cm입니다. 라운드 상판 옵션과 보증 범위를 확인하세요."}, {"id": "d10", "brand": "DESKER", "name": "데스커 스마트 DSDCM1406", "price": 466000, "url": "https://prod.danawa.com/info/?pcode=18427274", "image": "https://img.danuri.io/catalog-image/238/427/018/4734d97c092b4f5c9c22ca89eda570ef.jpg", "type": "40만 원대", "tag": "독립 후기 미확보", "color": "#bda684", "desc": "1400 분류 · 리낙모터 비교 후보", "spec": {"상판 크기": "1380 × 590 mm", "상판 두께": "28 mm", "높이 범위": "686–1151 mm", "모터 수": "1개 · 싱글", "모터 제조사": "LINAK · 리낙", "AS 기간": "모터 5년 · 컨트롤박스 3년 · 소모품 1년", "최대 하중": "70 kg", "배송 표시": "판매처·지역·설치비 확인"}, "good": "50만 원대 리낙모터·브랜드 비교 후보", "bad": "모터 제조사·부품별 AS 범위 구매처 확인", "review": "", "reviewKind": "", "refs": [], "search": "데스커 스마트 DSDCM1406", "priceNote": "1400 구성 다나와 표시가 · 배송·설치비 별도 확인", "checked": "2026.10.29", "sourceLabel": "다나와 1400 구성", "buyUrl": "https://brand.naver.com/desker/products/12101451524", "buyLabel": "네이버 공식 상품 보기", "linkNote": "데스커 공식 · 스마트 1400 × 600 라이트오크 확인", "naverSearch": "", "specSources": [{"url": "https://www.desker.co.kr/a/geo/electric-standing-desk-comparison", "label": "데스커 공식 비교 · 싱글모터 및 부품별 보증"}, {"url": "https://brand.naver.com/desker/products/12101451524", "label": "데스커 네이버 공식 1400 상품"}, {"url": "https://prod.danawa.com/info/?pcode=18427274", "label": "DSDCM1406 다나와 사양"}, {"url": "https://www.desker-mate.com/sub/detail_237.html", "label": "DSDCM1406 공식 판매 대리점 · 모터 보증 5년"}], "specChecked": "2026.10.29", "specNote": "데스커 공식 안내: 스마트 1400은 리낙 싱글 모터와 양쪽 기어박스를 사용하는 BEAM 구조입니다. 설치일 기준 모터 5년, 컨트롤박스 3년, 스위치·전원선 1년 보증입니다. 분류 폭 1400 mm, 표시된 실제 상판 크기는 1380 × 590 mm입니다."}],pc:[
+  {
+    "id": "pc1",
+    "brand": "다나와 표준 견적",
+    "name": "150만 원대 가성비 게이밍 표준",
+    "desc": "FHD 전 게임 144Hz+ 풀옵션 방어 및 QHD 입문",
+    "price": 1510000,
+    "dealPrice": 1470000,
+    "tag": "150만 원대",
+    "type": "150만 원대",
+    "tier": "FHD 풀옵션 / QHD 입문",
+    "spec": {
+      "CPU": "AMD 라이젠 5 7500F (라파엘)",
+      "GPU": "지포스 RTX 4060 Ti 8GB (핫딜: 4070S)",
+      "RAM": "DDR5-5600 16GB (8Gx2 또는 16Gx1)",
+      "SSD": "1TB NVMe PCIe 4.0",
+      "메인보드 / 파워": "B650M · 600~700W 80PLUS Bronze",
+      "추천 모니터": "27인치 FHD 144Hz / QHD 180Hz"
+    },
+    "good": "FHD 전 게임 풀옵션 144Hz+ 방어 및 캐주얼 e스포츠 최적",
+    "bad": "핫딜 시 RTX 4070 SUPER 완본체 특가(147만 원선)가 뜨는지 먼저 대조",
+    "danawaUrl": "https://shop.danawa.com/pc/?controller=estimateDeal&methods=view&representProductSeq=2969497",
+    "dealUrl": "https://www.algumon.com/n/deal/744664",
+    "search": "라이젠 7500F RTX 4060Ti"
+  },
+  {
+    "id": "pc2",
+    "brand": "다나와 표준 견적",
+    "name": "200만 원대 QHD 165Hz 게이밍 정석",
+    "desc": "QHD 고주사율 풀옵션 및 하위 1% 프레임 최상위 방어",
+    "price": 2010000,
+    "dealPrice": 1837000,
+    "tag": "200만 원대",
+    "type": "200만 원대",
+    "tier": "QHD 165Hz 정복",
+    "spec": {
+      "CPU": "AMD 라이젠 5 7500F / 7800X3D",
+      "GPU": "지포스 RTX 4070 SUPER WINDFORCE 12GB",
+      "RAM": "DDR5-5600 32GB (16GB×2 듀얼)",
+      "SSD": "SK하이닉스 Gold P31/P41 1TB NVMe",
+      "메인보드 / 파워": "B650M · 정격 750W 80PLUS Bronze",
+      "추천 모니터": "27인치 QHD 165~200Hz Nano-IPS"
+    },
+    "good": "배그, 로아, 스팀 대작 QHD 165Hz 풀옵션 및 하위 1% 프레임 완벽 방어",
+    "bad": "특가 완본체 구매 시 16GB 단일 램인지 확인 후 32GB 듀얼로 변경 필수",
+    "danawaUrl": "https://shop.danawa.com/pc/?controller=estimateDeal&methods=view&representProductSeq=2991205",
+    "dealUrl": "https://www.algumon.com/n/deal/731941",
+    "search": "라이젠 7500F RTX 4070 SUPER"
+  },
+  {
+    "id": "pc3",
+    "brand": "다나와 표준 견적",
+    "name": "250만 원대 하이엔드 QHD & 4K 입문",
+    "desc": "게이밍 끝판왕 7800X3D + 16GB VRAM 고사양 작업 겸용",
+    "price": 2490000,
+    "dealPrice": 2385400,
+    "tag": "250만 원대",
+    "type": "250만 원대",
+    "tier": "QHD 종결 / 4K 입문",
+    "spec": {
+      "CPU": "AMD 라이젠 7 7800X3D (3D V-캐시)",
+      "GPU": "지포스 RTX 4070 Ti SUPER 16GB",
+      "RAM": "DDR5-5600 32GB 방열판 탑재",
+      "SSD": "SK하이닉스 Platinum P41 1TB NVMe",
+      "메인보드 / 파워": "B650M 박격포 · 850W Gold 풀모듈러",
+      "추천 모니터": "32인치 QHD 165Hz+ / 27인치 4K"
+    },
+    "good": "16GB 그래픽 메모리 기반 고사양 영상편집, 로컬 AI 추론 및 QHD 종결",
+    "bad": "안정적인 클럭 유지를 위해 트윈 타워 공랭 또는 수랭 쿨러 장착 확인",
+    "danawaUrl": "https://shop.danawa.com/pc/?controller=estimateDeal&methods=view&representProductSeq=3052687",
+    "dealUrl": "https://www.algumon.com/n/deal/637876",
+    "search": "7800X3D RTX 4070 Ti SUPER"
+  },
+  {
+    "id": "pc4",
+    "brand": "다나와 표준 견적",
+    "name": "300만 원대 4K 고주사율 플래그십",
+    "desc": "4K UHD 144Hz+ 네이티브 게이밍 및 전문 3D 워크스테이션",
+    "price": 3040000,
+    "dealPrice": 2790000,
+    "tag": "300만 원대",
+    "type": "300만 원대",
+    "tier": "4K UHD 플래그십",
+    "spec": {
+      "CPU": "AMD 라이젠 7 7800X3D / 9800X3D",
+      "GPU": "지포스 RTX 4080 SUPER 16GB",
+      "RAM": "DDR5-5600 32GB 방열판 탑재",
+      "SSD": "삼성 990 PRO or SK하이닉스 2TB NVMe",
+      "메인보드 / 파워": "MSI MAG B650 토마호크 · 850~1000W Gold ATX 3.1",
+      "추천 모니터": "32인치 4K UHD 144~160Hz 플래그십"
+    },
+    "good": "사이버펑크 풀옵션 레이 트레이싱 4K 구동 및 3D 렌더링 워크스테이션",
+    "bad": "시스템 안정성을 위해 850W~1000W ATX 3.1 파워 및 빅타워 케이스 필수",
+    "danawaUrl": "https://shop.danawa.com/pc/?controller=estimateDeal&methods=view&representProductSeq=3036439",
+    "dealUrl": "https://shop.danawa.com/pcshop/?controller=brandPC&methods=priceListCategory&categorySeq=1327",
+    "search": "7800X3D RTX 4080 SUPER"
+  }
+],monitor:[
+  {
+    "id": "m1",
+    "brand": "한성컴퓨터",
+    "name": "TFG27F14P2 게이밍 144",
+    "desc": "10만 원대 초반 극가성비 e스포츠 입문 게이밍",
+    "price": 139000,
+    "tag": "10만 원대",
+    "type": "FHD",
+    "spec": {
+      "화면 크기": "27인치 (68.5cm)",
+      "해상도": "FHD (1920 × 1080)",
+      "주사율 / 패널": "144 Hz · IPS 평면",
+      "밝기 / 응답": "300 cd · 1ms(MPRT)",
+      "추천 본체": "150만 원대 본체 매칭"
+    },
+    "good": "롤, 발로란트, 오버워치 등 캐주얼 및 e스포츠 FPS용 극가성비 입문 1순위",
+    "bad": "27인치 FHD이므로 문서 작업 가독성보다 게임 위주 적합",
+    "url": "https://search.danawa.com/dsearch.php?query=TFG27F14P2",
+    "search": "한성컴퓨터 TFG27F14P2"
+  },
+  {
+    "id": "m2",
+    "brand": "GIGABYTE",
+    "name": "GS27QA QHD 180",
+    "desc": "20만 원대 초반에 누리는 가성비 QHD 180Hz 실속형",
+    "price": 234000,
+    "tag": "20만 원대",
+    "type": "QHD 27인치",
+    "spec": {
+      "화면 크기": "27인치 (68.5cm)",
+      "해상도": "QHD (2560 × 1440)",
+      "주사율 / 패널": "180 Hz · SS IPS",
+      "밝기 / 색역": "300 cd · sRGB 100%",
+      "추천 본체": "150만~200만 원대 본체"
+    },
+    "good": "20만 원대 초중반에 QHD 180Hz 환경을 저렴하게 구성하려는 실속파 추천",
+    "bad": "스탠드 조절 기능이 틸트 위주이므로 모니터암 장착 권장",
+    "url": "https://search.danawa.com/dsearch.php?query=%EA%B8%B0%EA%B0%80%EB%B0%94%EC%9D%B4%ED%8A%B8+GS27QA",
+    "search": "기가바이트 GS27QA"
+  },
+  {
+    "id": "m3",
+    "brand": "필립스 (알파스캔)",
+    "name": "에반니아 27M2N3501PF Fast IPS 180",
+    "desc": "\"가성비 판도를 뒤흔든 게임체인저\" 알파스캔 A/S",
+    "price": 279000,
+    "tag": "20만 원대",
+    "type": "QHD 27인치",
+    "spec": {
+      "화면 크기": "27인치 (68.5cm)",
+      "해상도": "QHD (2560 × 1440)",
+      "주사율 / 패널": "180 Hz · Fast IPS",
+      "응답 / 색역": "0.5ms(MPRT) · SmartContrast",
+      "추천 본체": "150만~200만 원대 본체"
+    },
+    "good": "커뮤니티 집중 조명 모델, 알파스캔(TPV) 유통으로 대기업급 사후지원",
+    "bad": "인기 모델로 행사 기간 재고 및 가격 변동 확인 필요",
+    "url": "https://search.danawa.com/dsearch.php?query=%ED%95%84%EB%A6%BD%EC%8A%A4+27M2N3501PF",
+    "search": "필립스 27M2N3501PF"
+  },
+  {
+    "id": "m4",
+    "brand": "LG전자",
+    "name": "울트라기어 27GS85Q 나노IPS 200",
+    "desc": "\"QHD 모니터의 표준이자 교과서\" 나노IPS 1ms",
+    "price": 439000,
+    "tag": "40만 원대",
+    "type": "QHD 27인치",
+    "spec": {
+      "화면 크기": "27인치 (68.5cm)",
+      "해상도": "QHD (2560 × 1440)",
+      "주사율 / 패널": "200 Hz(O/C) · Nano-IPS 1ms",
+      "색역 / 밝기": "DCI-P3 98% · VESA HDR400",
+      "추천 본체": "200만 원대 본체 매칭"
+    },
+    "good": "하드웨어 커뮤니티 공인 QHD 표준 교과서, FPS·RPG 전 장르 최고의 만족도",
+    "bad": "나노IPS 특유의 명암비 및 다소 높은 가격대",
+    "url": "https://search.danawa.com/dsearch.php?query=LG%EC%A0%84%EC%9E%90+27GS85Q",
+    "search": "LG전자 27GS85Q"
+  },
+  {
+    "id": "m5",
+    "brand": "알파스캔 AOC",
+    "name": "Q27G4S 게이밍 Fast IPS 180",
+    "desc": "LG 울트라기어 대체 1순위, 완성도 높은 마감과 A/S",
+    "price": 359000,
+    "tag": "30만 원대",
+    "type": "QHD 27인치",
+    "spec": {
+      "화면 크기": "27인치 (68.5cm)",
+      "해상도": "QHD (2560 × 1440)",
+      "주사율 / 패널": "180 Hz · Fast IPS",
+      "스탠드 기능": "피벗 · 높낮이 · 틸트 · 스위블",
+      "추천 본체": "200만 원대 본체 매칭"
+    },
+    "good": "30만 원대 중후반 탄탄한 마감과 완벽한 무결점 정책으로 에펨코리아 등 인기 1순위",
+    "bad": "전용 G-Menu 소프트웨어 초기 설정 적응 필요",
+    "url": "https://search.danawa.com/dsearch.php?query=%EC%95%8C%ED%8C%8C%EC%8A%A4%EC%BA%94+Q27G4S",
+    "search": "알파스캔 AOC Q27G4S"
+  },
+  {
+    "id": "m6",
+    "brand": "MSI",
+    "name": "MAG 325QF700 Rapid IPS 180",
+    "desc": "32인치 QHD 게이밍 시장 독보적 가성비 대화면",
+    "price": 369000,
+    "tag": "30만 원대",
+    "type": "QHD 32인치",
+    "spec": {
+      "화면 크기": "32인치 (80cm)",
+      "해상도": "QHD (2560 × 1440)",
+      "주사율 / 패널": "180 Hz · Rapid IPS",
+      "밝기 / 색역": "300 cd · DCI-P3 93%",
+      "추천 본체": "200만~250만 원대 본체"
+    },
+    "good": "대기업 32인치 QHD 가격이 부담스러운 틈새에서 확실한 대화면 몰입감 제공",
+    "bad": "스탠드 다리가 앞뒤로 다소 넓어 책상 깊이 700mm 이상 권장",
+    "url": "https://search.danawa.com/dsearch.php?query=MSI+MAG+325QF700",
+    "search": "MSI MAG 325QF700"
+  },
+  {
+    "id": "m7",
+    "brand": "삼성전자",
+    "name": "오디세이 G5 S32FG500 IPS 165",
+    "desc": "대기업 32인치 평면 IPS, 로스트아크·스팀 오픈월드 최적",
+    "price": 449000,
+    "tag": "40만 원대",
+    "type": "QHD 32인치",
+    "spec": {
+      "화면 크기": "32인치 (80cm)",
+      "해상도": "QHD (2560 × 1440)",
+      "주사율 / 패널": "165 Hz · Fast IPS 평면",
+      "스탠드 기능": "피벗 · 높낮이 · 틸트 · 스위블",
+      "추천 본체": "250만 원대 본체 매칭"
+    },
+    "good": "넓은 작업 영역과 게임 몰입감을 동시에 만족, 대기업 사후지원 신뢰도",
+    "bad": "32인치 평면 특성상 책상 깊이 최소 700~750mm 공간 확보 권장",
+    "url": "https://search.danawa.com/dsearch.php?query=%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90+S32FG500",
+    "search": "삼성 오디세이 S32FG500"
+  },
+  {
+    "id": "m8",
+    "brand": "한성컴퓨터",
+    "name": "TFG27U1224PMW 4K 160",
+    "desc": "27인치 고밀도 4K 고주사율 가성비 원탑",
+    "price": 469000,
+    "tag": "40만 원대",
+    "type": "4K UHD",
+    "spec": {
+      "화면 크기": "27인치 (68.5cm)",
+      "해상도": "4K UHD (3840 × 2160)",
+      "주사율 / 패널": "160 Hz · Fast IPS",
+      "부가 기능": "USB-C PD 90W 충전 · KVM",
+      "추천 본체": "250만~300만 원대 본체"
+    },
+    "good": "40만 원대에 누리는 27인치 초고밀도 4K 160Hz + 맥북/노트북 PD 충전 지원",
+    "bad": "윈도우 배율 150~175% 설정 권장",
+    "url": "https://search.danawa.com/dsearch.php?query=TFG27U1224PMW",
+    "search": "한성컴퓨터 TFG27U1224PMW"
+  },
+  {
+    "id": "m9",
+    "brand": "LG전자",
+    "name": "울트라기어 32GR93U 4K 144",
+    "desc": "300만 원대 본체에 걸맞은 32인치 4K 144Hz 정석 종결",
+    "price": 799000,
+    "tag": "70만 원대",
+    "type": "4K UHD",
+    "spec": {
+      "화면 크기": "32인치 (80cm)",
+      "해상도": "4K UHD (3840 × 2160)",
+      "주사율 / 패널": "144 Hz · IPS (DCI-P3 95%)",
+      "인터페이스": "HDMI 2.1 · DP 1.4 · VESA HDR400",
+      "추천 본체": "300만 원대 본체 매칭"
+    },
+    "good": "4K 144Hz의 선명함과 나노급 IPS 색감, \"300만 원 본체에 최소 이 급\"이라는 정석 추천",
+    "bad": "고주사율 유지를 위해 DP 1.4 DSC 또는 HDMI 2.1 대역폭 연결 필수",
+    "url": "https://search.danawa.com/dsearch.php?query=LG%EC%A0%84%EC%9E%90+32GR93U",
+    "search": "LG전자 32GR93U"
+  },
+  {
+    "id": "m10",
+    "brand": "ASUS ROG",
+    "name": "ROG Strix XG32UCG 듀얼모드",
+    "desc": "4K 160Hz ↔ FHD 320Hz 듀얼 모드 지원 끝판왕",
+    "price": 989000,
+    "tag": "90만 원대",
+    "type": "4K UHD",
+    "spec": {
+      "화면 크기": "32인치 (80cm)",
+      "해상도 모드": "4K 160Hz / FHD 320Hz 전환",
+      "패널 / 밝기": "Fast IPS · 400 cd · HDR400",
+      "스탠드 기능": "다기능 엘리베이션 / 틸트 / 스위블",
+      "추천 본체": "300만 원대 플래그십 본체"
+    },
+    "good": "4K 고화질 RPG와 320Hz 초고주사율 FPS 모드를 버튼 하나로 전환하는 끝판왕 모니터",
+    "bad": "100만 원에 육박하는 고가의 프리미엄 라인업",
+    "url": "https://search.danawa.com/dsearch.php?query=ASUS+ROG+Strix+XG32UCG",
+    "search": "ASUS ROG Strix XG32UCG"
+  }
+]};
+let tab='desk',filter='전체',motorFilter='전체',selected=new Set();
+const $=id=>document.getElementById(id),money=n=>n.toLocaleString('ko-KR');
+function art(p){if(tab==='desk')return `<svg viewBox="0 0 320 170" aria-hidden="true"><ellipse cx="160" cy="155" rx="125" ry="8" fill="#0000000b"/><path d="M58 56L249 56L286 77L27 77Z" fill="${p.color||'#c1ac8e'}"/><path d="M27 77H286V85H27Z" fill="${p.color||'#c1ac8e'}"/><g fill="${p.id==='d3'?'#353a35':'#b8bcb5'}"><path d="M57 85H69V146H57ZM245 85H257V146H245Z"/><path d="M43 144H85V151H43ZM231 144H273V151H231Z"/></g><rect x="220" y="84" width="28" height="7" rx="2" fill="#434a43"/></svg>`;if(tab==='pc')return `<svg viewBox="0 0 320 170" aria-hidden="true"><ellipse cx="162" cy="156" rx="85" ry="7" fill="#00000010"/><path d="M112 24L194 16L220 34V145L138 157L112 139Z" fill="#303b35"/><path d="M138 41L220 34V145L138 157Z" fill="#19251f"/><path d="M144 47L181 44V144L144 150Z" fill="#47594d"/><g stroke="#97b296" stroke-width="4" fill="#263a2d"><ellipse cx="200" cy="66" rx="12" ry="15"/><ellipse cx="200" cy="106" rx="12" ry="15"/></g><path d="M150 63H173M150 76H173M150 115H173" stroke="#82937c" stroke-width="3"/><circle cx="204" cy="41" r="2" fill="#d9e6cc"/></svg>`;return `<svg viewBox="0 0 320 170" aria-hidden="true"><ellipse cx="160" cy="154" rx="80" ry="7" fill="#00000010"/><rect x="55" y="24" width="210" height="114" rx="6" fill="#202b25"/><rect x="61" y="30" width="198" height="102" rx="3" fill="#2d3d34"/><rect x="68" y="37" width="184" height="88" rx="2" fill="#e2ebe2"/><path d="M68 95L115 65L160 90L210 60L252 85V125H68Z" fill="#9dbba1"/><circle cx="100" cy="55" r="8" fill="#c3d7c5"/><rect x="154" y="138" width="12" height="15" fill="#44554b"/><rect x="125" y="150" width="70" height="5" rx="2.5" fill="#303d35"/></svg>`;}
+
+function motorType(p){return p.spec['모터 수']?.startsWith('1개')?'싱글':p.spec['모터 수']?.startsWith('2개')?'듀얼':'미확인'}
+function motorBlock(p){const t=motorType(p);return `<div class="motor-block ${t==='미확인'?'unknown':''}"><b>${t==='싱글'?'1':t==='듀얼'?'2':'?'}</b><div><strong>${t==='미확인'?'모터 수 미확인':t+' 모터'}</strong><small>제조사 · ${p.spec['모터 제조사']}</small></div></div>`}
+function modelCheck(p){const missing=['모터 수','모터 제조사','AS 기간','상판 두께'].filter(k=>p.spec[k].includes('미확인'));return `<details class="model-check"><summary>구매 전 확인 · 판매자 문의문</summary><p>${missing.length?'먼저 확인할 사양: '+missing.join(' · '):'표시 사양과 구매 옵션이 같은지 확인하세요.'}</p><p>현재 확인된 AS: ${p.spec['AS 기간']}<br>배송 표시: ${p.spec['배송 표시']}</p><textarea readonly aria-label="${p.name} 판매자 문의문">${p.name} 구매 문의입니다.
+1. 선택 옵션의 모터 수·제조사, 상판 두께·소재와 상판 포함 높이를 알려주세요.
+2. 모터·컨트롤박스·스위치·프레임·상판별 보증기간과 출장/운송비는 어떻게 되나요?
+3. 허용 하중에 상판 무게가 포함되나요? 모니터 암 설치가 가능한가요?
+4. 배송·설치·지역 추가비를 포함한 최종 금액과 초기불량·조립 후 반품 조건을 알려주세요.</textarea></details>`}
+
+
+// Explicitly curated facts: null means unknown or not comparable for this exact option.
+const scoreFacts={d1:{height:[72,118],load:80,warranty:1},d2:{height:[73,122],load:80,warranty:1},d6:{height:[73,122],load:80,warranty:null},d3:{height:[65,108],load:80,warranty:null},d4:{height:[67,107],load:100,warranty:null},d5:{height:[64.5,130.5],load:100,warranty:5},d11:{height:[73,122],load:80,warranty:null},d10:{height:[68.6,115.1],load:70,warranty:5}};
+function score(p){const f=scoreFacts[p.id];const items=[];const price=p.price<200000?25:p.price<300000?20:p.price<400000?15:p.price<500000?10:5;items.push(['가격',price,`${money(p.price)}원 · 배송비 제외`]);if(f.height){const [lo,hi]=f.height;const n=(lo<=65?1:0)+(hi>=120?1:0);items.push(['높이',n===2?25:n===1?15:5,`${lo*10}–${hi*10} mm`])}if(f.load!==null)items.push(['하중',f.load>=100?25:f.load>=80?18:10,`${f.load}kg`]);if(f.warranty!==null)items.push(['보증',f.warranty>=5?25:f.warranty>=3?18:10,`${p.id==='d10'?'모터 무상 5년 · 대리점 안내':`무상 ${f.warranty}년`}`]);const sum=items.reduce((a,x)=>a+x[1],0);return {items,points:Math.round(sum/(items.length*25)*100),count:items.length}}
+function scoreBlock(p){const r=score(p);return `<div class="score-panel"><strong>${r.points}</strong> / 100 <button type="button" class="score-toggle" aria-controls="detail-${p.id}" aria-expanded="false">점수 근거 보기 ↓</button></div>`}
+function scoreEvidence(p){const r=score(p),keys=['가격','높이','하중','보증'];return `<section class="detail-section detail-score"><h3>점수 근거 <small>${r.points} / 100 · ${r.count<4?'잠정 점수':'종합 점수'}</small></h3><div class="detail-score-grid">${keys.map(k=>{const item=r.items.find(x=>x[0]===k);return `<div><span>${k}</span><strong>${item?item[1]+' / 25':'평가 제외'}</strong><small>${item?item[2]:'확인된 정보 부족'}</small></div>`}).join('')}</div><p>확인된 항목의 점수를 100점으로 환산했습니다.</p></section>`}
+
+
+
+function shortSpec(p,k){const v=p.spec[k]||'미확인'; if(k==='높이 범위')return v.split(' · ')[0]; if(k==='모터 수')return v.replace(/\s*\([^)]*\)/g,''); if(k==='AS 기간'){const as={d2:'무상 1년',d3:'무상 1년 · 확인 필요',d4:'1년 · 판매처 표기',d5:'무상 5년',d10:'모터 5년'};return as[p.id]||v} return v}
+function sourceLinks(p){const seen=new Set([p.buyUrl]);const entries=[...(p.specSources||[]),...(p.url?[{url:p.url,label:'가격·사양 출처'}]:[])];return entries.filter(r=>{if(!r.url||seen.has(r.url))return false;seen.add(r.url);return true})}
+function compactDesk(p){const isTop=score(p).points===Math.max(...products.desk.map(item=>score(item).points));return `<article class="compact-row ${isTop?'top-ranked':''}">${isTop?'<span class="rank-badge">★ 점수 1위</span>':''}<img class="compact-img" src="${p.image}" alt="${p.name} 상품 이미지" loading="lazy" onerror="this.hidden=true"><div class="compact-name"><span>${p.brand} · ${p.type}</span><h2>${p.name}</h2><strong>${money(p.price)}원</strong><small>조사 ${p.checked} · 조건 확인</small></div><div class="compact-spec"><div><small>상판</small><b>${shortSpec(p,'상판 크기')}</b></div><div><small>모터</small><b>${shortSpec(p,'모터 수')}</b></div><div><small>높이</small><b>${shortSpec(p,'높이 범위')}</b></div><div><small>하중</small><b>${shortSpec(p,'최대 하중')}</b></div><div class="wide"><small>AS</small><b>${shortSpec(p,'AS 기간')}</b></div></div><div class="compact-score">${scoreBlock(p)}</div><div class="compact-actions"><a class="buy" href="${p.buyUrl}" target="_blank" rel="noopener noreferrer">네이버 구매 ↗</a><button class="compare" data-id="${p.id}" aria-pressed="${selected.has(p.id)}">${selected.has(p.id)?'담김 ✓':'비교 담기 +'}</button></div><details class="compact-more" id="detail-${p.id}"><summary>자세히 보기</summary><div class="compact-expanded">${scoreEvidence(p)}<section class="detail-section detail-spec"><h3>전체 사양</h3><dl>${Object.entries(p.spec).map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl></section><section class="detail-section detail-sources"><h3>출처 및 확인 사항</h3><p>${p.specNote}</p><div class="detail-links">${sourceLinks(p).map(r=>`<a class="source" href="${r.url}" rel="noopener noreferrer">${r.label} ↗</a>`).join('')}</div>${p.review?`<h3>커뮤니티 후기</h3><p>${p.review}</p>${(p.refs||[]).map(r=>`<a class="source" href="${r.url}" rel="noopener noreferrer">${r.label} ↗</a>`).join('')}`:''}${p.linkNote&&/확인 필요|로그인/.test(p.linkNote)?`<p class="detail-purchase">${p.linkNote}</p>`:''}</section></div></details></article>`}
+
+function compactPC(p){
+  return `<article class="pc-card">
+    <div class="pc-card-visual">
+      ${art(p)}
+      <span class="pc-card-tier">${p.tier||p.tag}</span>
+    </div>
+    <div class="pc-card-main">
+      <span class="badge">${p.type}</span>
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+      <div class="pc-card-pricing">
+        <span class="pc-card-price">단품 약 ${money(p.price)}원</span>
+        ${p.dealPrice?`<span class="pc-card-deal">핫딜 체감 약 ${money(p.dealPrice)}원</span>`:''}
+      </div>
+    </div>
+    <div class="pc-card-specs">
+      <div><dt>CPU</dt><dd title="${p.spec['CPU']}">${p.spec['CPU']}</dd></div>
+      <div><dt>GPU</dt><dd title="${p.spec['GPU']}">${p.spec['GPU']}</dd></div>
+      <div><dt>RAM</dt><dd title="${p.spec['RAM']}">${p.spec['RAM']}</dd></div>
+      <div><dt>SSD</dt><dd title="${p.spec['SSD']}">${p.spec['SSD']}</dd></div>
+      <div class="wide"><dt>파워</dt><dd title="${p.spec['메인보드 / 파워']}">${p.spec['메인보드 / 파워']}</dd></div>
+      <div class="wide"><dt>화면</dt><dd style="color:#205634" title="${p.spec['추천 모니터']}">${p.spec['추천 모니터']}</dd></div>
+    </div>
+    <div class="pc-card-actions">
+      <a class="buy" href="${p.danawaUrl}" target="_blank" rel="noopener noreferrer">다나와 견적 ↗</a>
+      ${p.dealUrl?`<a class="deal-btn" href="${p.dealUrl}" target="_blank" rel="noopener noreferrer">핫딜 사례 보기 ↗</a>`:''}
+      <button class="compare" data-id="${p.id}" aria-pressed="${selected.has(p.id)}">${selected.has(p.id)?'담김 ✓':'비교 담기 +'}</button>
+    </div>
+  </article>`;
+}
+
+function compactMonitor(p){
+  return `<article class="mon-card">
+    <div class="mon-visual">
+      ${art(p)}
+      <span class="badge" style="margin-top:6px">${p.type}</span>
+    </div>
+    <div class="mon-info">
+      <span class="brand" style="font-size:10px;color:var(--muted)">${p.brand}</span>
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+      <div class="mon-price">${money(p.price)}<small style="font-size:11px;font-weight:400;color:var(--muted)">원 (다나와 최저가 기준)</small></div>
+    </div>
+    <div class="mon-specs">
+      <div><dt>화면</dt><dd>${p.spec['화면 크기']||p.spec['화면']}</dd></div>
+      <div><dt>해상도</dt><dd>${p.spec['해상도']}</dd></div>
+      <div><dt>주사율</dt><dd>${p.spec['주사율 / 패널']||p.spec['해상도 모드']}</dd></div>
+      <div><dt>매칭</dt><dd style="color:#205634">${p.spec['추천 본체']}</dd></div>
+      <div class="mon-comment"><b>추천 이유:</b> ${p.good}</div>
+    </div>
+    <div class="pc-card-actions">
+      <a class="buy" href="${p.url}" target="_blank" rel="noopener noreferrer">다나와 가격비교 ↗</a>
+      <a class="deal-btn" href="https://search.shopping.naver.com/search/all?query=${encodeURIComponent(p.search)}" target="_blank" rel="noopener noreferrer">네이버 최저가 ↗</a>
+      <button class="compare" data-id="${p.id}" aria-pressed="${selected.has(p.id)}">${selected.has(p.id)?'담김 ✓':'비교 담기 +'}</button>
+    </div>
+  </article>`;
+}
+
+function render(){
+const types=['전체',...new Set(products[tab].map(p=>p.type))];$('filters').innerHTML=types.map(t=>`<button class="chip ${t===filter?'active':''}" data-filter="${t}" aria-pressed="${t===filter}">${t}</button>`).join('');
+$('desk-essentials').hidden=tab!=='desk';$('buy-planner').hidden=tab!=='desk';$('score-method').hidden=tab!=='desk';$('motor-tools').hidden=tab!=='desk';
+if($('desk-evidence'))$('desk-evidence').hidden=tab!=='desk';
+if($('pc-matrix-section'))$('pc-matrix-section').hidden=tab!=='pc';
+if($('monitor-matrix-section'))$('monitor-matrix-section').hidden=tab!=='monitor';
+
+$('motor-tools').innerHTML='<div class="filters"><label>모터 구성</label>'+['전체','싱글','듀얼','미확인'].map(m=>`<button class="chip ${motorFilter===m?'active':''}" data-motor="${m}" aria-pressed="${motorFilter===m}">${m} · ${products.desk.filter(p=>(filter==='전체'||p.type===filter)&&(m==='전체'||motorType(p)===m)).length}</button>`).join('')+'</div><p>1 = 싱글 · 2 = 듀얼 · ? = 확인 필요. 모터 수가 표기되지 않았다고 싱글로 단정할 수 없습니다. 다리 단수와도 다른 사양입니다.</p>';
+
+const list=products[tab].filter(p=>(filter==='전체'||p.type===filter)&&(tab!=='desk'||motorFilter==='전체'||motorType(p)===motorFilter));
+const tabName=tab==='desk'?'모션 데스크':tab==='pc'?'데스크탑 견적':'추천 모니터';
+const priceLabel=tab==='desk'?'조사 가격':tab==='pc'?'단품 최저가 및 핫딜 체감가':'다나와 최저가 기준';
+$('count').textContent=`${tabName} ${list.length}개 · ${priceLabel}`;
+
+if(tab==='desk'){
+  $('cards').innerHTML=list.map(compactDesk).join('');
+}else if(tab==='pc'){
+  $('cards').innerHTML=list.map(compactPC).join('');
+}else{
+  $('cards').innerHTML=list.map(compactMonitor).join('');
+}
+
+if(!list.length)$('cards').innerHTML='<div class="no-results">해당 조건에 맞는 제품이 없습니다. 필터를 전체로 변경해보세요.</div>';
+
+$('guide-title').textContent=tab==='desk'?'모션 데스크, 크기보다 먼저 확인할 것':tab==='pc'?'데스크탑 본체, 목적에 맞는 균형 구성':'모니터, 해상도와 주사율 선택 가이드';
+$('guide-description').textContent=tab==='desk'?'최저 높이부터 설치 공간까지. 구매 전 체크 포인트를 정리했어요.':tab==='pc'?'게임과 작업 목적에 맞춰 CPU와 GPU, 메모리 균형을 정리했어요.':'해상도와 주사율, 패널 종류까지. 사용 목적에 맞춰 모니터를 골라보세요.';
+$('guide-detail').innerHTML=tab==='desk'?'<h3>책상 구매 전 체크리스트</h3><ul><li>의자에 앉았을 때 팔꿈치 높이와 책상 최저 높이를 비교하세요.</li><li>상판 깊이와 모니터 암 장착 공간, 벽과의 여유를 확인하세요.</li><li>모터 개수만으로 안정성을 판단하지 말고 최대 높이에서의 흔들림을 확인하세요.</li><li>상판과 장비를 포함한 하중 기준, 배송·설치비와 보증 범위를 확인하세요.</li></ul>':tab==='pc'?'<h3>데스크탑 본체 구성 체크포인트</h3><ul><li>주 사용 게임 또는 작업 툴의 권장 사양과 CPU·GPU 조합을 확인하세요.</li><li>파워서플라이 용량과 쿨링(발열 제어), 케이스 규격을 함께 점검하세요.</li><li>RAM(최소 32GB)과 빠른 NVMe SSD 용량을 넉넉하게 산정하세요.</li><li>본체 예산은 모니터 및 책상/체어와 별도로 균형 있게 배분하세요.</li></ul>':'<h3>모니터를 고르는 순서</h3><ul><li>게임 중심이면 목표 게임의 해상도별 실제 프레임과 고주사율(144Hz+)을 확인하세요.</li><li>편집과 디자인 중심이면 색역(sRGB, DCI-P3)·색 정확도와 IPS 패널 여부를 확인하세요.</li><li>책상 깊이에 맞춰 27인치(깊이 600~700mm) 또는 32인치(750mm 이상)를 선택하세요.</li><li>GPU의 출력 포트(DP/HDMI) 규격과 모니터 암 규격(VESA 홀)을 확인하세요.</li></ul>';
+
+if($('monitor-section'))$('monitor-section').hidden=true;
+renderComparison();
+}
+
+function renderComparison(){const list=products[tab].filter(p=>selected.has(p.id));$('selected-count').textContent=`${list.length} / 3`;$('comparison').innerHTML=list.length?`<table><thead><tr><th scope="col">비교 기준</th>${list.map(p=>`<th scope="col">${p.name}</th>`).join('')}</tr></thead><tbody><tr><th scope="row">가격</th>${list.map(p=>`<td>${money(p.price)}원${p.dealPrice?`<br><small style="color:#2a7046;font-weight:700">핫딜 약 ${money(p.dealPrice)}원</small>`:''}</td>`).join('')}</tr>${tab==='desk'?`<tr><th scope="row">종합 점수</th>${list.map(p=>{const r=score(p);return `<td>${r.points}점 · ${r.count}/4항목${r.count<4?' · 잠정':''}</td>`}).join('')}</tr>`:''}${Object.keys(list[0].spec).map(k=>`<tr><th scope="row">${k}</th>${list.map(p=>`<td>${p.spec[k]}</td>`).join('')}</tr>`).join('')}<tr><th scope="row">이런 분께</th>${list.map(p=>`<td>${p.good}</td>`).join('')}</tr><tr><th scope="row">확인할 점</th>${list.map(p=>`<td>${p.bad}</td>`).join('')}</tr></tbody></table>`:'<div class="empty">어떤 제품이 나에게 맞을까요? 제품을 담으면 가격과 핵심 사양을 나란히 볼 수 있어요.</div>'}
+function switchTab(value){tab=value;filter='전체';motorFilter='전체';selected.clear();document.querySelectorAll('[data-tab]').forEach(b=>{b.setAttribute('aria-selected',b.dataset.tab===tab);b.tabIndex=b.dataset.tab===tab?0:-1});$('products').setAttribute('aria-labelledby',tab+'-tab');$('guide-detail').hidden=true;$('guide-button').setAttribute('aria-expanded','false');$('guide-button').textContent='선택 가이드 보기 +';render()}
+document.querySelectorAll('[data-tab]').forEach(b=>{b.onclick=()=>switchTab(b.dataset.tab);b.onkeydown=e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const tabList=['desk','pc','monitor'];let idx=tabList.indexOf(tab);if(e.key==='Home')idx=0;else if(e.key==='End')idx=tabList.length-1;else if(e.key==='ArrowLeft')idx=(idx-1+tabList.length)%tabList.length;else if(e.key==='ArrowRight')idx=(idx+1)%tabList.length;const next=tabList[idx];switchTab(next);$(next+'-tab').focus()}}});
+$('motor-tools').onclick=e=>{const b=e.target.closest('[data-motor]');if(b){motorFilter=b.dataset.motor;render();document.querySelector(`[data-motor="${motorFilter}"]`).focus()}};
+$('buy-planner').onchange=()=>{const n=document.querySelectorAll('.purchase-check:checked').length;$('check-progress').textContent=`${n} / 9 확인`;$('check-bar').style.width=`${n/9*100}%`};
+$('filters').onclick=e=>{const b=e.target.closest('[data-filter]');if(b){filter=b.dataset.filter;render()}};
+$('cards').addEventListener('toggle',e=>{if(e.target.matches('.compact-more')){const button=e.target.closest('.compact-row').querySelector('.score-toggle');button.setAttribute('aria-expanded',String(e.target.open))}},true);
+$('cards').onclick=e=>{const trigger=e.target.closest('.score-toggle');if(trigger){const details=document.getElementById(trigger.getAttribute('aria-controls'));details.open=!details.open;return}const b=e.target.closest('[data-id]');if(b){selected.has(b.dataset.id)?selected.delete(b.dataset.id):selected.size<3?selected.add(b.dataset.id):alert('최대 3개까지 비교할 수 있습니다.');const id=b.dataset.id;render();document.querySelector(`[data-id="${id}"]`).focus()}};
+$('guide-button').onclick=()=>{const open=$('guide-detail').hidden;$('guide-detail').hidden=!open;$('guide-button').setAttribute('aria-expanded',open);$('guide-button').textContent=open?'가이드 접기 −':'선택 가이드 보기 +'};
+if($('monitors')){$('monitors').innerHTML=[['PLAY QHD','27인치 · QHD · 165 Hz','플레이 QHD 조합','게임 중심의 화면 구성 예시. 실제 주사율 활용 여부는 게임별 프레임을 확인하세요.'],['CREATE BALANCE','27인치 · QHD · IPS','크리에이트 밸런스 조합','편집과 게임을 함께 고려하는 예시. 색역과 주사율은 작업 비중에 맞춰 선택하세요.'],['STUDIO PERFORMANCE','32인치 · 4K · IPS','스튜디오 퍼포먼스 조합','넓은 작업 공간을 위한 예시. 배율 설정과 색 정확도, 책상 깊이를 함께 확인하세요.']].map(([a,b,c,d])=>`<article><span class="eyebrow" style="font-size:9px">${a}</span><h4>${b}</h4><small>${c}</small><p>${d}</p><a style="font-size:12px;color:var(--green)" href="https://search.shopping.naver.com/search/all?query=${encodeURIComponent(b.replaceAll('·',' '))}" rel="noopener noreferrer">모니터 검색 ↗</a></article>`).join('');}render();
+</script>
+
+<script>
+(function(){
+  function setNewTabLinks(root){
+    const links = root.matches?.('a[href]') ? [root] : root.querySelectorAll?.('a[href]') || [];
+    for (const link of links){
+      const href=link.getAttribute('href').trim();
+      if(!href || href.startsWith('#') || /^(?:javascript:|mailto:|tel:)/i.test(href)) continue;
+      link.setAttribute('target','_blank');
+      link.setAttribute('rel','noopener noreferrer');
+    }
+  }
+  setNewTabLinks(document);
+  new MutationObserver(records=>{for(const record of records)for(const node of record.addedNodes)if(node.nodeType===1)setNewTabLinks(node)}).observe(document.body,{childList:true,subtree:true});
+})();
+</script>
+</body>
+</html>
